@@ -1,0 +1,37 @@
+body  {
+    background-color: var(--bg-color);
+}
+
+header {
+    background-color: var(--box-color);
+    width:100%
+}
+
+.navbar {
+    background-color: var(--box-color);
+    height: 80px;
+    /*outline-color: ;*/
+    
+}
+
+.navbar .form-control {
+    position: absolute;
+    top: 20px; /* Y */
+    left: 455px; /* X */
+    width: 430px; /* W */
+    height: 40px; /* H */
+}
+
+
+.container-header {
+    max-width: 1440px;
+    margin: auto;
+}
+
+.categories {
+    background-color: var(--bg-color);
+    outline-color: var(--border-color);
+    outline-width: 1px;
+
+}
+

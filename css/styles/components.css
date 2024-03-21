@@ -1,0 +1,11 @@
+.button-red {
+    border: 1px;
+    text-align: center;
+    text-decoration: none !important;
+    color: var(--light-white) !important;
+    background-color: var(--top-attention);
+}
+
+.button-red:hover {
+
+}

@@ -7,11 +7,15 @@ header {
     width:100%
 }
 
-.navbar {
+.navbar-upper {
     background-color: var(--box-color);
     height: 80px;
     /*outline-color: ;*/
-    
+}
+
+.navbar-lower {
+    background-color: var(--border-color);
+    height: 30px;
 }
 
 .navbar .form-control {
@@ -28,10 +32,31 @@ header {
     margin: auto;
 }
 
-.categories {
-    background-color: var(--bg-color);
-    outline-color: var(--border-color);
-    outline-width: 1px;
-
+.container-main {
+    max-width: 1440px;
+    margin: auto;
 }
 
+.box-category {
+    background-color: red;
+    max-width: 380px;
+    max-height: 350px;
+    border: 2px solid white;
+    border-radius: 8px
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 91.84%; /* Aspect ratio: 350px / 380px */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+}

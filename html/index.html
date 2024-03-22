@@ -19,7 +19,7 @@
 
   <header>
     <div class="container-header">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-upper">
         <!--add div for signup, create account + shopping cart -->
         <div class="container-fluid">
           <!-- <a> pre logo, treba upravit v css-->
@@ -43,14 +43,46 @@
           </form>
         </div>
       </nav>
+
+      <nav class="navbar navbar-expand-lg navbar-light navbar-lower">
+
+      </nav>
     </div>
   </header>
 
 
   <main>
-    <div class="categories">
-      <!--<button class="button-red">Hello</button>-->
+
+
+    <div class="categories" style="background-color: red">
+      <button class="button-red">Hello</button>
     </div>
+
+    <div class="container">
+      <div class="row">
+          <div class="col flex-column justify-content-end box-category">
+              <button type="button" class="btn btn-secondary mt-auto">Button</button>
+          </div>
+          <div class="col d-flex flex-column justify-content-end box-category">
+              <div class="image-container">
+                  <img src="../images/main/category.png" alt="Category" class="background-image">
+
+              </div>
+              
+          </div>
+          <div class="col d-flex flex-column justify-content-end box-category">
+              <div class="p-2 bg-primary text-white text-center">Box 3</div>
+              <button type="button" class="btn btn-secondary mt-auto">Button</button>
+          </div>
+      </div>
+  </div>
+
+  <div class="product-categories"> 
+    <div class="product-category"></div>
+    <div class="product-category"></div>
+    <div class="product-category"></div>
+  </div>
+
 
   </main>
   

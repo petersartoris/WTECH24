@@ -20,8 +20,6 @@
     /* Remove the right margin from the last breadcrumb item */
 /* } */
 
-*/
-
 /* This removes the "/" */
 .breadcrumb-item+.breadcrumb-item::before {
     content: "";
@@ -30,7 +28,7 @@
 .breadcrumb-item.active {
     font-weight: bold;
     /* change the text color */
-    color: var(--top-attention);
+    color: var(--color-black);
 }
 
 .form-group {
@@ -52,7 +50,3 @@
     /* set color to be top-attention */
     background-color: var(--top-attention);
 }
-
-/* .input-number {
-    width: 50px;
-} */

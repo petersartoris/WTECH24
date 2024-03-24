@@ -1,12 +1,4 @@
-/*** BASIC ***/
-body  {
-    background-color: var(--bg-color);
-}
 
-header {
-    background-color: var(--box-color);
-    width:100%;
-}
 
 .row {
     width:100%;
@@ -71,10 +63,6 @@ header {
 
 .background-image {
     object-fit: cover;
-}
-
-.white-text {
-    color: var(--white)
 }
 
 

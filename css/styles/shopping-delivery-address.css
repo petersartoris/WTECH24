@@ -1,0 +1,36 @@
+.breadcrumb-item {
+    font-size: 1em;
+    /* Change this to the size you want */
+    /* Change this to the text color you want */
+    padding: 10px;
+    /* Change this to the padding you want */
+    border-radius: 0.5em;
+    /* Change this to the border radius you want */
+    margin-right: 15px;
+
+    text-decoration: none !important;
+
+
+}
+
+.breadcrumb-item a {
+    color: var(--color-black);
+    /* Change this to the text color you want */
+    text-decoration: none !important;
+}
+
+.breadcrumb-item:last-child {
+    margin-right: 0;
+    /* Remove the right margin from the last breadcrumb item */
+}
+
+/* This removes the "/" */
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "";
+}
+
+.breadcrumb-item.active {
+    font-weight: bold;
+    /* change the text color */
+    color: var(--top-attention);
+}

@@ -1,6 +1,6 @@
 :root {
     --box-color: #252525;
-    --bg-color: #1f1f1f;
+    --bg-color: #181A1B;
     --black: #1b1b1b;
     --white: #fff;
     --light-white: #d4d4d4;
@@ -36,3 +36,17 @@
 .color-black {
     color: var(--color-black);
 }
+
+/*
+:root {
+
+    --box-color: #221C69;
+    --bg-color: #080942;
+    --black: #1b1b1b;
+    --white: #fff;
+    --light-white: #d4d4d4;
+    --border-color: #707070;
+    --top-attention: #D1098D;
+    --color-black: #000;
+    
+    }*/

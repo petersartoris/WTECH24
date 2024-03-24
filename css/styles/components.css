@@ -1,4 +1,7 @@
+/*** CUSTOM BUTTON ***/
+
 .button-custom {
+
     border-radius: 0.5em;
     text-align: center;
     text-decoration: none !important;
@@ -12,14 +15,75 @@
     align-items: center;
     height: 100%;
     margin-block: auto;
+
 }
 
 .button-red {
     background-color: var(--top-attention);
     color: var(--light-white);
+
 }
 
 .button-white {
     background-color: var(--light-white);
     color: var(--black);
+}
+
+
+/*** CUSTOM BORDERS ***/
+
+.border-custom {
+    border: 0.07em solid var(--border-color);
+}
+
+.border-bottom-custom {
+    border-bottom: 0.07em solid var(--border-color);
+}
+
+.border-top-custom {
+    border-top: 0.07em solid var(--border-color);
+}
+
+.border-left-custom {
+    border-left: 0.07em solid var(--border-color);
+}
+
+.border-right-custom {
+    border-right: 0.07em solid var(--border-color);
+}
+
+.border-radius-custom {
+    border-radius: 1em;
+}
+
+/*** NAVBAR CLASSES ***/
+.container-header {
+    max-width: 90em;
+    margin: auto;
+}
+
+.navbar-upper {
+    background-color: var(--box-color);
+    min-height: 4.25em;
+    border-bottom: 0.05em solid var(--border-color);
+    /*outline-color: ;*/
+}
+
+.navbar-lower {
+    background-color: var(--box-color);
+    height: 2.75em;
+
+}
+
+.navbar-lower .nav-item.nav-link {
+    color: var(--white);
+}
+
+.navbar-nav>.nav-item {
+    margin-right: 0.35em;
+    margin-left: 0.35em;
+}
+
+.btn-search {
+    border-color: var(--border-color);
 }

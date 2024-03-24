@@ -20,3 +20,11 @@
 .text-container::-webkit-scrollbar {
     display: none;
 }
+
+.row {
+    width: 100%;
+}
+
+.footer {
+    border-top-color: var(--border-color);
+}

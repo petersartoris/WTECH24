@@ -108,3 +108,16 @@ header {
     padding-left: 0;
     padding-right: 0;
 }
+
+/*** CUSTOM TEXT ***/
+.price-text {
+    /* set the color of the font */
+    color: var(--white);
+
+    /* set the size of the font */
+    font-size: 1.5em;
+
+    /* set margin */
+    margin: 1em 0;
+
+}

@@ -80,22 +80,65 @@
         </div>
     </header>
 
-
-    <div class="container container-custom border-custom border-radius-custom center-all bg-box">
-        <div class="row">
-            <!-- <div class="d-flex justify-content-center align-items-center m-3"> -->
-            <nav class="m-3" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item button-white"><a href="#">Shopping Cart</a></li>
-                    <li class="breadcrumb-item active button-white" aria-current="page">Shipping & Payment</li>
-                    <li class="breadcrumb-item button-white"><a href="#">Delivery Information</a></li>
-                    <li class="breadcrumb-item button-white"><a href="#">Order Summary</a></li>
-                </ol>
-            </nav>
+    <main>
+        <div class="container container-custom border-custom border-radius-custom center-all bg-box">
+            <div class="row">
+                <!-- <div class="d-flex justify-content-center align-items-center m-3"> -->
+                <nav class="m-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item button-white"><a href="#">Shopping Cart</a></li>
+                        <li class="breadcrumb-item active button-white" aria-current="page">Shipping & Payment</li>
+                        <li class="breadcrumb-item button-white"><a href="#">Delivery Information</a></li>
+                        <li class="breadcrumb-item button-white"><a href="#">Order Summary</a></li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-    </div>
 
+        <section id="delivery-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 mt-3">
+                        <h1 class="text-center border-custom" id="delivery-address">Enter delivery address
+                        </h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">First name, Last name</label>
+                                <input type="text" class="form-control" id="name" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Street address, Postal code</label>
+                                <input type="text" class="form-control" id="address" autocomplete="street-address">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City, Country</label>
+                                <input type="text" class="form-control" id="city" autocomplete="address-level2">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone number</label>
+                                <input type="tel" class="form-control" id="phone" autocomplete="tel">
+                            </div>
 
+                            <div class="text-center text-white">
+                                <h2 class="price-text">Total: 4000 €</h2>
+                                <button type="submit" class="button button-custom text-white">Proceed to
+                                    payment</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 mt-5 mt-md-3 align-content-center">
+                        <div class="picture-container">
+                            <img class="picture img-fluid mw-100" src="../images/delivery-address/delivery-page.jpeg"
+                                alt="picture of mascot in storage facility">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </section>
+    </main>
 
 
 </body>

@@ -1,11 +1,7 @@
 .breadcrumb-item {
     font-size: 1em;
-    /* Change this to the size you want */
-    /* Change this to the text color you want */
     padding: 10px;
-    /* Change this to the padding you want */
     border-radius: 0.5em;
-    /* Change this to the border radius you want */
     margin-right: 15px;
 
     text-decoration: none !important;
@@ -13,6 +9,7 @@
 
 }
 
+/* removing all decorations from class a*/
 .breadcrumb-item a {
     color: var(--color-black);
     /* Change this to the text color you want */
@@ -33,4 +30,24 @@
     font-weight: bold;
     /* change the text color */
     color: var(--top-attention);
+}
+
+.form-group {
+    margin-bottom: 1em;
+    /* set the color of the font */
+    color: var(--white);
+}
+
+#delivery-address {
+    /* set the color of the font */
+    color: var(--white);
+    border-radius: 0.3em;
+    /* padding */
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.button {
+    /* set color to be top-attention */
+    background-color: var(--top-attention);
 }

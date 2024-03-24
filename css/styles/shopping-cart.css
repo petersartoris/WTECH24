@@ -28,7 +28,7 @@
 .breadcrumb-item.active {
     font-weight: bold;
     /* change the text color */
-    color: var(--top-attention);
+    color: var(--black-color);
 }
 
 .remove-button {
@@ -65,4 +65,8 @@
 
 .border-radius-medium {
     border-radius: 0.5em;
+}
+
+.row-footer {
+    width: 100%;
 }

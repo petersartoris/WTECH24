@@ -1,0 +1,22 @@
+.text-justify {
+    text-align: justify;
+}
+
+.center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*HIDING SCROLLBAR ON WEB BROWSERS*/
+.text-container {
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.text-container::-webkit-scrollbar {
+    display: none;
+}

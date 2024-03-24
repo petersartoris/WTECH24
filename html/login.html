@@ -72,16 +72,16 @@
             <div class="row first-row-container">
                 <div class="col-md-6 col-lg-8 mb-4 mb-md-0 align-content-center">
                     <h1 class="login-text">Login</h1>
-                    <form action="login.php" method="POST">
+                    <form action="loginForm" method="POST">
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" placeholder="username" class="form-control" id="username" name="username"
-                                required>
+                            <input type="text" placeholder="username" class="form-control" id="username"
+                                autocomplete="username" name="username" required>
                         </div>
                         <div class="mb-5 position-relative">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" placeholder="password" class="form-control" id="password"
-                                name="password" required>
+                                autocomplete="current-password" name="password" required>
                             <small class="form-text text-muted position-absolute end-0 ">
                                 <a href="#" id="forgot-password-link">Forgot your password?</a>
                             </small>

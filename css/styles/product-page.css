@@ -94,3 +94,14 @@
         width: 50%;
     }
 }
+
+.page-item .page-link {
+    color: var(--white);
+    background-color: var(--bg-color);
+    border: none;
+    font-size: 1.5rem;
+}
+
+.page-item .page-link.current {
+    background-color: var(--top-attention);
+}

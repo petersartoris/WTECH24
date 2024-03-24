@@ -119,7 +119,7 @@ header {
 
 .nav-item,
 .nav-link {
-  color: var(--white);
+    color: var(--white);
 }
 
 

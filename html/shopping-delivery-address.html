@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Shopping-delivery</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../libs/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom CSS for this file -->
-    <link rel="stylesheet" type="text/css" href="../css/styles/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles/shopping-delivery-address.css">
 
     <!-- Custom CSS for the whole project -->
     <link rel="stylesheet" type="text/css" href="../css/styles/global.css">
-    <link rel="stylesheet" type="text/css" href="../css/styles/components.css">
-    <link rel="stylesheet" type="text/css" href="../css/responsive/components.css">
+    <link rel="stylesheet" href="../css/styles/components.css">
+    <link rel="stylesheet" href="../css/responsive/components.css">
 
     <!-- Favicon made with realfavicongenerator.net-->
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">
@@ -28,6 +28,7 @@
     <meta name="theme-color" content="#ffffff">
 
 </head>
+
 
 <body>
     <header>
@@ -79,51 +80,24 @@
         </div>
     </header>
 
-    <main class="main py-2 px-2 d-flex justify-content-md-center">
-        <!-- login page -->
-        <div class="container-fluid d-flex justify-content-center">
-            <div class="row border-custom border-radius-custom">
-                <section class="col-md-6 col-lg-8 mb-4 mb-md-0 align-content-center">
-                    <h1 class="login-text">Login</h1>
-                    <form action="loginForm" method="POST"> <!-- this should be changed to some php/other location-->
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" placeholder="username" class="form-control" id="username"
-                                autocomplete="username" name="username" required>
-                        </div>
-                        <div class="mb-5 position-relative">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" placeholder="password" class="form-control" id="password"
-                                autocomplete="current-password" name="password" required>
-                            <small class="form-text text-muted position-absolute end-0 ">
-                                <a href="#" id="forgot-password-link">Forgot your password?</a>
-                            </small>
-                        </div>
 
-                        <button type="submit" class="button-red button-login">Login</button>
-                    </form>
-                </section>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="picture-container">
-                        <img class="picture img-fluid mw-100" src="../images/login/login-page.jpeg"
-                            alt="Placeholder Image">
-                        <div id="registration-caller" class="mx-auto">
-                            <h1 id="registration-caller-text">Do not have an account?</h1>
-                            <button type="button" class="btn btn-light">Create Account</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container container-custom border-custom border-radius-custom center-all bg-box">
+        <div class="row">
+            <!-- <div class="d-flex justify-content-center align-items-center m-3"> -->
+            <nav class="m-3" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item button-white"><a href="#">Shopping Cart</a></li>
+                    <li class="breadcrumb-item active button-white" aria-current="page">Shipping & Payment</li>
+                    <li class="breadcrumb-item button-white"><a href="#">Delivery Information</a></li>
+                    <li class="breadcrumb-item button-white"><a href="#">Order Summary</a></li>
+                </ol>
+            </nav>
         </div>
-    </main>
+    </div>
 
-    <footer class="footer py-2 px-2 bg-light">
-        <p>&copy; 2024 All rights reserved</p>
-        <button class="btn btn-primary">Button 1</button>
-        <button class="btn btn-secondary">Button 2</button>
-        <p>Some text for the footer</p>
-    </footer>
+
+
+
 </body>
 
 </html>

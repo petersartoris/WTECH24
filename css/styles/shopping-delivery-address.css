@@ -13,6 +13,7 @@
 
 }
 
+/* removing all decoration from class a*/
 .breadcrumb-item a {
     color: var(--color-black);
     /* Change this to the text color you want */
@@ -33,4 +34,23 @@
     font-weight: bold;
     /* change the text color */
     color: var(--top-attention);
+}
+
+.form-group {
+    margin-bottom: 1em;
+    /* set the color of the font */
+    color: var(--white);
+}
+
+#delivery-address {
+    /* set the color of the font */
+    color: var(--white);
+    border-radius: 0.3em;
+    /* padding */
+    padding: 0.5em;
+    /* padding from the top of the border */
+    /* padding from the bottom of the border */
+    margin-bottom: 0.5em;
+
+    /* border-custom border-radius-custom */
 }

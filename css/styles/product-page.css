@@ -8,17 +8,6 @@
     align-items: center;
 }
 
-.container-custom {
-    max-width: 90em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5em;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-
 .sidebar {
     width: 20%;
     border-top-right-radius: 0% !important;
@@ -93,4 +82,15 @@
     .col-lg-2.col-md-4 {
         width: 50%;
     }
+}
+
+.page-item .page-link {
+    color: var(--white);
+    background-color: var(--bg-color);
+    border: none;
+    font-size: 1.5rem;
+}
+
+.page-item .page-link.current {
+    background-color: var(--top-attention);
 }

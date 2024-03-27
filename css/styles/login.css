@@ -13,6 +13,7 @@
 /* set the width of all rows to maximum */
 .row {
     width: 100%;
+    overflow: hidden;
 }
 
 .login-text {

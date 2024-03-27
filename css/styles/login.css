@@ -5,9 +5,6 @@
 
     /* set the container height to the viewport height */
     min-height: 100vh;
-
-    /* set the background color */
-    background-color: var(--bg-color);
 }
 
 /* set the width of all rows to maximum */
@@ -30,11 +27,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-
-    /* max-width: 500px;
-    max-height: 500px; */
-    /* set the picture container to get smaller when device class <= md */
-
 }
 
 .picture {

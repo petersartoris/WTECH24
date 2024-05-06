@@ -18,11 +18,6 @@
     color: var(--white);
 }
 
-/* text above the username and password forms */
-.form-label {
-    color: var(--white);
-}
-
 .picture-container {
     position: relative;
     width: 100%;

@@ -29,11 +29,6 @@
     overflow-wrap: normal;
 }
 
-.text-justify {
-    text-align: justify;
-}
-
-
 .button-cart:hover {
     transform: scale(1.2);
 }
@@ -93,4 +88,11 @@
 
 .page-item .page-link.current {
     background-color: var(--top-attention);
+}
+
+@media (min-width: 576px) {
+    .product-info {
+        max-height: 230px;
+        overflow: hidden;
+    }
 }

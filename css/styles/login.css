@@ -76,3 +76,15 @@
 .row-main {
     width: 100%;
 }
+
+@media (min-width: 576px) {
+    .form-design {
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-design {
+        width: 100%;
+    }
+}

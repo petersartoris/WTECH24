@@ -45,7 +45,8 @@
                     <!--SEARCH BAR-->
                     <div class="container-fluid search-container order-3 order-lg-2" id="navbarSearch">
                         <div class="input-group">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <input id="search" class="form-control" type="search" placeholder="Search"
+                                aria-label="Search">
                             <button type="button" class="btn btn-search">
                                 <img src="../images/main/magnifying-glass.png" alt="">
                             </button>
@@ -79,24 +80,33 @@
             <nav class="navbar navbar-expand navbar-lower">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="index.html">Home</a>
-                    <a class="nav-item nav-link" href="error.html">Products</a>
-                    <a class="nav-item nav-link" href="error.html">Delivery</a>
-                    <a class="nav-item nav-link" href="error.html">Contact</a>
-                    <a class="nav-item nav-link" href="error.html">About</a>
+                    <a class="nav-item nav-link" href="product-page.html">Products</a>
+                    <a class="nav-item nav-link" href="delivery-about-contact.html#delivery">Delivery</a>
+                    <a class="nav-item nav-link" href="delivery-about-contact.html#contact">Contact</a>
+                    <a class="nav-item nav-link" href="delivery-about-contact.html#about">About</a>
                 </div>
             </nav>
         </div>
     </header>
+
     <main>
         <div class="container container-custom center-all bg-box mt-2">
-            <div class="row flex-column flex-column-reverse gap-3">
-                <nav class="m-3" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active button-white" aria-current="page">Shopping Cart</a></li>
-                        <li class="breadcrumb-item button-white"><a href="#">Shipping & Payment</li>
-                        <li class="breadcrumb-item button-white"><a href="#">Delivery Information</a></li>
-                    </ol>
-                </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <a href="/html/shopping-cart.html" class="btn btn-primary w-100 my-2">Shopping
+                            Cart</a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="/html/shopping-cart-delivery-options.html"
+                            class="btn btn-outline-secondary w-100 my-2">Shipping
+                            & Payment</a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="/html/shopping-delivery-address.html"
+                            class="btn btn-outline-secondary w-100 my-2">Delivery Information</a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -111,7 +121,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="card-body">
-                        <h2 class="card-title">Product Name</h2>
+                        <h2 class="white-text">Product Name</h2>
                         <p class="price-text">1000 €</p>
                         <div class="row align-items-center">
                             <div class="col">
@@ -140,44 +150,49 @@
                 </div>
             </div>
         </div>
-        <!-- This has to be changed ↓ -->
+
         <div class="container container-custom border-radius-custom mb-3 mt-2 p-3 border-custom">
-            <div class="row align-content-center">
-                <div class="col-sm-6 d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center align-items-center">
                     <div class="flex-column">
-                        <h2 class="card-title">Total Price:</h2>
+                        <h2 class="white-text">Total Price:</h2>
                     </div>
                 </div>
-                <div class="col-sm-6 d-flex justify-content-center my-3">
+                <div class="col-sm-4 d-flex justify-content-center my-3">
                     <div class="d-flex align-items-center">
-                        <h2 class="my-2 white-text mr-2">1000€</h2>
-                        <button class="button-custom button-red fixed-size my-3 mx-2">Finish Order</button>
+                        <h2 class="white-text">1000€</h2>
                     </div>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center my-3">
+                    <button class="button-custom button-red">Continue</button>
                 </div>
             </div>
         </div>
     </main>
 
 
-    <div class="container container-custom">
+    <div class="container footer-position container-custom">
         <div class="row">
             <footer class="pt-3 mb-3 mt-4">
                 <ul class="nav justify-content-center border-bottom-custom pb-3 mb-3">
                     <li class="nav-item"><a href="index.html"
-                            class="nav-link px-2 text-body-secondary nav-footer">Home</a></li>
-                    <li class="nav-item"><a href="error.html"
+                            class="nav-link px-2 text-body-secondary nav-footer">Home</a>
+                    </li>
+                    <li class="nav-item"><a href="product-page.html"
                             class="nav-link px-2 text-body-secondary nav-footer">Products</a>
                     </li>
-                    <li class="nav-item"><a href="error.html"
+                    <li class="nav-item"><a href="delivery-about-contact.html#delivery"
                             class="nav-link px-2 text-body-secondary nav-footer">Delivery</a>
                     </li>
-                    <li class="nav-item"><a href="error.html"
+                    <li class="nav-item"><a href="delivery-about-contact.html#contact"
                             class="nav-link px-2 text-body-secondary nav-footer">Contact</a>
                     </li>
-                    <li class="nav-item"><a href="error.html"
-                            class="nav-link px-2 text-body-secondary nav-footer">About</a></li>
+                    <li class="nav-item"><a href="delivery-about-contact.html#about"
+                            class="nav-link px-2 text-body-secondary nav-footer">About</a>
+                    </li>
                 </ul>
-                <p class="text-center text-body-secondary nav-footer">Copyright &copy; 2024 BombaShop WTECH @ FIIT STU
+                <p class="text-center text-body-secondary nav-footer">Copyright &copy; 2024
+                    BombaShop WTECH @ FIIT STU
                 </p>
             </footer>
         </div>

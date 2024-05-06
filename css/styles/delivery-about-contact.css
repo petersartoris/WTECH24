@@ -1,6 +1,6 @@
-.row {
+/* .row {
     width: 100%;
-}
+} */
 
 body {
     display: flex;
@@ -21,9 +21,4 @@ body {
     border-radius: 0.5em;
 
 
-}
-
-
-.container-custom.pos-footer {
-    margin-top: auto;
 }

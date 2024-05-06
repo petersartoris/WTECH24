@@ -10,7 +10,6 @@ header {
 
 /*** CUSTOM BUTTON ***/
 .button-custom {
-
     border-radius: 0.5em;
     text-align: center;
     text-decoration: none !important;
@@ -20,7 +19,6 @@ header {
     max-height: 3em;
     height: 100%;
     margin-block: auto;
-
 }
 
 .button-red {

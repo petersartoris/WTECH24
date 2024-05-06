@@ -73,9 +73,6 @@
     text-align: center;
 }
 
-.row-main {
-    width: 100%;
-}
 
 @media (min-width: 576px) {
     .form-design {

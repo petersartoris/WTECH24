@@ -1,18 +1,6 @@
-.main {
-    /* set the properti*/
-    display: flex;
-    flex-direction: column;
-}
-
-/* set the width of all rows to maximum */
 .row {
     /* width: 100%; */
     overflow: hidden;
-}
-
-.login-text {
-    text-align: center;
-    color: var(--white);
 }
 
 .picture-container {
@@ -25,7 +13,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* border-radius: 10%; */
     filter: blur(3px);
 }
 

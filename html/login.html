@@ -94,23 +94,24 @@
             <div class="row border-custom border-radius-custom">
                 <div class="col-lg-8 col-md-6 mx-auto">
                     <h1 class="text-center white-text mt-3 mb-3">Log In</h1>
-                    <form action="loginForm" method="post">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" placeholder="username" class="form-control" id="username"
-                                autocomplete="username" name="username" required>
-                        </div>
-                        <div class="mb-5 position-relative">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" placeholder="password" class="form-control" id="password"
-                                autocomplete="current-password" name="password" required>
-                            <small class="form-text text-muted position-absolute end-0">
-                                <a href="error.html" id="forgot-password-link">Forgot your password?</a>
-                            </small>
-                        </div>
-
-                        <button type="submit" class="button-login button-red">Login</button>
-                    </form>
+                    <div class="form-design mx-auto">
+                        <form action="loginForm" method="post">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" placeholder="username" class="form-control" id="username"
+                                    autocomplete="username" name="username" required>
+                            </div>
+                            <div class="mb-5 position-relative">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" placeholder="password" class="form-control" id="password"
+                                    autocomplete="current-password" name="password" required>
+                                <small class="form-text text-muted position-absolute end-0">
+                                    <a href="error.html" id="forgot-password-link">Forgot your password?</a>
+                                </small>
+                            </div>
+                            <button type="submit" class="button-login button-red mb-4 mb-md-2">Login</button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 d-flex justify-content-center align-items-center">

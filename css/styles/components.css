@@ -148,3 +148,7 @@ body {
     max-width: 40px;
     max-height: 40px;
 }
+
+.no-underline {
+    text-decoration: none;
+}

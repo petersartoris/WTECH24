@@ -1,0 +1,9 @@
+.container-custom.pos-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    padding: 20px;
+}
+
+.row {
+    width: 100%;
+}

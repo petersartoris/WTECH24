@@ -51,11 +51,6 @@
     background: var(--bg-color);
 }
 
-.card-title {
-    color: var(--white);
-    /* text padding from left */
-    padding-left: 0.2em;
-}
 
 /* change the size of the quantity selector */
 #quantity {

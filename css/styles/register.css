@@ -9,17 +9,12 @@
 
 /* set the width of all rows to maximum */
 .row {
-    width: 100%;
+    /* width: 100%; */
     overflow: hidden;
 }
 
 .reg-text {
     text-align: center;
-    color: var(--white);
-}
-
-/* text above the username and password forms */
-.form-label {
     color: var(--white);
 }
 
@@ -71,10 +66,6 @@
 .footer {
     width: 100%;
     text-align: center;
-}
-
-.row-main {
-    width: 100%;
 }
 
 @media (min-width: 576px) {

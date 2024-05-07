@@ -1,36 +1,3 @@
-.breadcrumb-item {
-    font-size: 1em;
-    padding: 5px;
-    border-radius: 0.5em;
-    margin-right: 0.5em;
-    margin-top: 0.8em;
-
-    text-decoration: none !important;
-}
-
-/* removing all decorations from class a*/
-.breadcrumb-item a {
-    color: var(--color-black);
-    /* Change this to the text color you want */
-    text-decoration: none !important;
-}
-
-/* .breadcrumb-item:last-child {
-    margin-right: 0;
-    /* Remove the right margin from the last breadcrumb item */
-/* } */
-
-/* This removes the "/" */
-.breadcrumb-item+.breadcrumb-item::before {
-    content: "";
-}
-
-.breadcrumb-item.active {
-    font-weight: bold;
-    /* change the text color */
-    color: var(--color-black);
-}
-
 .form-group {
     margin-bottom: 1em;
     /* set the color of the font */
@@ -46,7 +13,8 @@
     margin-bottom: 0.5em;
 }
 
-.button {
-    /* set color to be top-attention */
-    background-color: var(--top-attention);
+#finish-order {
+    /* set the height */
+    /* without this the button is too small, haven't found the css that causes this yet */
+    height: 3em;
 }

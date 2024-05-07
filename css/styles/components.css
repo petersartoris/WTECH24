@@ -8,9 +8,24 @@ header {
     width: 100%;
 }
 
+/* TODO check with peter where to put this */
+.row {
+    width: 100%;
+}
+
+/* This makes the footer stick to the bottom of the viewport */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-custom.footer-position {
+    margin-top: auto;
+}
+
 /*** CUSTOM BUTTON ***/
 .button-custom {
-
     border-radius: 0.5em;
     text-align: center;
     text-decoration: none !important;
@@ -20,7 +35,6 @@ header {
     max-height: 3em;
     height: 100%;
     margin-block: auto;
-
 }
 
 .button-red {
@@ -114,7 +128,10 @@ header {
     color: var(--white);
     font-size: 1.5em;
     margin: 1em 0;
+}
 
+.form-label {
+    color: var(--white);
 }
 
 .nav-item,
@@ -130,8 +147,4 @@ header {
 .logo-image {
     max-width: 40px;
     max-height: 40px;
-}
-
-.row-footer {
-    width: 100%;
 }

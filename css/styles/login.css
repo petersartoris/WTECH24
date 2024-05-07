@@ -1,5 +1,4 @@
 .row {
-    /* width: 100%; */
     overflow: hidden;
 }
 
@@ -44,6 +43,16 @@
     text-align: center;
     text-decoration: none !important;
     border-style: none;
+}
+
+.caller-button-text {
+    color: var(--black);
+    background-color: var(--white);
+
+    /* ↓ for making the text "button" text centered*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 576px) {

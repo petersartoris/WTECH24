@@ -61,3 +61,8 @@
 .border-radius-medium {
     border-radius: 0.5em;
 }
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+}

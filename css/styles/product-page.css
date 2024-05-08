@@ -96,3 +96,8 @@
         overflow: hidden;
     }
 }
+
+.form-check {
+    color: white;
+    padding-right: 2em;
+}

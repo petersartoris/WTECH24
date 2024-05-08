@@ -14,7 +14,7 @@
     border-bottom-right-radius: 0% !important;
     /*background-color: var(--box-color);*/
     background-color: var(--box-color);
-    
+
 }
 
 .content {
@@ -54,13 +54,16 @@
         display: flex;
         flex-direction: column;
     }
+
     .fixed-size {
         margin-top: 0% !important;
     }
+
     .col-lg-10.col-md-8,
     .col-lg-2.col-md-4 {
         width: 100%;
     }
+
     .container-fluid.ms-3.m-2 {
         margin: 0%;
         display: none;

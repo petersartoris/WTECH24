@@ -1,0 +1,27 @@
+.button-edit {
+    text-align: center;
+    text-decoration: none !important;
+    border-style: none;
+    margin-block: auto;
+    padding-left: 1em;
+    height: 100%;
+    height: 2em;
+    background-color: transparent;
+    color: white;
+}
+
+.form-check {
+    color: white;
+    padding-right: 2em;
+    padding-bottom: 10px;
+}
+
+img {
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.button-custom {
+    height: 3em !important;
+    margin-right: 10px;
+}

@@ -1,21 +1,5 @@
-.main {
-    /* set the properti*/
-    display: flex;
-    flex-direction: column;
-
-    /* set the container height to the viewport height */
-    min-height: 100vh;
-}
-
-/* set the width of all rows to maximum */
 .row {
-    /* width: 100%; */
     overflow: hidden;
-}
-
-.login-text {
-    text-align: center;
-    color: var(--white);
 }
 
 .picture-container {
@@ -28,7 +12,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* border-radius: 10%; */
     filter: blur(3px);
 }
 
@@ -54,7 +37,7 @@
     /* set the button size to fill its container */
     display: block;
     width: 100%;
-    height: 100%;
+    height: 3em;
 
     border-radius: 0.5em;
     text-align: center;
@@ -62,12 +45,15 @@
     border-style: none;
 }
 
+.caller-button-text {
+    color: var(--black);
+    background-color: var(--white);
 
-.footer {
-    width: 100%;
-    text-align: center;
+    /* ↓ for making the text "button" text centered*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 @media (min-width: 576px) {
     .form-design {

@@ -88,58 +88,48 @@
         </div>
     </header>
 
-    <div class="container container-custom d-flex justify-content-center align-items-center vh-100">
-        <div class="row-main">
-            <main class="main py-2 px-2 d-flex justify-content-md-center">
-                <!-- login page -->
-                <div class="container-custom d-flex justify-content-center">
-                    <div class="row border-custom border-radius-custom">
-                        <section
-                            class="col-md-6 col-lg-8 mb-4 mb-md-0 d-flex justify-content-center align-items-center">
-                            <div class="form-design">
-                                <h1 class="login-text">Login</h1>
-                                <form action="loginForm" method="post">
-                                    <!-- this should be changed to some php/other location-->
-                                    <div class="mb-3">
-                                        <label for="username" class="form-label">Username</label>
-                                        <input type="text" placeholder="username" class="form-control" id="username"
-                                            autocomplete="username" name="username" required>
-                                    </div>
-                                    <div class="mb-5 position-relative">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="password" placeholder="password" class="form-control" id="password"
-                                            autocomplete="current-password" name="password" required>
-                                        <small class="form-text text-muted position-absolute end-0">
-                                            <a href="error.html" id="forgot-password-link">Forgot your password?</a>
-                                        </small>
-                                    </div>
-
-                                    <button type="submit" class="button-red button-login">Login</button>
-                                </form>
+    <main class="main">
+        <!-- login page -->
+        <div class="container container-custom">
+            <div class="row border-custom border-radius-custom">
+                <div class="col-12 col-lg-8 col-md-6 mx-auto">
+                    <h1 class="text-center white-text mt-3 mb-3">Log In</h1>
+                    <div class="form-design mx-auto">
+                        <form action="loginForm" method="post">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" placeholder="username" class="form-control" id="username"
+                                    autocomplete="username" name="username" required>
                             </div>
-                        </section>
-
-                        <div class="col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
-                            <div class="picture-container">
-                                <img class="picture img-fluid mw-100" src="../images/login/login-page.jpeg"
-                                    alt="Placeholder Image">
-                                <div id="registration-caller" class="mx-auto">
-                                    <h1 id="registration-caller-text">Do not have an account?</h1>
-                                    <a href="register.html">
-                                        <button type="button" class="btn btn-light">Create Account</button>
-                                    </a>
-                                </div>
+                            <div class="mb-5 position-relative">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" placeholder="password" class="form-control" id="password"
+                                    autocomplete="current-password" name="password" required>
+                                <small class="form-text text-muted position-absolute end-0">
+                                    <a href="error.html" id="forgot-password-link">Forgot your password?</a>
+                                </small>
                             </div>
+                            <button type="submit" class="button-login button-red mb-4 mb-md-2">Login</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="picture-container">
+                        <img class="picture img-fluid mw-100" src="../images/login/login-page.jpeg"
+                            alt="Placeholder Image">
+                        <div id="registration-caller" class="mx-auto">
+                            <h1 id="registration-caller-text">Do not have an account?</h1>
+                            <a href="register.html" class="no-underline">
+                                <!-- <button type="button" class="btn btn-light">Create Account</button> -->
+                                <span class="button-custom caller-button-text">Create Account</span>
+                            </a>
                         </div>
                     </div>
-
-
-
                 </div>
-            </main>
+            </div>
         </div>
-    </div>
-
+    </main>
 
     <div class="container footer-position container-custom">
         <div class="row">

@@ -12,10 +12,10 @@
     
     <!-- Custom CSS -->
     <link href="{{ asset('css/styles/main-page.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/responsive/main-page-responsive.css') }}" rel="stylesheet">
+    {{ $styles ?? '' }}
+
     <link href="{{ asset('css/styles/global.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles/components.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/responsive/components.css') }}" rel="stylesheet">
 
     <!-- Favicon made with realfavicongenerator.net-->
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table-> bigInteger('user_info_id')->unsigned(); // foreign key which will be setup in foreign key migration.
             $table-> bigInteger('delivery_type_id')->unsigned(); // foreign key which will be setup in foreign key migration.
             $table-> bigInteger('payment_type_id')->unsigned(); // foreign key which will be setup in foreign key migration.
@@ -25,6 +24,7 @@ return new class extends Migration
             $table->string('city', 255);
             $table->string('country', 255);
             $table->string('postal_code', 255);
+            $table->timestamps();
         });
     }
 

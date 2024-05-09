@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payment_type', function (Blueprint $table) {
+        Schema::create('delivery_types', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name', 255)->unique();
+            $table->timestamps();
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payment_type');
+        Schema::dropIfExists('delivery_types');
     }
 };

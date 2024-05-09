@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('delivery_type', function (Blueprint $table) {
-            $table->id();
+        Schema::create('order_product', function (Blueprint $table) {
+            // $table->id();
+            $table->bigInteger('orders_id')->unsigned();
+            $table->bigInteger('products_id')->unsigned();
+            $table->primary(['orders_id', 'products_id']);
             $table->timestamps();
-            $table->string('name', 255)->unique();
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('delivery_type');
+        Schema::dropIfExists('order_product');
     }
 };

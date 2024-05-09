@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('user_info_id')->constrained(); // `user_info_id` references `id` on `user_info` table
-            $table->foreignId('delivery_type_id')->constrained(); // `deliver_type_id` references `id` on `delivery_type` table
-            $table->foreignId('payment_type_id')->constrained(); // 
+            $table-> bigInteger('user_info_id')->unsigned(); // foreign key which will be setup in foreign key migration.
+            $table-> bigInteger('delivery_type_id')->unsigned(); // foreign key which will be setup in foreign key migration.
+            $table-> bigInteger('payment_type_id')->unsigned(); // foreign key which will be setup in foreign key migration.
             
             $table->string('state', 16);
-            $table->string('name', 255)->nullable();
-            $table->string('email', 320)->nullable();
-            $table->string('address', 255)->nullable();
-            $table->string('city', 255)->nullable();
-            $table->string('country', 255)->nullable();
-            $table->string('postal_code', 255)->nullable();
+            $table->string('name', 255);
+            $table->string('email', 320);
+            $table->string('address', 255);
+            $table->string('city', 255);
+            $table->string('country', 255);
+            $table->string('postal_code', 255);
         });
     }
 

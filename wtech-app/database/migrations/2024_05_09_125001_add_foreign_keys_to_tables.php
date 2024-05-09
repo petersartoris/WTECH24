@@ -14,26 +14,26 @@ return new class extends Migration
     {
         // Add foreign keys to the orders table
         Schema::table('orders', function (Blueprint $table) {
-            $table->foreign('user_info_id')->references('id')->on('user_info');
-            $table->foreign('delivery_type_id')->references('id')->on('delivery_types');
-            $table->foreign('payment_type_id')->references('id')->on('payment_types');
+            $table->foreign('user_info_id')->references('id')->on('user_info')->onDelete('cascade');
+            $table->foreign('delivery_type_id')->references('id')->on('delivery_types')->onDelete('cascade');
+            $table->foreign('payment_type_id')->references('id')->on('payment_types')->onDelete('cascade');
         });
         
         // Add foreign key to users_info table
         Schema::table('users_info', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
         // Add foreign keys to order_product pivot table
         Schema::table('order_product', function (Blueprint $table) {
-            $table->foreign('orders_id')->references('id')->on('orders');
-            $table->foreign('products_id')->references('id')->on('products');
+            $table->foreign('orders_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
         });
 
         // Add foreign keys to product_category pivot table
         Schema::table('product_category', function (Blueprint $table) {
-            $table->foreign('products_id')->references('id')->on('products');
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

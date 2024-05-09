@@ -30,10 +30,21 @@ return new class extends Migration
             $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
         });
 
+        // Add foreign key to produt_images table
+        Schema::table('product_images', function (Blueprint $table) {
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+        });
+
         // Add foreign keys to product_category pivot table
         Schema::table('product_category', function (Blueprint $table) {
             $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
+        });
+
+        // Add foreign key to product_user_info pivot table
+        Schema::table('shopping_cart', function (Blueprint $table) {
+            $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('user_info_id')->references('id')->on('user_info')->onDelete('cascade');
         });
     }
 
@@ -60,6 +71,11 @@ return new class extends Migration
         Schema::table('product_category', function (Blueprint $table) {
             $table->dropForeign(['products_id']);
             $table->dropForeign(['categories_id']);
+        });
+
+        Schema::table('shopping_cart', function (Blueprint $table) {
+            $table->dropForeign(['products_id']);
+            $table->dropForeign(['user_info_id']);
         });
     }
 };

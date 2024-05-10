@@ -18,6 +18,17 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            
+            // Added by me ↓
+            $table->string('username')->unique(); // Username
+            $table->string('phone_number')->nullable(); // Phone number
+            // Address ↓
+            $table->string('address')->nullable(); // Street address (e.g. 123 Main St)
+            $table->string('country')->nullable(); // Country (e.g. United States)
+            $table->string('city')->nullable(); // City (e.g. New York)
+            $table->string('zip_code')->nullable(); // Zip code (e.g. 10001)
+            // End of added by me
+            
             $table->timestamps();
         });
 

@@ -44,5 +44,4 @@ class Category extends Model
             'name' => 'required|string|max:255|unique:categories,name,' . $id . ',id,parent_id,' . request('parent_id'),
         ];
     }
-
 }

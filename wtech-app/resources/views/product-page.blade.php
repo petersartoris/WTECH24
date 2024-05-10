@@ -77,194 +77,21 @@
         </div>
 
         <section id="Product-Page">
-            <div class="container container-custom border-custom border-radius-custom">
-                <div class="row">
+            
                     <!-- Product 1-->
-                    <div class="container container-fluid px-0">
-                        <div class="row row-product content flex-column flex-sm-row">
-
-                            <!--IMAGE + TITLE-->
-                            <div class="col-lg-10 col-md-8">
-                                <div class="d-flex">
-                                    <a href="product-detail.html" class="product-link">
-                                        <img src="../images/main/250x250.png" alt="Product Image" class="img-fluid">
-                                    </a>
-                                    <div class="container-fluid ms-3 m-2 product-info">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 white-text">Product Name</h2>
-                                        </a>
-                                        <p class="m-2 white-text">Product code: 202410</p>
-                                        <p class="m-2 mb-2 gray-text text-justify d-md-block d-none">Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam
-                                            similique minima cumque, voluptatem aperiam reprehenderit accusantium
-                                            officia atque officiis impedit iure animi sunt temporibus non ullam fugiat
-                                            saepe optio magnam nam. Assumenda possimus vitae fuga non veniam..</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--ADD TO CART-->
-                            <div class="col-lg-2 col-md-4">
-                                <div class="d-flex">
-                                    <div class="m-2">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 d-md-none d-block white-text">Product Name</h2>
-                                        </a>
-                                        <h2 class="m-2 white-text">1000 €</h2>
-                                        <button class="button-custom button-red fixed-size">Add to cart</button>
-                                        <div class="d-flex mb-3 mt-sm-2">
-                                            <span class="text-success">✓ Available</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Other items -->
-                </div>
-            </div>
-
-            <div class="container container-custom border-custom border-radius-custom">
-                <div class="row">
+                    <x-product-item product="product1" image="250x250.png" name="Product Name" code="202410" 
+                    description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam similique minima cumque, voluptatem aperiam reprehenderit 
+                    accusantium officia atque officiis impedit iure animi sunt temporibus non ullam fugiat saepe optio magnam nam. Assumenda possimus vitae fuga non veniam.." 
+                    price="1000" />
                     <!-- Product 2-->
-                    <div class="container container-fluid px-0">
-                        <div class="row row-product content flex-column flex-sm-row">
+                    <x-product-item product="product1" image="250x250.png" name="Product Name" code="202410" 
+                    description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam similique minima cumque, voluptatem aperiam reprehenderit 
+                    accusantium officia atque officiis impedit iure animi sunt temporibus non ullam fugiat saepe optio magnam nam. Assumenda possimus vitae fuga non veniam.." 
+                    price="1000" />
 
-                            <!--IMAGE + TITLE-->
-                            <div class="col-lg-10 col-md-8">
-                                <div class="d-flex">
-                                    <a href="product-detail.html" class="product-link">
-                                        <img src="../images/main/250x250.png" alt="Product Image" class="img-fluid">
-                                    </a>
-                                    <div class="container-fluid ms-3 m-2 product-info">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 white-text">Product Name</h2>
-                                        </a>
-                                        <p class="m-2 white-text">Product code: 202410</p>
-                                        <p class="m-2 mb-2 gray-text text-justify d-md-block d-none">Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam
-                                            similique minima cumque, voluptatem aperiam reprehenderit accusantium
-                                            officia atque officiis impedit iure animi sunt temporibus non ullam fugiat
-                                            saepe optio magnam nam. Assumenda possimus vitae fuga non veniam..</p>
-                                    </div>
-                                </div>
-                            </div>
+        </section>
 
-                            <!--ADD TO CART-->
-                            <div class="col-lg-2 col-md-4">
-                                <div class="d-flex">
-                                    <div class="m-2">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 d-md-none d-block white-text">Product Name</h2>
-                                        </a>
-                                        <h2 class="m-2 white-text">1000 €</h2>
-                                        <button class="button-custom button-red fixed-size">Add to cart</button>
-                                        <div class="d-flex mb-3 mt-sm-2">
-                                            <span class="text-success">✓ Available</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Other items -->
-                </div>
-            </div>
-
-            <div class="container container-custom border-custom border-radius-custom">
-                <div class="row">
-                    <!-- Product 3-->
-                    <div class="container container-fluid px-0">
-                        <div class="row row-product content flex-column flex-sm-row">
-
-                            <!--IMAGE + TITLE-->
-                            <div class="col-lg-10 col-md-8">
-                                <div class="d-flex">
-                                    <a href="product-detail.html" class="product-link">
-                                        <img src="../images/main/250x250.png" alt="Product Image" class="img-fluid">
-                                    </a>
-                                    <div class="container-fluid ms-3 m-2 product-info">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 white-text">Product Name</h2>
-                                        </a>
-                                        <p class="m-2 white-text">Product code: 202410</p>
-                                        <p class="m-2 mb-2 gray-text text-justify d-md-block d-none">Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam
-                                            similique minima cumque, voluptatem aperiam reprehenderit accusantium
-                                            officia atque officiis impedit iure animi sunt temporibus non ullam fugiat
-                                            saepe optio magnam nam. Assumenda possimus vitae fuga non veniam..</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--ADD TO CART-->
-                            <div class="col-lg-2 col-md-4">
-                                <div class="d-flex">
-                                    <div class="m-2">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 d-md-none d-block white-text">Product Name</h2>
-                                        </a>
-                                        <h2 class="m-2 white-text">1000 €</h2>
-                                        <button class="button-custom button-red fixed-size">Add to cart</button>
-                                        <div class="d-flex mb-3 mt-sm-2">
-                                            <span class="text-success">✓ Available</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Other items -->
-                </div>
-            </div>
-
-            <div class="container container-custom border-custom border-radius-custom">
-                <div class="row">
-                    <!-- Product 4-->
-                    <div class="container container-fluid px-0">
-                        <div class="row row-product content flex-column flex-sm-row">
-
-                            <!--IMAGE + TITLE-->
-                            <div class="col-lg-10 col-md-8">
-                                <div class="d-flex">
-                                    <a href="product-detail.html" class="product-link">
-                                        <img src="../images/main/250x250.png" alt="Product Image" class="img-fluid">
-                                    </a>
-                                    <div class="container-fluid ms-3 m-2 product-info">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 white-text">Product Name</h2>
-                                        </a>
-                                        <p class="m-2 white-text">Product code: 202410</p>
-                                        <p class="m-2 mb-2 gray-text text-justify d-md-block d-none">Lorem ipsum dolor,
-                                            sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam
-                                            similique minima cumque, voluptatem aperiam reprehenderit accusantium
-                                            officia atque officiis impedit iure animi sunt temporibus non ullam fugiat
-                                            saepe optio magnam nam. Assumenda possimus vitae fuga non veniam..</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--ADD TO CART-->
-                            <div class="col-lg-2 col-md-4">
-                                <div class="d-flex">
-                                    <div class="m-2">
-                                        <a href="product-detail.html" class="product-link">
-                                            <h2 class="m-2 d-md-none d-block white-text">Product Name</h2>
-                                        </a>
-                                        <h2 class="m-2 white-text">1000 €</h2>
-                                        <button class="button-custom button-red fixed-size">Add to cart</button>
-                                        <div class="d-flex mb-3 mt-sm-2">
-                                            <span class="text-success">✓ Available</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Other items -->
-                </div>
-            </div>
-
+        <section>
             <div class="container mt-5">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">

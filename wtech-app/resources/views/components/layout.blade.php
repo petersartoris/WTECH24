@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <title>Home</title>
+    <title>{{ $title ?? 'BombaShop' }}</title>
 
-    <!-- Required meta tags -->
+    <!--Required-meta-tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap-->
+    <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
-    <!-- Custom CSS -->
+    <!--Custom-CSS-->
     {{ $styles ?? '' }}
     <link href="{{ asset('css/global.css') }}" rel="stylesheet">
     <link href="{{ asset('css/components.css') }}" rel="stylesheet">
 
-    <!-- Favicon made with realfavicongenerator.net-->
+    <!--Favicons-made-with-realfavicongenerator.net-->
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
@@ -30,97 +30,15 @@
 
 <body>
     <!--HEADER-->
-    <header>
-        <div class="container-header">
-            <nav class="navbar navbar-expand-lg navbar-dark border-body navbar-upper">
-                <div class="container-fluid">
-
-                    <!--BRAND LOGO-->
-                    <div class="d-flex align-items-center">
-                        <a href="index.html">
-                            <img src="../images/main/wtech-logo.png" alt="Logo" class="img-fluid logo-image">
-                        </a>
-                    </div>
-
-                    <!--SEARCH BAR-->
-                    <div class="container-fluid search-container order-3 order-lg-2" id="navbarSearch">
-                        <div class="input-group">
-                            <input id="search" class="form-control" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <button type="button" class="btn btn-search">
-                                <img src="../images/main/magnifying-glass.png" alt="">
-                            </button>
-                        </div>
-                    </div>
-
-                    <!--LOGIN REGISTER CART-->
-                    <div class="d-flex order-2 order-lg-3 ">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
-                            <li class="nav-item">
-                                <a href="login.html">
-                                    <button class="button-custom button-red">Log In</button>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="register.html">
-                                    <button class="button-custom button-white">Create Account</button>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="shopping-cart.html">
-                                    <img src="../images/main/cart.png" alt="Cart" class="ml-2">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <!--NAVBAR LOWER-->
-            <nav class="navbar navbar-expand navbar-lower">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.html">Home</a>
-                    <a class="nav-item nav-link" href="product-page.html">Products</a>
-                    <a class="nav-item nav-link" href="delivery-about-contact.html#delivery">Delivery</a>
-                    <a class="nav-item nav-link" href="delivery-about-contact.html#contact">Contact</a>
-                    <a class="nav-item nav-link" href="delivery-about-contact.html#about">About</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <x-layout-header></x-layout-header>
 
     <!--SLOT FOR MAIN-->
     {{ $slot }}
 
     <!--FOOTER-->
-    <div class="container footer-position container-custom">
-        <div class="row">
-            <footer class="pt-3 mb-3 mt-4">
-                <ul class="nav justify-content-center border-bottom-custom pb-3 mb-3">
-                    <li class="nav-item"><a href="index.html"
-                            class="nav-link px-2 text-body-secondary nav-footer">Home</a>
-                    </li>
-                    <li class="nav-item"><a href="product-page.html"
-                            class="nav-link px-2 text-body-secondary nav-footer">Products</a>
-                    </li>
-                    <li class="nav-item"><a href="delivery-about-contact.html#delivery"
-                            class="nav-link px-2 text-body-secondary nav-footer">Delivery</a>
-                    </li>
-                    <li class="nav-item"><a href="delivery-about-contact.html#contact"
-                            class="nav-link px-2 text-body-secondary nav-footer">Contact</a>
-                    </li>
-                    <li class="nav-item"><a href="delivery-about-contact.html#about"
-                            class="nav-link px-2 text-body-secondary nav-footer">About</a>
-                    </li>
-                </ul>
-                <p class="text-center text-body-secondary nav-footer">Copyright &copy; 2024
-                    BombaShop WTECH @ FIIT STU
-                </p>
-            </footer>
-        </div>
-    </div>
+    <x-layout-footer></x-layout-footer>
 
-    @yield('content')
+    <!--@//yield('content')-->
     <script type="text/javascript" src="../libs/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>
 

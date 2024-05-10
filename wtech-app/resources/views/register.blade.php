@@ -4,7 +4,7 @@
     </x-slot>
 
     <main>
-        <!-- registration page -->
+        <!--REGISTRATION-FORM-->
         <div class="container container-custom">
             <div class="row border-custom border-radius-custom">
                 <div class="col-12 col-md-6 col-lg-8 mb-4 mb-md-0 d-flex justify-content-center">

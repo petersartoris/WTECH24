@@ -11,21 +11,26 @@ class PaymentTypeSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(): array
     {
         // PaymentType::factory(3)->create(); // Create 3
 
         // The code below is essentially the same as the code above as the factory already creates unique names for each PaymentType 
-        // PaymentType::factory()->create([
-        //     'name' => 'cash',
-        // ]);
+        $allPaymentTypes = [
+            'credit card',
+            'paypal',
+            'cash on delivery',
+        ];
 
-        // PaymentType::factory()->create([
-        //     'name' => 'credit card',
-        // ]);
+        $paymentTypes = [];
 
-        // PaymentType::factory()->create([
-        //     'name' => 'paypal',
-        // ]);
+        foreach ($allPaymentTypes as $paymentType) {
+            $paymentTypes[] = PaymentType::firstOrCreate([
+                'name' => $paymentType,
+
+            ]);
+        }
+
+        return $paymentTypes;
     }
 }

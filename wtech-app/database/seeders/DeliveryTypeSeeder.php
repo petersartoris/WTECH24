@@ -11,7 +11,7 @@ class DeliveryTypeSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(): array
     {
         // DeliveryType::factory(3)->create(); // Create 3 delivery types which will have these names: standard, express, next day
 
@@ -27,5 +27,21 @@ class DeliveryTypeSeeder extends Seeder
         // DeliveryType::factory()->create([
         //     'name' => 'next day',
         // ]);
+
+        $allDeliveryTypes = [
+            'standard',
+            'express',
+            'next day',
+        ];
+        $deliveryTypes = [];
+
+        foreach ($allDeliveryTypes as $deliveryType) {
+            $deliveryTypes[] = DeliveryType::firstOrCreate([
+                'name' => $deliveryType,
+                'price' => rand(1, 100),
+            ]);
+        }
+
+        return $deliveryTypes;
     }
 }

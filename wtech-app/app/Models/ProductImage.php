@@ -9,7 +9,7 @@ class ProductImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id', 'path']; // The attributes that are mass assignable
+    protected $fillable = ['product_id', 'path', 'order']; // The attributes that are mass assignable
 
     public function product()
     {
@@ -22,6 +22,7 @@ class ProductImage extends Model
         return [
             'product_id' => 'required|exists:products,id',
             'path' => 'required|string|max:255',
+            'order' => 'required|integer|min:0|max:10',
         ];
     }
 }

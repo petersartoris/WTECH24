@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\File;
+
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,14 +21,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-        // $this->call([
-        //     UserSeeder::class, // creates 2 admins. Users will be created here.
-        //     ProductSeeder::class, // creates 3 products. Other products will be created here.
-        //     ProductImageSeeder::class,
-        //     OrderSeeder::class,
-
-        // ]);
+        // make sure that the dummy images folder is empty
+        $path = public_path('/images/product-images');
+        if (file_exists($path)) {
+            File::deleteDirectory($path);
+        }
 
         $numCategories = 5;
         $numPaymentTypes = 3;
@@ -55,22 +54,26 @@ class DatabaseSeeder extends Seeder
         }
 
         // create all payment types and save them in an array
-        for ($i = 0; $i < $numPaymentTypes; $i++) {
-            $paymentTypes[] = PaymentType::factory()->create();
-        }
+        $paymentTypes = (new PaymentTypeSeeder())->run();
 
         // create all delivery types and save them in an array
-        for ($i = 0; $i < $numDeliveryTypes; $i++) {
-            $deliveryTypes[] = DeliveryType::factory()->create();
-        }
+        $deliveryTypes = (new DeliveryTypeSeeder())->run();
 
         // create all products, images and attach random categories to each product
         for ($i = 0; $i < $numProducts; $i++) {
             $products[] = Product::factory()->create();
 
-            ProductImage::factory()->count($numProductImages)->create([
-                'product_id' => $products[$i]->id,
-            ]);
+            for ($j = 0; $j < $numProductImages; $j++) {
+                echo "Product ID: " . $products[$i]->id . "\n";
+                ProductImage::factory()->create([
+                    'product_id' => $products[$i]->id,
+                    'order' => $j, // order of the image in the product
+                ]);
+            }
+
+            // ProductImage::factory()->count($numProductImages)->create([
+            //     'product_id' => $products[$i]->id,
+            // ]);
 
             // attach random categories to each product
             $randomCategories = array_rand($categories, rand(1, $numCategories));
@@ -96,22 +99,29 @@ class DatabaseSeeder extends Seeder
 
             // generate random quantity for each product in the order
             $quantities = [];
-            for ($j = 0; $j < $numProductsInOrder; $j++) {
+            for ($i = 0; $i < $numProductsInOrder; $i++) {
                 $quantities[] = rand(1, 5);
             }
 
-            // get random products
-            $randomProducts = array_rand($products, $numProductsInOrder);
+            // get random product keys
+            $randomProductKeys = array_rand($products, $numProductsInOrder);
 
-            if (!is_array($randomProducts)) {
-                $randomProducts = [$randomProducts];
+            // if only one product is selected, convert $randomProductKeys to an array
+            if (!is_array($randomProductKeys)) {
+                $randomProductKeys = [$randomProductKeys];
             }
 
-            Order::factory()->create([
-                'user_id' => $users[array_rand($users)]->id,
-                'payment_type_id' => $paymentTypes[array_rand($paymentTypes)]->id,
-                'delivery_type_id' => $deliveryTypes[array_rand($deliveryTypes)]->id,
-            ])->products()->attach(array_combine($randomProducts, $quantities)); // attach products to the order with quantities as pivot data
+            // get corresponding product IDs
+            $randomProductIds = [];
+            foreach ($randomProductKeys as $key) {
+                $randomProductIds[] = $products[$key]->id;
+            }
+
+            // Order::factory()->create([
+            //     'user_id' => $users[array_rand($users)]->id,
+            //     'payment_type_id' => $paymentTypes[array_rand($paymentTypes)]->id,
+            //     'delivery_type_id' => $deliveryTypes[array_rand($deliveryTypes)]->id,
+            // ])->products()->attach(array_combine($randomProductIds, )); // attach products to the order with quantities as pivot data
         }
     }
 }

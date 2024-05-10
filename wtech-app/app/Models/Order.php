@@ -28,7 +28,7 @@ class Order extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class)->withPivot('quantity', 'price'); // An order can have many products
+        return $this->belongsToMany(Product::class)->withPivot('quantity'); // An order can have many products
     }
 
     public function getTotalPriceAttribute() // Get the total price of the order

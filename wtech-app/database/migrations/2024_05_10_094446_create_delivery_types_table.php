@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('delivery_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name')->unique(); // Name in ('standard', 'express', 'next day')
             $table->decimal('price', 8, 2);
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class PaymentTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->unique()->randomElement(['credit card', 'paypal', 'cash on delivery']),
         ];
     }
 }

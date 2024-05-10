@@ -18,6 +18,7 @@ class DeliveryTypeFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->randomElement(['standard', 'express', 'next day']),
+            'price' => $this->faker->randomFloat(2, 0, 100),
         ];
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->string('path'); // Path to the image
+            $table->integer('order')->default(0); // Order of the image
             $table->timestamps();
         });
     }

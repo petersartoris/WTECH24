@@ -57,6 +57,18 @@ class User extends Authenticatable
         return $this->hasMany(Order::class); // A user can have many orders
     }
 
+    // mutator for password
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    // mutator for role. This will probably be used in the future to create an admin user from normal user
+    public function setRoleAttribute($value)
+    {
+        $this->attributes['role'] = $value ?: 'user';
+    }
+
     // validation rules for store and update methods
     public static function rules($id = null)
     {

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('categories')->onDelete('cascade'); // If parent category is deleted, the child category will also be deleted
             $table->string('name'); // Name
-
             $table->unique(['parent_id', 'name']); // A category name must be unique within the same parent category
             // $table->softDeletes(); // Soft delete column
             $table->timestamps();

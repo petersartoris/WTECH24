@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS for this file -->
+    <link rel="stylesheet" type="text/css" href="../css/styles/register.css">
+
+    <!-- Custom CSS for the whole project -->
+    <link rel="stylesheet" type="text/css" href="../css/styles/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles/components.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive/components.css">
+
+    <!-- Favicon made with realfavicongenerator.net-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+    <header>
+        <div class="container-header">
+            <nav class="navbar navbar-expand-lg navbar-dark border-body navbar-upper">
+                <div class="container-fluid">
+
+                    <!--BRAND LOGO-->
+                    <div class="d-flex align-items-center">
+                        <a href="index.html">
+                            <img src="../images/main/wtech-logo.png" alt="Logo" class="img-fluid logo-image">
+                        </a>
+                    </div>
+
+                    <!--SEARCH BAR-->
+                    <div class="container-fluid search-container order-3 order-lg-2" id="navbarSearch">
+                        <div class="input-group">
+                            <input id="search" class="form-control" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button type="button" class="btn btn-search">
+                                <img src="../images/main/magnifying-glass.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--LOGIN REGISTER CART-->
+                    <div class="d-flex order-2 order-lg-3 ">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
+                            <li class="nav-item">
+                                <a href="login.html">
+                                    <button class="button-custom button-red">Log In</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="register.html">
+                                    <button class="button-custom button-white">Create Account</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="shopping-cart.html">
+                                    <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!--NAVBAR LOWER-->
+            <nav class="navbar navbar-expand navbar-lower">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="index.html">Home</a>
+                    <a class="nav-item nav-link" href="product-page.html">Products</a>
+                    <a class="nav-item nav-link" href="delivery-about-contact.html#delivery">Delivery</a>
+                    <a class="nav-item nav-link" href="delivery-about-contact.html#contact">Contact</a>
+                    <a class="nav-item nav-link" href="delivery-about-contact.html#about">About</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <!-- registration page -->
+        <div class="container container-custom">
+            <div class="row border-custom border-radius-custom">
+                <div class="col-12 col-md-6 col-lg-8 mb-4 mb-md-0 d-flex justify-content-center">
+                    <div class="form-design">
+                        <h1 class="text-center white-text mt-3 mb-3">Register</h1>
+                        <form action="registrationForm" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" placeholder="firstname surname" class="form-control" id="name"
+                                    name="name" autocomplete="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" placeholder="example@company.com" class="form-control" id="email"
+                                    name="email" autocomplete="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phoneNumber" class="form-label">Phone number</label>
+                                <input type="text" placeholder="+000 000 000 000" class="form-control" id="phoneNumber"
+                                    name="phoneNumber" autocomplete="tel" required>
+                            </div>
+                            <div class="mb-5 position-relative">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" placeholder="password" class="form-control" id="password"
+                                    name="password" autocomplete="new-password" required>
+                            </div>
+                            <button type="submit" class="button-red button-reg mb-4 mb-md-2">Register</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="picture-container">
+                        <img class="picture img-fluid mw-100" src="../images/login/login-page.jpeg"
+                            alt="welcome picture">
+                        <div id="register-caller" class="mx-auto">
+                            <h1 id="register-caller-text">Welcome!</h1>
+                            <a href="login.html" class="no-underline">
+                                <span class="button-custom caller-button-text">Log in</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container footer-position container-custom">
+        <div class="row">
+            <footer class="pt-3 mb-3 mt-4">
+                <ul class="nav justify-content-center border-bottom-custom pb-3 mb-3">
+                    <li class="nav-item"><a href="index.html"
+                            class="nav-link px-2 text-body-secondary nav-footer">Home</a>
+                    </li>
+                    <li class="nav-item"><a href="product-page.html"
+                            class="nav-link px-2 text-body-secondary nav-footer">Products</a>
+                    </li>
+                    <li class="nav-item"><a href="delivery-about-contact.html#delivery"
+                            class="nav-link px-2 text-body-secondary nav-footer">Delivery</a>
+                    </li>
+                    <li class="nav-item"><a href="delivery-about-contact.html#contact"
+                            class="nav-link px-2 text-body-secondary nav-footer">Contact</a>
+                    </li>
+                    <li class="nav-item"><a href="delivery-about-contact.html#about"
+                            class="nav-link px-2 text-body-secondary nav-footer">About</a>
+                    </li>
+                </ul>
+                <p class="text-center text-body-secondary nav-footer">Copyright &copy; 2024
+                    BombaShop WTECH @ FIIT STU
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../libs/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

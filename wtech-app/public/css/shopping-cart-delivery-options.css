@@ -1,0 +1,23 @@
+.method-button {
+    width: 100% !important;
+}
+
+/* .row {
+    width:100%;
+} */
+
+.center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-text {
+    white-space: nowrap;
+}
+
+@media(max-width: 36em) {
+    .justify-content-custom {
+        justify-content: start !important;
+    }
+}

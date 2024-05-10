@@ -1,0 +1,24 @@
+/* .row {
+    width: 100%;
+} */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.text {
+    color: white;
+    /* font-size: 5em; */
+}
+
+.form-text {
+    width: 100%;
+    height: 150px;
+
+    /* set border radios to bootstrap form default */
+    border-radius: 0.5em;
+
+
+}

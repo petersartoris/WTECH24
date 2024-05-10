@@ -12,6 +12,6 @@ class OrderSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // orders will be created in the DatabaseSeeder
     }
 }

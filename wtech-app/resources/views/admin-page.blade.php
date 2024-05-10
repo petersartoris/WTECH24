@@ -56,7 +56,7 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
                             <li class="nav-item">
                                 <a href="login.html">
-                                    <button class="button-custom button-red">Log In</button>
+                                    <button class="button-custom button-red">+ Add Item</button>
                                 </a>
                             </li>
                             <li class="nav-item">

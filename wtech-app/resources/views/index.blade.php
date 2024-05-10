@@ -1,4 +1,8 @@
 <x-layout>
+    <x-slot name="styles">
+        <link href="{{ asset('css/main-page.css') }}" rel="stylesheet">
+    </x-slot>
+
     <main>
         <!--PRODUCT CATEGORIES-->
         <section id="Product-Categories">

@@ -1,8 +1,10 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<!--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">-->
+<html lang="en">
 
 <head>
     <title>Home</title>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,11 +13,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <!-- Custom CSS -->
-    <link href="{{ asset('css/styles/main-page.css') }}" rel="stylesheet">
     {{ $styles ?? '' }}
-
-    <link href="{{ asset('css/styles/global.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles/components.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/global.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/components.css') }}" rel="stylesheet">
 
     <!-- Favicon made with realfavicongenerator.net-->
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">
@@ -30,6 +30,7 @@
 
 
 <body>
+    <!--HEADER-->
     <header>
         <div class="container-header">
             <nav class="navbar navbar-expand-lg navbar-dark border-body navbar-upper">
@@ -89,8 +90,10 @@
         </div>
     </header>
 
+    <!--SLOT FOR MAIN-->
     {{ $slot }}
 
+    <!--FOOTER-->
     <div class="container footer-position container-custom">
         <div class="row">
             <footer class="pt-3 mb-3 mt-4">
@@ -118,6 +121,7 @@
         </div>
     </div>
 
+    @yield('content')
     <script type="text/javascript" src="../libs/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>
 

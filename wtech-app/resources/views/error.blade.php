@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/styles/error.css"/>
+    <link rel="stylesheet" href="css/error.css"/>
 </head>
 
-<body class="">
+<body>
     <main class="main">
         <div class="container">
             <h1>This page is currently not available</h1>

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('order_product', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
+            $table->foreignId('product_id')->constrained(); // If a product is deleted, the order_product record will not be deleted
+            $table->integer('quantity'); // Quantity of the product in a specific order
             $table->timestamps();
         });
     }

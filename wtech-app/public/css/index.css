@@ -1,22 +1,7 @@
-/* .row {
-    width: 100%;
-} */
-
 .center-all {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* CONTAINER adjusting */
-.container-custom {
-    max-width: 90em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5em;
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .container-sales {
@@ -37,7 +22,6 @@
 
 /* PRODUCT CATEGORY */
 .product-category {
-    /* background-color: red; */
     position: relative;
     overflow: hidden;
     max-width: 25em;
@@ -79,7 +63,6 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 
-    /* ↓ for making the text "button" text centered*/
     display: flex;
     justify-content: center;
     align-items: center;

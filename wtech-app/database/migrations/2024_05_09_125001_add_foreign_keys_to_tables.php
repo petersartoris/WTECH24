@@ -30,7 +30,7 @@ return new class extends Migration
             $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
         });
 
-        // Add foreign key to produt_images table
+        // Add foreign key to product_images table
         Schema::table('product_images', function (Blueprint $table) {
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });

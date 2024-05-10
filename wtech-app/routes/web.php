@@ -20,3 +20,7 @@ Route::middleware('guest')->group(function () {
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/products', function () {
+    return view('product-page');
+});

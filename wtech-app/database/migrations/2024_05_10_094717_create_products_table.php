@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description'); // Description
             $table->decimal('price', 10, 2); // Price
             $table->integer('quantity'); // Quantity
-            $table->string('availability', 20)->default('available'); // Availability ('available', 'unavailable')
+            $table->string('availability', 20)->default('available'); // Availability in ('available', 'unavailable')
             $table->softDeletes(); // Soft delete column
             $table->timestamps();
         });

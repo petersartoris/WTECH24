@@ -18,8 +18,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            
+
             // Added by me ↓
+            $table->string('role')->default('user'); // Role (e.g. user, admin)
             $table->string('username')->unique(); // Username
             $table->string('phone_number')->nullable(); // Phone number
             // Address ↓
@@ -28,7 +29,7 @@ return new class extends Migration
             $table->string('city')->nullable(); // City (e.g. New York)
             $table->string('zip_code')->nullable(); // Zip code (e.g. 10001)
             // End of added by me
-            
+
             $table->timestamps();
         });
 

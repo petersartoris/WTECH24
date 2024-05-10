@@ -20,8 +20,8 @@ class DeliveryType extends Model
     public static function rules($id = null)
     {
         return [
-            'name' => 'required|string|max:255|unique:delivery_types,name,' . $id . ',id',
-            'price' => 'required|numeric|min:0',
+            'name' => 'required|string|max:255|in:standard,express,next day|unique:delivery_types,name,' . $id . ',id',
+            'price' => 'required|numeric|between:0,9999.99',
         ];
     }
 }

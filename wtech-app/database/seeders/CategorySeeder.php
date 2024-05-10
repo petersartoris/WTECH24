@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
@@ -12,6 +13,18 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Category::factory()->create([
+        //     'name' => 'Category 1',
+        // ]);
+
+        // Category::factory()->create([
+        //     'name' => 'Category 2',
+        // ]);
+
+        // Category::factory()->create([
+        //     'name' => 'Category 3',
+        // ]);
+
+        // Category::factory(5)->create(); // Create 5 more categories which will have random names and no Products
     }
 }

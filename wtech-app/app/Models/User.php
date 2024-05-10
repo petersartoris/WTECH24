@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
         'username',
         'phone_number',
         'address',
@@ -56,6 +57,18 @@ class User extends Authenticatable
         return $this->hasMany(Order::class); // A user can have many orders
     }
 
+    // mutator for password
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    // mutator for role. This will probably be used in the future to create an admin user from normal user
+    public function setRoleAttribute($value)
+    {
+        $this->attributes['role'] = $value ?: 'user';
+    }
+
     // validation rules for store and update methods
     public static function rules($id = null)
     {
@@ -63,6 +76,7 @@ class User extends Authenticatable
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email' . ($id ? ",$id" : ''),
             'password' => 'required|string|min:8',
+            'role' => 'required|string|in:user,admin',
             'username' => 'required|string|max:255|unique:users,username' . ($id ? ",$id" : ''),
             'phone_number' => 'nullable|string|max:255',
             'address' => 'nullable|string|max:255',

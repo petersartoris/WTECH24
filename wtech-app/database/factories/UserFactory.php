@@ -27,8 +27,9 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => static::$password ??= Hash::make('password'), // Default password is password but can be changed to any other password in the seeder
             'remember_token' => Str::random(10),
+            'role' => 'user', // Default role is user but can be changed to admin
             'username' => fake()->unique()->userName(),
             'phone_number' => fake()->phoneNumber(),
             'address' => fake()->streetAddress(),

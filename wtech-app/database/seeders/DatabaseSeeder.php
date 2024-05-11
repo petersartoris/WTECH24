@@ -152,7 +152,7 @@ class DatabaseSeeder extends Seeder
                 }
 
                 // Generate a fake image and store it in the new folder
-                $imagePath = $faker->image($path, 640, 480, null, false);
+                $imagePath = $faker->image($path, 250, 250, null, false);
 
                 // Combine the path and the image name
                 $imagePath = "images/product-images/{$product_id}/{$imagePath}";

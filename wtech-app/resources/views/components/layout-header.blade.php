@@ -23,23 +23,40 @@
 
                 <!--LOGIN REGISTER CART-->
                 <div class="d-flex order-2 order-lg-3 ">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
-                        <li class="nav-item">
-                            <a href="{{ route('login') }}">
-                                <button class="button-custom button-red">Log In</button>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('register') }}">
-                                <button class="button-custom button-white">Create Account</button>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('cart') }}">
-                                <img src="../images/main/cart.png" alt="Cart" class="ml-2">
-                            </a>
-                        </li>
-                    </ul>
+
+                        @guest
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
+                                <li class="nav-item">
+                                    <a href="{{ route('login') }}">
+                                        <button class="button-custom button-red">Log In</button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('register') }}">
+                                        <button class="button-custom button-white">Create Account</button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('cart') }}">
+                                        <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                    </a>
+                                </li>
+                            </ul>
+                        @endguest
+                        @auth
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
+                                <li class="nav-item">
+                                    <h2>DOKONCIT</h2>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="{{ route('cart') }}">
+                                        <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                    </a>
+                                </li>              
+                            </ul>
+                        @endauth
+                    
                 </div>
             </div>
         </nav>

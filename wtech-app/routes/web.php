@@ -34,6 +34,10 @@ Route::get('/cart', function () {
     return view('shopping-cart');
 })->name('cart');
 
+Route::post('/cart/add', [ProductController::class, 'addToCart'])
+->name('cart.add')
+->middleware('auth');
+
 Route::get('/cart/delivery', function () {
     return view('shopping-cart-delivery-options');
 })->name('cart-delivery');

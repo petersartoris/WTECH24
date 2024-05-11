@@ -102,4 +102,13 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function addToCart(Request $request)
+    {
+        // Add the product to the cart
+        // ...
+
+        // Redirect to the shopping cart
+        return redirect()->route('cart');
+    }
 }

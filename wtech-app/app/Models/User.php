@@ -57,6 +57,11 @@ class User extends Authenticatable
         return $this->hasMany(Order::class); // A user can have many orders
     }
 
+    public function products()
+    {
+        return $this->belongsToMany(Product::class)->withPivot('quantity'); // A user can have many products in a cart
+    }
+
     // mutator for password
     public function setPasswordAttribute($value)
     {

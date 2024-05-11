@@ -37,59 +37,55 @@
             </div>
         </div>
 
-        <section id="Product-Page">
-            
-            <!-- Product 1-->
-            <x-product-item product="product1" image="images/main/250x250.png" name="Product Name" code="202410" 
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam similique minima cumque, voluptatem aperiam reprehenderit 
-            accusantium officia atque officiis impedit iure animi sunt temporibus non ullam fugiat saepe optio magnam nam. Assumenda possimus vitae fuga non veniam.." 
-            price="1000" />
-            <!-- Product 2-->
-            <x-product-item product="product1" image="250x250.png" name="Product Name" code="202410" 
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam similique minima cumque, voluptatem aperiam reprehenderit 
-            accusantium officia atque officiis impedit iure animi sunt temporibus non ullam fugiat saepe optio magnam nam. Assumenda possimus vitae fuga non veniam.." 
-            price="1000" />
-            
-            @foreach ($products as $product)
-            @php
-                $image = $product->images->where('order', 0)->first();
-            @endphp
-            <x-product-item 
-                product="{{ $product->id }}" 
-                image="{{ asset($image->path ?? 'images/main/250x250.png') }}" 
-                name="{{ $product->name }}" 
-                code="{{ $product->id }}" 
-                description="{{ $product->description }}" 
-                price="{{ $product->price }}" 
-            />
-        @endforeach
+        @section('content')
+            <section id="Product-Page">
+                @foreach ($products as $product)
+                    @php
+                        $image = $product->images->where('order', 0)->first();
+                    @endphp
+                    <x-product-item 
+                        product="{{ $product->id }}" 
+                        image="{{ asset($image->path ?? 'images/main/250x250.png') }}" 
+                        name="{{ $product->name }}" 
+                        code="{{ $product->code }}" 
+                        description="{{ $product->description }}" 
+                        price="{{ $product->price }}" 
+                    />
+                @endforeach
+            </section>
+
+            <!--PAGINATION-->
+            <div class="container mt-5">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <!-- Previous Page Link -->
+                        @if ($products->onFirstPage())
+                            <li class="page-item disabled"><span class="page-link">«</span></li>
+                        @else
+                            <li class="page-item"><a class="page-link" href="{{ $products->previousPageUrl() }}" rel="prev">«</a></li>
+                        @endif
+
+                        <!-- Pagination Elements -->
+                        @for ($i = 1; $i <= $products->lastPage(); $i++)
+                            @if ($i == $products->currentPage())
+                                <li class="page-item active"><span class="page-link">{{ $i }}</span></li>
+                            @else
+                                <li class="page-item"><a class="page-link" href="{{ $products->url($i) }}">{{ $i }}</a></li>
+                            @endif
+                        @endfor
+
+                        <!-- Next Page Link -->
+                        @if ($products->hasMorePages())
+                            <li class="page-item"><a class="page-link" href="{{ $products->nextPageUrl() }}" rel="next">»</a></li>
+                        @else
+                            <li class="page-item disabled"><span class="page-link">»</span></li>
+                        @endif
+                    </ul>
+                </nav>
+            </div>
+        @endsection
 
 
-            <!-- upravit potom code -->
-        </section>
-
-        <!--PAGINATION-->
-        <div class="container mt-5">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item mx-2">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item mx-2"><a class="page-link current border-radius-custom" href="#">1</a></li>
-                    <li class="page-item mx-2"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item mx-2"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item mx-2"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item mx-2"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item mx-2">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
 
     </main>
 </x-layout>

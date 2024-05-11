@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //$products = Product::all(); // Fetch all products from the database
+        //$products = Product::all();
         $products = Product::paginate(5);
         return view('product-page', ['products' => $products]); // Pass the products to the view
     }
@@ -37,9 +37,17 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        if ($product) {
+            //return view('error');
+            return view('product-detail', ['product' => $product]);
+        } else {
+            // Handle the case where the product was not found
+            return view('error');
+        }
     }
 
     /**

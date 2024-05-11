@@ -100,7 +100,7 @@ class DatabaseSeeder extends Seeder
             // generate random quantity for each product in the order
             $quantities = [];
             for ($j = 0; $j < $numProductsInOrder; $j++) {
-                $quantities[] = rand(1, 5);
+                $quantities[] = ['quantity' => rand(1, 5)];
             }
 
             // get random product keys

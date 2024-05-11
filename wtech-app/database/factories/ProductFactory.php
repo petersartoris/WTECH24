@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->word(),
-            'code' => $this->faker->unique()->bothify('product-###?###'), // Add this line
+            'code' => $this->faker->unique()->bothify('###?###'), // Add this line
             'description' => $this->faker->sentence(),
             'price' => $this->faker->randomFloat(2, 1, 1000),
             'quantity' => $this->faker->numberBetween(1, 100),

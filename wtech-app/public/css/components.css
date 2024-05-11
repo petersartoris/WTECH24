@@ -138,6 +138,18 @@ body {
     color: var(--white);
 }
 
+.nav-item.nav-link:hover {
+    color: var(--hover-color);
+}
+
+.nav-item.nav-active:hover {
+    color: var(--hover-color);
+}
+
+.nav-active {
+    border-color: var(--selected-color);
+    background-color: var(--selected-color);
+}
 
 .nav-footer {
     color: var(--border-color) !important;

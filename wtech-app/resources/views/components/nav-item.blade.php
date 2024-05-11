@@ -1,3 +1,2 @@
-@props(['url', 'id' => '', 'name'])
-
-<a class="nav-item nav-link" href="{{ route($url) }}#{{ $id }}">{{ $name }}</a>
+@props(['active' => false])
+<a class="nav-item nav-link {{ $active ? 'nav-active' : '' }}" {{ $attributes }}>{{ $slot }}</a>

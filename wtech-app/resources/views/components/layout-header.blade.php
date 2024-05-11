@@ -72,13 +72,12 @@
         <!--NAVBAR LOWER-->
         <nav class="navbar navbar-expand navbar-lower">
             <div class="navbar-nav">
-                <x-nav-item name="Home" url="/" />
-                <x-nav-item name="Products" url="products" />
-                <x-nav-item name="Delivery" url="about" id="delivery" />
-                <x-nav-item name="Contact" url="about" id="contact" />
-                <x-nav-item name="About" url="about" id="about" />
+                <x-nav-item href="/" :active="request()->is('/')">Home</x-nav-item>
+                <x-nav-item href="/products" :active="request()->is('products')">Products</x-nav-item>
+                <x-nav-item href="/about#delivery" :active="request()->is('about')">Delivery</x-nav-item>
+                <x-nav-item href="/about#contact" :active="request()->is('about')">Contact</x-nav-item>
+                <x-nav-item href="/about#about" :active="request()->is('about')">About</x-nav-item>
             </div>
-    </div>
-    </nav>
+        </nav>
     </div>
 </header>

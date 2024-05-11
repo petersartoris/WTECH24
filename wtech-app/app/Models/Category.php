@@ -42,6 +42,7 @@ class Category extends Model
         return [
             'parent_id' => 'nullable|exists:categories,id',
             'name' => 'required|string|max:255|unique:categories,name,' . $id . ',id,parent_id,' . request('parent_id'),
+            'slug' => 'required|string|max:255|unique:categories,slug,' . $id . ',id,parent_id,' . request('parent_id'),
         ];
     }
 }

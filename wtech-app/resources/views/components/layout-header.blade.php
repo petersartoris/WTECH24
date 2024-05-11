@@ -46,7 +46,11 @@
                         @auth
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
                                 <li class="nav-item">
-                                    <h2>DOKONCIT</h2>
+                                    <form method="POST" action="/logout">
+                                        @csrf
+                                        <button class="button-custom button-white">Log Out</button>
+                                    </form>
+                                    
                                 </li>
                                 
                                 <li class="nav-item">

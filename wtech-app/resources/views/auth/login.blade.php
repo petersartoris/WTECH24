@@ -13,7 +13,7 @@
                         <h1 class="text-center white-text mt-3 mb-3">Log In</h1>
                         <div class="form-design mx-auto">
                             <form action="loginForm" method="post">
-                                <x-form-field label="Email" type="text" placeholder="example@company.com" id="email" name="email" autocomplete="email" />
+                                <x-form-field label="Email" type="text" placeholder="example@company.com" id="email" name="email" autocomplete="email" :value="old('email')" />
                                 <x-form-field label="Password" type="password" placeholder="password" id="password" name="password" autocomplete="current-password" />
 
                                 <div class="mb-5 position-relative">

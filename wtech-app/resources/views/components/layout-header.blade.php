@@ -24,47 +24,47 @@
                 <!--LOGIN REGISTER CART-->
                 <div class="d-flex order-2 order-lg-3 ">
 
-                        @guest
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
-                                <li class="nav-item">
-                                    <a href="{{ route('login') }}">
-                                        <button class="button-custom button-red">Log In</button>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('register') }}">
-                                        <button class="button-custom button-white">Create Account</button>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('cart') }}">
-                                        <img src="../images/main/cart.png" alt="Cart" class="ml-2">
-                                    </a>
-                                </li>
-                            </ul>
-                        @endguest
-                        @auth
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
-                                <li class="nav-item">
-                                    <label>{{ Auth::user()->username }}</label>
-                                </li>
+                    @guest
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
+                            <li class="nav-item">
+                                <a href="{{ route('login') }}">
+                                    <button class="button-custom button-red">Log In</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('register') }}">
+                                    <button class="button-custom button-white">Create Account</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('cart') }}">
+                                    <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                </a>
+                            </li>
+                        </ul>
+                    @endguest
+                    @auth
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
+                            <li class="nav-item">
+                                <label>{{ Auth::user()->username }}</label>
+                            </li>
 
-                                <li class="nav-item">
-                                    <form method="POST" action="/logout">
-                                        @csrf
-                                        <button class="button-custom button-white">Log Out</button>
-                                    </form>
-                                    
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a href="{{ route('cart') }}">
-                                        <img src="../images/main/cart.png" alt="Cart" class="ml-2">
-                                    </a>
-                                </li>              
-                            </ul>
-                        @endauth
-                    
+                            <li class="nav-item">
+                                <form method="POST" action="/logout">
+                                    @csrf
+                                    <button class="button-custom button-white">Log Out</button>
+                                </form>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('cart') }}">
+                                    <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                </a>
+                            </li>
+                        </ul>
+                    @endauth
+
                 </div>
             </div>
         </nav>
@@ -72,13 +72,13 @@
         <!--NAVBAR LOWER-->
         <nav class="navbar navbar-expand navbar-lower">
             <div class="navbar-nav">
-                <x-nav-item name="Home" url="/"/>
-                <x-nav-item name="Products" url="products"/>
-                <x-nav-item name="Delivery" url="about"/>
-                <x-nav-item name="Contact" url="about"/>
-                <x-nav-item name="Contact" url="about"/>
+                <x-nav-item name="Home" url="/" />
+                <x-nav-item name="Products" url="products" />
+                <x-nav-item name="Delivery" url="about" id="delivery" />
+                <x-nav-item name="Contact" url="about" id="contact" />
+                <x-nav-item name="About" url="about" id="about" />
             </div>
-            </div>
-        </nav>
+    </div>
+    </nav>
     </div>
 </header>

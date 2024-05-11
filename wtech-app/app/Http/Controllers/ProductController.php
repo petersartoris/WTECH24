@@ -13,8 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all(); // Fetch all products from the database
-
+        //$products = Product::all(); // Fetch all products from the database
+        $products = Product::paginate(1);
         return view('product-page', ['products' => $products]); // Pass the products to the view
     }
 

@@ -11,7 +11,7 @@ class Product extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['name', 'description', 'price', 'quantity', 'availability']; // The attributes that are mass assignable
-
+    
     public function categories()
     {
         return $this->belongsToMany(Category::class); // A product can belong to many categories

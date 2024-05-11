@@ -56,12 +56,12 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'username' => $attributes['username'],
             'email' => $attributes['email'],
-            'password' => Hash::make($attributes['password']),
+            'password' => $attributes['password'],
         ]);
 
         Auth::login($user);
 
         //redirect to login page
-        return redirect('auth.login');
+        return redirect('login');
     }
 }

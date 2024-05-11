@@ -25,9 +25,8 @@
         </div>
 
         <div class="container container-custom mb-3 mt-2 card">
-            <div class="row">
+            <div class="row">    
                 
-
                 <div class="col-sm-2 px-0">
                     <img src="/images/main/product-desktop.jpg" class="card-img" alt="Product Image">
                 </div>

@@ -29,9 +29,9 @@
     overflow-wrap: normal;
 }
 
-.button-cart:hover {
+/* .button-cart:hover {
     transform: scale(1.2);
-}
+} */
 
 .product-link,
 .product-link:visited,

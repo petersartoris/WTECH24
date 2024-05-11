@@ -36,7 +36,7 @@
                                     <button class="button-custom button-white">Create Account</button>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item cart-image">
                                 <a href="{{ route('cart') }}">
                                     <img src="{{ asset('/images/main/cart.png') }}" alt="Cart" class="ml-2">
                                 </a>

@@ -19,9 +19,9 @@ Route::get('/products/detail', function () {
     return view('product-detail');
 })->name('product-detail');
 
-/*Route::get('/products', function () {
+Route::get('/products', function () {
     return view('product-page');
-})->name('products');*/
+})->name('products');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 

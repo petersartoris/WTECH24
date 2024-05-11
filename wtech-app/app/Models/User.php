@@ -73,7 +73,7 @@ class User extends Authenticatable
     public static function rules($id = null)
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'nullable|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email' . ($id ? ",$id" : ''),
             'password' => 'required|string|min:8',
             'role' => 'required|string|in:user,admin',

@@ -40,7 +40,7 @@
         <section id="Product-Page">
             
             <!-- Product 1-->
-            <x-product-item product="product1" image="250x250.png" name="Product Name" code="202410" 
+            <x-product-item product="product1" image="public/images/main/250x250.png" name="Product Name" code="202410" 
             description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa inventore nemo, quisquam similique minima cumque, voluptatem aperiam reprehenderit 
             accusantium officia atque officiis impedit iure animi sunt temporibus non ullam fugiat saepe optio magnam nam. Assumenda possimus vitae fuga non veniam.." 
             price="1000" />
@@ -51,18 +51,19 @@
             price="1000" />
             
             @foreach ($products as $product)
-                @php
-                    $image = $product->images->where('order', 1)->first();
-                @endphp
-                <x-product-item 
-                    product="{{ $product->id }}" 
-                    image="{{ $image->path ?? '250x250.png' }}" 
-                    name="{{ $product->name }}" 
-                    code="{{ $product->id }}" 
-                    description="{{ $product->description }}" 
-                    price="{{ $product->price }}" 
-                />
-            @endforeach
+            @php
+                $image = $product->images->where('order', 0)->first();
+            @endphp
+            <x-product-item 
+                product="{{ $product->id }}" 
+                image="{{ asset($image->path ?? 'images/main/250x250.png') }}" 
+                name="{{ $product->name }}" 
+                code="{{ $product->id }}" 
+                description="{{ $product->description }}" 
+                price="{{ $product->price }}" 
+            />
+        @endforeach
+
 
             <!-- upravit potom code -->
         </section>

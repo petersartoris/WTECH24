@@ -155,7 +155,7 @@ class DatabaseSeeder extends Seeder
                 $imagePath = $faker->image($path, 640, 480, null, false);
 
                 // Combine the path and the image name
-                $imagePath = "public/images/product-images/{$product_id}/{$imagePath}";
+                $imagePath = "images/product-images/{$product_id}/{$imagePath}";
                 ProductImage::factory()->create([
                     'product_id' => $product_id,
                     'path' => $imagePath,

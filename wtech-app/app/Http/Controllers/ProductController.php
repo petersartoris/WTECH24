@@ -5,17 +5,35 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($categorySlug = null)
     {
-        //$products = Product::all(); // Fetch all products from the database
-        $products = Product::paginate(5);
-        return view('product-page', ['products' => $products]); // Pass the products to the view
+        $category = null;
+
+        if ($categorySlug) {
+            $category = Category::where('slug', $categorySlug)->firstOrFail();
+
+            $products = Product::whereHas('categories', function ($query) use ($category) {
+                $query->where('id', $category->id);
+            })->with(['images', 'categories'])->paginate(5); // this assumes that a product will belong to category and its subcategories
+        } else {
+            $products = Product::with(['images', 'categories'])->paginate(5);
+        }
+
+        return view(
+            'product-page',
+            [
+                'products' => $products,
+                'category' => $category,
+                'subcategories' => $category ? $category->children : collect()
+            ]
+        );
     }
 
     /**

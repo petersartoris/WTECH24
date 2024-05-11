@@ -6,7 +6,7 @@
     <main>
         <div class="container container-custom">
             <div class="row">
-                
+
                 <div class="col-md-5 mb-5 mb-md-0">
                     <!--GET IMAGES FROM DATABASE-->
                     @php
@@ -22,7 +22,7 @@
                     <!--SMALL PRODUCT IMAGES-->
                     <div class="container container-custom">
                         <div class="row justify-content-center align-items-center">
-                            @foreach($otherImages as $image)
+                            @foreach ($otherImages as $image)
                                 <div class="col center-all">
                                     <a href="#">
                                         <img src="{{ asset($image->path) }}" class="img-fluid">
@@ -65,12 +65,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-    $(document).ready(function(){
-        $(".img-fluid").click(function(){
-            var imgSrc = $(this).attr("src");
-            $(".main").attr("src", imgSrc);
+        $(document).ready(function() {
+            $(".img-fluid").click(function() {
+                var imgSrc = $(this).attr("src");
+                $(".main").attr("src", imgSrc);
+            });
         });
-    });
     </script>
 
 </x-layout>

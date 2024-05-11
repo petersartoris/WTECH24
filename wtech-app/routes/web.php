@@ -19,11 +19,8 @@ Route::get('/products/detail', function () {
     return view('product-detail');
 })->name('product-detail');
 
-Route::get('/products', function () {
-    return view('product-page');
-})->name('products');
+Route::get('/products/{categorySlug?}', [ProductController::class, 'index'])->name('products'); // display all products or products by category
 
-Route::get('/products', [ProductController::class, 'index'])->name('products');
 
 # SHOPPING CART
 // tu pridat aj middlewares
@@ -39,6 +36,7 @@ Route::get('/cart/delivery-info', function () {
     return view('shopping-delivery-address');
 })->name('cart-delivery-info');
 
+
 # ADMIN
 Route::get('/admin', function () {
     return view('admin-page');
@@ -47,8 +45,9 @@ Route::get('/admin', function () {
 Route::get('/admin/edit', function () {
     return view('admin-page-edit');
 })->name('admin-edit');
-# OTHER
 
+
+# OTHER
 Route::get('/about', function () {
     return view('delivery-about-contact');
 })->name('about');
@@ -64,4 +63,4 @@ Route::get('/error', function () {
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

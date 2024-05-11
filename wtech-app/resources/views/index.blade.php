@@ -13,9 +13,9 @@
             </div>
             <div class="container container-custom">
                 <div class="row">
-                    <x-product-category justify="justify-content-start" image="product-desktop.jpg" category="desktop-pcs" name="Desktop PCs" />
-                    <x-product-category image="product-components.jpg" category="components" name="Components" />
-                    <x-product-category justify="justify-content-end" image="product-accessories.jpg" category="accessories" name="Accessories" />
+                    <x-product-category justify="justify-content-start" image="images/main/product-desktop.jpg" category="desktop-pcs" name="Desktop PCs" />
+                    <x-product-category image="images/main/product-components.jpg" category="components" name="Components" />
+                    <x-product-category justify="justify-content-end" image="images/main/product-accessories.jpg" category="accessories" name="Accessories" />
                 </div>
             </div>
         </section>

@@ -38,7 +38,7 @@
         </div>
 
         @section('content')
-            <!--PRODUCTS-LISTING-->
+            <!--PRODUCTS-->
             <section id="Product-Page">
                 @foreach ($products as $product)
                     @php
@@ -74,7 +74,7 @@
                         @endphp
                         @for ($i = $start; $i <= $end; $i++)
                             @if ($i == $products->currentPage())
-                                <li class="page-item active "><span class="page-link current">{{ $i }}</span></li>
+                                <li class="page-item active "><span class="page-link current border-radius-custom">{{ $i }}</span></li>
                             @else
                                 <li class="page-item"><a class="page-link" href="{{ $products->url($i) }}">{{ $i }}</a></li>
                             @endif

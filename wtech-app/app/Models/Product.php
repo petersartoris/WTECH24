@@ -24,7 +24,7 @@ class Product extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class)->withPivot('quantity'); // A product can belong to many users
+        return $this->belongsToMany(User::class)->withPivot('quantity'); // A product can belong to many carts
     }
 
     public function images()

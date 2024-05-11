@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         }
 
         $numCategories = 5;
-        $numProducts = 10;
+        $numProducts = 20;
         $numProductImages = 5;
 
         $numUsers = 10;

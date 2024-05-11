@@ -38,6 +38,7 @@
         </div>
 
         @section('content')
+            <!--PRODUCTS-->
             <section id="Product-Page">
                 @foreach ($products as $product)
                     @php
@@ -58,22 +59,27 @@
             <div class="container mt-5">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
+                        
                         <!-- Previous Page Link -->
                         @if ($products->onFirstPage())
                             <li class="page-item disabled"><span class="page-link">«</span></li>
                         @else
                             <li class="page-item"><a class="page-link" href="{{ $products->previousPageUrl() }}" rel="prev">«</a></li>
                         @endif
-
+            
                         <!-- Pagination Elements -->
-                        @for ($i = 1; $i <= $products->lastPage(); $i++)
+                        @php
+                            $start = max($products->currentPage() - 3, 1);
+                            $end = min($start + 6, $products->lastPage());
+                        @endphp
+                        @for ($i = $start; $i <= $end; $i++)
                             @if ($i == $products->currentPage())
-                                <li class="page-item active"><span class="page-link">{{ $i }}</span></li>
+                                <li class="page-item active "><span class="page-link current border-radius-custom">{{ $i }}</span></li>
                             @else
                                 <li class="page-item"><a class="page-link" href="{{ $products->url($i) }}">{{ $i }}</a></li>
                             @endif
                         @endfor
-
+            
                         <!-- Next Page Link -->
                         @if ($products->hasMorePages())
                             <li class="page-item"><a class="page-link" href="{{ $products->nextPageUrl() }}" rel="next">»</a></li>
@@ -83,9 +89,8 @@
                     </ul>
                 </nav>
             </div>
+            
         @endsection
-
-
 
     </main>
 </x-layout>

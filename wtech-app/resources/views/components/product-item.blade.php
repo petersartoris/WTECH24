@@ -10,7 +10,8 @@
                     <h2 class="m-2 white-text">{{ $name }}</h2>
                 </a>
                 <p class="m-2 white-text">Product code: {{ $code }}</p>
-                <p class="m-2 mb-2 gray-text text-justify d-md-block d-none">{{ $description }}</p>
+                <p class="m-2 mb-2 gray-text text-justify d-md-block d-none" id="description">
+                    {{ Str::limit($description, 430, '...') }}</p>
             </div>
         </div>
 

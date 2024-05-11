@@ -22,9 +22,12 @@
                     <h2 class="m-2 d-md-none d-block white-text">{{ $name }}</h2>
                 </a>
                 <h2 class="m-2 white-text">{{ $price }} €</h2>
-                <x-button-cart-add></x-button-cart-add>
+                <x-cart-add-button></x-cart-add-button>
+
                 <div class="d-flex mb-3 mt-sm-2">
-                    <span class="text-success">✓ Available</span>
+                    <span class="{{ $availability === 'available' ? 'text-success' : 'text-danger' }}">
+                        {{ $availability === 'available' ? '✓ Available' : 'X Not Available' }}
+                    </span>
                 </div>
             </div>
         </div>

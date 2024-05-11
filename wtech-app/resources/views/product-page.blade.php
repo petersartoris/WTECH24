@@ -50,7 +50,8 @@
                         name="{{ $product->name }}" 
                         code="{{ $product->code }}" 
                         description="{{ $product->description }}" 
-                        price="{{ $product->price }}" 
+                        price="{{ $product->price }}"
+                        availability="{{ $product->availability }}"
                     />
                 @endforeach
             </section>

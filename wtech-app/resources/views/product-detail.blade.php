@@ -45,7 +45,7 @@
                         <div class="d-flex">
                             <div class="my-2">
                                 <h2 class="my-2 white-text">{{ $product->price }} €</h2>
-                                <x-button-cart-add></x-button-cart-add>
+                                <x-cart-add-button></x-cart-add-button>
                                 @php
                                     $availability = $product->getAvailabilityAttribute($product->availability);
                                 @endphp

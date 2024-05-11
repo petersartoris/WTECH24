@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Http\Request;
+
 use App\Models\Product;
 use App\Models\Category;
 
@@ -36,6 +38,15 @@ class ProductController extends Controller
         );
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $products = Product::whereRaw('LOWER(name) LIKE ?', ["%{$query}%"])
+            ->orWhereRaw('LOWER(description) LIKE ?', ["%{$query}%"])
+            ->paginate(5);
+
+        return view('product-page', ['products' => $products]);
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -55,9 +66,17 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        if ($product) {
+            //return view('error');
+            return view('product-detail', ['product' => $product]);
+        } else {
+            // Handle the case where the product was not found
+            return view('error');
+        }
     }
 
     /**

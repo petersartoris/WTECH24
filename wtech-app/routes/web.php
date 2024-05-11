@@ -4,7 +4,8 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ProductController; // kontroler #kod1
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Routing\RouteBinding;
 
@@ -15,12 +16,19 @@ Route::get('/', function () {
 
 
 # PRODUCTS
-Route::get('/products/detail', function () {
+/*Route::get('/products/detail', function () {
     return view('product-detail');
-})->name('product-detail');
+})->name('product-detail');*/
+
+
+
+//Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+//Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
 Route::get('/products/{categorySlug?}', [ProductController::class, 'index'])->name('products'); // display all products or products by category
 
+
+Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
 # SHOPPING CART
 // tu pridat aj middlewares
@@ -56,11 +64,8 @@ Route::get('/error', function () {
     return view('error');
 })->name('error');
 
-//Route::get('/products/{category}', 'ProductController@show')->name('product-page'); //zobraz kategoriu #kod1
-//Route::get('/product-detail/{product}', 'ProductController@show')->name('product-detail'); //zobraz detail produktu #kod1
-
-
-
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/products/search', [ProductController::class, 'search'])->name('product-search');
 
 
 require __DIR__ . '/auth.php';

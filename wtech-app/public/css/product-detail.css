@@ -21,6 +21,10 @@
     display: none;
 }
 
-/* .row {
-    width: 100%;
-} */
+@media screen and (min-width: 1200px) {
+    .img-fluid.main{
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+    }
+}

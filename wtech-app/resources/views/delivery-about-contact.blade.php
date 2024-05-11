@@ -5,7 +5,7 @@
 
     <main>
         <div id="contact" class="container mt-5">
-            <h1 class="text-center text-white border-custom border-radius-custom">Contact Us</h1>
+            <h1 class="text-center text-white border-custom border-radius-custom mb-4">Contact Us</h1>
             <div class="row">
                 <div class="col-lg-6">
                     <h2 class="text-white">Customer Service</h2>
@@ -23,8 +23,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="col-lg-6">
                     <h2 class="text-white">Send us a message</h2>
                     <form action="contactForm" method="post">
@@ -41,7 +39,7 @@
 
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea name="message" id="message" class="form-text"></textarea>
+                            <textarea name="message" placeholder="your message goes here" id="message" class="form-text p-2"></textarea>
                         </div>
                         <input type="submit" value="Submit" class="button-red button-custom">
                     </form>
@@ -50,7 +48,7 @@
         </div>
 
         <div id="delivery" class="container mt-5">
-            <h1 class="text-center text-white border-custom border-radius-custom">Delivery Information</h1>
+            <h1 class="text-center text-white border-custom border-radius-custom mb-4">Delivery Information</h1>
             <div class="row">
                 <div class="col-lg-4">
                     <h2 class="text-white">Delivery Services</h2>
@@ -83,7 +81,7 @@
         </div>
 
         <div id="about" class="container mt-5">
-            <h1 class="text-center text-white border-custom border-radius-custom">About Us</h1>
+            <h1 class="text-center text-white border-custom border-radius-custom mb-4">About Us</h1>
             <div class="row">
                 <div class="col-lg-12">
                     <p class="lead text-center text-white">We are a team of passionate individuals dedicated to creating

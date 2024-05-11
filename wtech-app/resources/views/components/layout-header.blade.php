@@ -6,7 +6,7 @@
                 <!--BRAND LOGO-->
                 <div class="d-flex align-items-center">
                     <a href="{{ route('/') }}">
-                        <img src="../images/main/wtech-logo.png" alt="Logo" class="img-fluid logo-image">
+                        <img src="{{ asset('images/main/wtech-logo.png') }}" alt="Logo" class="img-fluid logo-image">
                     </a>
                 </div>
 
@@ -16,7 +16,7 @@
                         <input id="search" class="form-control" type="search" placeholder="Search"
                             aria-label="Search">
                         <button type="button" class="btn btn-search">
-                            <img src="../images/main/magnifying-glass.png" alt="">
+                            <img src="{{ asset('images/main/magnifying-glass.png') }}" alt="">
                         </button>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('cart') }}">
-                                    <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                    <img src="{{ asset('/images/main/cart.png') }}" alt="Cart" class="ml-2">
                                 </a>
                             </li>
                         </ul>
@@ -59,7 +59,7 @@
 
                             <li class="nav-item">
                                 <a href="{{ route('cart') }}">
-                                    <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                    <img src="{{ asset('/images/main/cart.png') }}" alt="Cart" class="ml-2">
                                 </a>
                             </li>
                         </ul>

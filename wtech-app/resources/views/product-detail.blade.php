@@ -9,33 +9,35 @@
                 <!--MAIN PRODUCT IMAGE-->
                 <div class="col-md-5 mb-5 mb-md-0">
                     <div class="d-flex justify-content-center align-content-center">
-                        <img src="../images/main/vents.jpg" class="img-fluid" alt="Product Photo">
+                        {{-- add a css class that will maintain a given size --}}
+                        <img src="{{ asset('images/main/vents.jpg') }}" class="img-fluid" alt="">
                     </div>
 
                     <!--SMALL IMAGE BUTTONS-->
                     <div class="container container-custom">
                         <div class="row justify-content-center align-items-center">
+                            {{-- make a component out of this ↓ --}}
                             <div class="col center-all">
                                 <a href="#">
-                                    <img src="../images/main/vents100x100.jpg" class="img-fluid">
+                                    <img src="{{ asset('images/main/vents100x100.jpg') }}" class="img-fluid">
                                 </a>
                             </div>
 
                             <div class="col center-all">
                                 <a href="#">
-                                    <img src="../images/main/vents100x100.jpg" class="img-fluid">
+                                    <img src="{{ asset('images/main/vents100x100.jpg') }}" class="img-fluid">
                                 </a>
                             </div>
 
                             <div class="col center-all">
                                 <a href="#">
-                                    <img src="../images/main/vents100x100.jpg" class="img-fluid">
+                                    <img src="{{ asset('images/main/vents100x100.jpg') }}" class="img-fluid">
                                 </a>
                             </div>
 
                             <div class="col center-all">
                                 <a href="#">
-                                    <img src="../images/main/vents100x100.jpg" class="img-fluid">
+                                    <img src="{{ asset('images/main/vents100x100.jpg') }}" class="img-fluid">
                                 </a>
                             </div>
                         </div>

@@ -76,8 +76,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{-- this should be made into component ↓ --}}
                         <tr>
-                            <td><img src="/images/main/product-desktop.jpg" class="card-img" alt="-"></td>
+                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
+                                    alt="-"></td>
                             <td>Product Name</td>
                             <td>1000 €</td>
                             <td>69</td>
@@ -90,7 +92,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><img src="/images/main/product-desktop.jpg" class="card-img" alt="-"></td>
+                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
+                                    alt="-"></td>
                             <td>Product Name</td>
                             <td>1000 €</td>
                             <td>69</td>
@@ -103,7 +106,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><img src="/images/main/product-desktop.jpg" class="card-img" alt="-"></td>
+                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
+                                    alt="-"></td>
                             <td>Product Name</td>
                             <td>1000 €</td>
                             <td>69</td>
@@ -116,7 +120,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><img src="/images/main/product-desktop.jpg" class="card-img" alt="-"></td>
+                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
+                                    alt="-"></td>
                             <td>Product Name</td>
                             <td>1000 €</td>
                             <td>69</td>

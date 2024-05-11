@@ -4,6 +4,7 @@
     </x-slot>
 
     <main>
+        {{-- make a component out of this ↓ --}}
         <div class="container container-custom center-all mt-2">
             <div class="container">
                 <div class="row">
@@ -25,10 +26,10 @@
         </div>
 
         <div class="container container-custom mb-3 mt-2 card">
-            <div class="row">    
-                
+            <div class="row">
+
                 <div class="col-sm-2 px-0">
-                    <img src="/images/main/product-desktop.jpg" class="card-img" alt="Product Image">
+                    <img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img" alt="Product Image">
                 </div>
                 <div class="col-sm-3">
                     <div class="card-body">
@@ -43,8 +44,8 @@
                                             +
                                         </button>
                                     </span>
-                                    <input type="text" id="quantity" name="quantity" class="form-control input-number"
-                                        value="1" min="1" max="100">
+                                    <input type="text" id="quantity" name="quantity"
+                                        class="form-control input-number" value="1" min="1" max="100">
                                     <span class="input-group-btn">
                                         <button type="button" class="quantity-left-minus btn btn-outline-light"
                                             data-type="minus" data-field="">

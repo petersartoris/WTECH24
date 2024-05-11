@@ -39,7 +39,8 @@
                     <!--BRAND LOGO-->
                     <div class="d-flex align-items-center">
                         <a href="index.html">
-                            <img src="../images/main/wtech-logo.png" alt="Logo" class="img-fluid logo-image">
+                            <img src="{{ asset('images/main/wtech-logo.png') }}" alt="Logo"
+                                class="img-fluid logo-image">
                         </a>
                     </div>
 
@@ -48,7 +49,7 @@
                         <div class="input-group">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                             <button type="button" class="btn btn-search">
-                                <img src="../images/main/magnifying-glass.png" alt="">
+                                <img src="{{ asset('images/main/magnifying-glass.png') }}" alt="">
                             </button>
                         </div>
                     </div>
@@ -68,7 +69,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="shopping-cart.html">
-                                    <img src="../images/main/cart.png" alt="Cart" class="ml-2">
+                                    <img src="{{ asset('images/main/cart.png') }}" alt="Cart" class="ml-2">
                                 </a>
                             </li>
                         </ul>
@@ -92,43 +93,48 @@
 
     <main>
         <div class="container container-custom">
-            
-            
+
+
             <div class="row">
 
                 <h2 class="mb-4 white-text">Edit Product Details</h2>
 
                 <div class="col-8">
-                    
+
                     <div class="row white-text mb-4">
                         <!-- Product Name -->
                         <div class="form-group white-text mb-4">
-                            <label class="pb-2"  for="product-name">Product Name:</label>
-                            <input type="text" class="form-control" id="product-name" placeholder="Enter product name">
+                            <label class="pb-2" for="product-name">Product Name:</label>
+                            <input type="text" class="form-control" id="product-name"
+                                placeholder="Enter product name">
                         </div>
-    
+
                         <!-- Product Description -->
                         <div class="form-group white-text mb-4">
                             <label class="pb-2" for="product-description">Product Description:</label>
                             <textarea class="form-control" id="product-description" rows="8" placeholder="Enter product description"></textarea>
                         </div>
                     </div>
-    
+
                     <!-- Price, Quantity, and Availability -->
                     <div class="row white-text mb-4">
                         <div class="col-3">
                             <label class="pb-2" for="product-price">Price (Euros €):</label>
-                            <input type="number" class="form-control" id="product-price" placeholder="Enter price" step="0.01">
+                            <input type="number" class="form-control" id="product-price" placeholder="Enter price"
+                                step="0.01">
                         </div>
                         <div class="col-3">
                             <label class="pb-2" for="product-quantity">Quantity:</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="btn btn-outline-secondary" type="button" id="decrease-quantity">-</button>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        id="decrease-quantity">-</button>
                                 </div>
-                                <input type="number" class="form-control" id="product-quantity" placeholder="Enter quantity" min="0">
+                                <input type="number" class="form-control" id="product-quantity"
+                                    placeholder="Enter quantity" min="0">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="increase-quantity">+</button>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        id="increase-quantity">+</button>
                                 </div>
                             </div>
                         </div>
@@ -142,11 +148,13 @@
                         </div>
 
                         <div class="col-12 pt-5">
-                            <button class="button-custom button-red" id="save-changes"><i class="fas fa-save"></i> Save</button>
-                            <button class="button-custom button-white" id="remove-product"><i class="fas fa-trash-alt"> Remove</i></button>
+                            <button class="button-custom button-red" id="save-changes"><i class="fas fa-save"></i>
+                                Save</button>
+                            <button class="button-custom button-white" id="remove-product"><i
+                                    class="fas fa-trash-alt"> Remove</i></button>
                         </div>
                     </div>
-    
+
                 </div>
                 <div class="col-2">
                     <div class="filter-container d-flex flex-column py-2">
@@ -194,32 +202,33 @@
                             </label>
                         </div>
                     </div>
-    
+
                 </div>
-    
+
+                {{-- this should be made to component ↓ --}}
                 <div class="col-2">
                     <div class="image-edit-container">
                         <div class="mb-3">
-                            <img src="/images/main/product-desktop.jpg" alt="Image 1">
+                            <img src="{{ asset('images/main/product-desktop.jpg') }}" alt="Image 1">
                             <button class="button-edit"><i class="fas fa-edit"></i></button>
                         </div>
                         <div class="mb-3">
-                            <img src="/images/main/product-desktop.jpg" alt="Image 2">
+                            <img src="{{ asset('images/main/product-desktop.jpg') }}" alt="Image 2">
                             <button class="button-edit"><i class="fas fa-edit"></i></button>
                         </div>
                         <div class="mb-3">
-                            <img src="/images/main/product-desktop.jpg" alt="Image 3">
+                            <img src="{{ asset('images/main/product-desktop.jpg') }}" alt="Image 3">
                             <button class="button-edit"><i class="fas fa-edit"></i></button>
                         </div>
                         <div class="mb-3">
-                            <img src="/images/main/product-desktop.jpg" alt="Image 4">
+                            <img src="{{ asset('images/main/product-desktop.jpg') }}" alt="Image 4">
                             <button class="button-edit"><i class="fas fa-edit"></i></button>
                         </div>
                     </div>
                 </div>
-    
+
             </div>
-    
+
         </div>
     </main>
 

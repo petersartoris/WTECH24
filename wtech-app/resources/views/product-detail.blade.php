@@ -62,4 +62,15 @@
         </div>
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $(".img-fluid").click(function(){
+            var imgSrc = $(this).attr("src");
+            $(".main").attr("src", imgSrc);
+        });
+    });
+    </script>
+
 </x-layout>

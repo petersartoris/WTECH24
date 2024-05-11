@@ -42,6 +42,30 @@
     <x-layout-footer></x-layout-footer>
 
     <script type="text/javascript" src="../libs/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    function fetchResults() {
+        var query = $('#search').val();
+        if (query.length > 2) { // Only search if the query is at least 3 characters long
+            $.ajax({
+                url: '/search',
+                type: 'GET',
+                data: { 'query': query },
+                success: function(data) {
+                    $('#search-results').html(data);
+                    if (data) {
+                        $('#search-results').show(); // Show the search results
+                    } else {
+                        $('#search-results').hide(); // Hide the search results
+                    }
+                }
+            });
+        } else {
+            $('#search-results').hide(); // Hide the search results
+        }
+    }
+    </script>
+
 </body>
 
 </html>

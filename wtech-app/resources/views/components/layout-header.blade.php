@@ -10,15 +10,25 @@
                     </a>
                 </div>
 
-                <!--SEARCH BAR-->
                 <div class="container-fluid search-container order-3 order-lg-2" id="navbarSearch">
-                    <div class="input-group">
-                        <input id="search" class="form-control" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <button type="button" class="btn btn-search">
-                            <img src="{{ asset('images/main/magnifying-glass.png') }}" alt="">
-                        </button>
-                    </div>
+                    <!--<div class="input-group-wrapper">
+                        <div class="input-group">
+                            <input id="search" name="query" class="form-control" type="search" placeholder="Search" aria-label="Search" onkeyup="fetchResults()">
+                            <button type="button" class="btn btn-search">
+                                <img src="{{ asset('images/main/magnifying-glass.png') }}" alt="">
+                            </button>
+                        </div>
+                        <div id="search-results"></div>
+                    </div>-->
+                    <form action="/products/search" method="GET" class="input-group-wrapper">
+                        <div class="input-group">
+                            <input id="search" name="query" class="form-control" type="search" placeholder="Search" aria-label="Search" onkeyup="fetchResults()">
+                            <button type="submit" class="btn btn-search">
+                                <img src="{{ asset('images/main/magnifying-glass.png') }}" alt="">
+                            </button>
+                        </div>
+                        <div id="search-results"></div>
+                    </form>
                 </div>
 
                 <!--LOGIN REGISTER CART-->

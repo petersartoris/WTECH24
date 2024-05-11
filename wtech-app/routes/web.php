@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Routing\RouteBinding;
 
@@ -63,5 +64,9 @@ Route::get('/about', function () {
 Route::get('/error', function () {
     return view('error');
 })->name('error');
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/products/search', [ProductController::class, 'search'])->name('product-search');
+
 
 require __DIR__.'/auth.php';

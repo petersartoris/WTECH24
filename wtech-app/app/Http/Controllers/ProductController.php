@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -15,7 +17,17 @@ class ProductController extends Controller
     {
         //$products = Product::all();
         $products = Product::paginate(5);
-        return view('product-page', ['products' => $products]); // Pass the products to the view
+        return view('product-page', ['products' => $products]);
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $products = Product::whereRaw('LOWER(name) LIKE ?', ["%{$query}%"])
+                    ->orWhereRaw('LOWER(description) LIKE ?', ["%{$query}%"])
+                    ->paginate(5);
+
+        return view('product-page', ['products' => $products]);
     }
 
     /**

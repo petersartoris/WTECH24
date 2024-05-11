@@ -13,30 +13,17 @@ Route::get('/', function () {
     return view('index');
 })->name('/');
 
-# AUTHENTICATION
-/*Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');*/
-
-/*Route::get('/register', function () {
-    return view('register');
-})->name('register');*/
-
-
-
-/*Route::post('/register', [RegisteredUserController::class, 'store'])
-->middleware('guest')
-->name('register');*/
-
 
 # PRODUCTS
 Route::get('/products/detail', function () {
     return view('product-detail');
 })->name('product-detail');
 
-Route::get('/products', function () {
+/*Route::get('/products', function () {
     return view('product-page');
-})->name('products');
+})->name('products');*/
+
+Route::get('/products', [ProductController::class, 'index'])->name('products');
 
 # SHOPPING CART
 // tu pridat aj middlewares
@@ -70,8 +57,8 @@ Route::get('/error', function () {
     return view('error');
 })->name('error');
 
-Route::get('/products/{category}', 'ProductController@show')->name('product-page'); //zobraz kategoriu #kod1
-Route::get('/product-detail/{product}', 'ProductController@show')->name('product-detail'); //zobraz detail produktu #kod1
+//Route::get('/products/{category}', 'ProductController@show')->name('product-page'); //zobraz kategoriu #kod1
+//Route::get('/product-detail/{product}', 'ProductController@show')->name('product-detail'); //zobraz detail produktu #kod1
 
 
 

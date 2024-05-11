@@ -20,13 +20,11 @@ Route::get('/', function () {
     return view('product-detail');
 })->name('product-detail');*/
 
-
-
 //Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 //Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
-Route::get('/products/{categorySlug?}', [ProductController::class, 'index'])->name('products'); // display all products or products by category
-
+Route::get('/products/search', [ProductController::class, 'search'])->name('products.search'); // search for products
+Route::get('/products/category/{categorySlug?}', [ProductController::class, 'index'])->name('products'); // display all products or products by category
 
 Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 

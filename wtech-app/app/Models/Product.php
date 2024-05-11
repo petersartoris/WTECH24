@@ -62,6 +62,7 @@ class Product extends Model
     {
         return [
             'name' => 'required|string|max:255',
+            'code' => 'required|string|max:255|unique:products,code,' . $id,
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'quantity' => 'required|integer|min:0',

@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
 
             // generate random quantity for each product in the order
             $quantities = [];
-            for ($i = 0; $i < $numProductsInOrder; $i++) {
+            for ($j = 0; $j < $numProductsInOrder; $j++) {
                 $quantities[] = rand(1, 5);
             }
 
@@ -117,11 +117,22 @@ class DatabaseSeeder extends Seeder
                 $randomProductIds[] = $products[$key]->id;
             }
 
-            // Order::factory()->create([
-            //     'user_id' => $users[array_rand($users)]->id,
-            //     'payment_type_id' => $paymentTypes[array_rand($paymentTypes)]->id,
-            //     'delivery_type_id' => $deliveryTypes[array_rand($deliveryTypes)]->id,
-            // ])->products()->attach(array_combine($randomProductIds, )); // attach products to the order with quantities as pivot data
+            // print out the values of $randomProductIds and $quantities
+            echo "randomProductIds: ";
+            print_r($randomProductIds);
+            echo "\nquantities: ";
+            print_r($quantities);
+            echo "\n";
+
+            // create pivot data
+            $pivotData = array_combine($randomProductIds, $quantities);
+
+            // create order and attach products
+            Order::factory()->create([
+                'user_id' => $users[array_rand($users)]->id,
+                'payment_type_id' => $paymentTypes[array_rand($paymentTypes)]->id,
+                'delivery_type_id' => $deliveryTypes[array_rand($deliveryTypes)]->id,
+            ])->products()->attach($pivotData); // attach products to the order with quantities as pivot data
         }
     }
 }

@@ -19,28 +19,28 @@ class ProductImageFactory extends Factory
 
     public function definition(): array
     {
-        $product_id = $attributes['product_id'] ?? Product::factory()->create()->id;
-        echo "in image factory:" . $product_id;
-
-        // Define the path where the image will be stored
-        $path = public_path("/images/product-images/{$product_id}");
-        if (!file_exists($path)) {
-            File::makeDirectory($path, 0777, true, true); // Create the directory if it does not exist 
-        }
-
-        // Generate a fake image and store it in the new folder
-        $filename = time() . '.jpg';
-        $imagePath = $this->faker->image($path, 640, 480, null, false, $filename);
-
-
-        // combine the path and the image name
-        $imagePath = $path . '/' . $imagePath;
-        echo $imagePath;
-
         return [
-            'product_id' => $product_id,
-            'path' => $imagePath,
-            'order' => $this->faker->numberBetween(0, 5), // Should be unique
+            'product_id' => function (array $attributes) {
+                $product_id = $attributes['product_id'] ?? Product::factory()->create()->id;
+
+                // Define the path where the image will be stored
+                $path = public_path("/images/product-images/{$product_id}");
+                if (!file_exists($path)) {
+                    File::makeDirectory($path, 0777, true, true); // DEV setting Create the directory if it does not exist 
+                }
+
+                // Generate a fake image and store it in the new folder
+                $imagePath = $this->faker->image($path, 640, 480, null, false);
+
+                // combine the path and the image name
+                $imagePath = "public/images/product-images/{$product_id}/{$imagePath}";
+
+                return $product_id;
+            },
+            'path' => function (array $attributes) {
+                return "public/images/product-images/{$attributes['product_id']}/{$this->faker->image}";
+            },
+            'order' => $this->faker->unique()->numberBetween(0, 5),
         ];
     }
 }

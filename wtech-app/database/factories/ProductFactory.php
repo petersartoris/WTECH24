@@ -19,7 +19,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->unique()->word(),
             'code' => $this->faker->unique()->bothify('###?###'), // Add this line
-            'description' => $this->faker->sentence(),
+            'description' => $this->faker->sentences(20, true),
             'price' => $this->faker->randomFloat(2, 1, 1000),
             'quantity' => $this->faker->numberBetween(1, 100),
             'availability' => $this->faker->randomElement(['available', 'unavailable']),

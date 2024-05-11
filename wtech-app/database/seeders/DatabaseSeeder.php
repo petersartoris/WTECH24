@@ -8,11 +8,10 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
-use App\Models\PaymentType;
-use App\Models\DeliveryType;
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\Order;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,12 +23,14 @@ class DatabaseSeeder extends Seeder
         // make sure that the dummy images folder is empty
         $path = public_path('/images/product-images');
         if (file_exists($path)) {
-            File::deleteDirectory($path);
+            try {
+                File::deleteDirectory($path);
+            } catch (\Exception $e) {
+                echo "Error deleting directory: " . $e->getMessage() . "\n";
+            }
         }
 
         $numCategories = 5;
-        $numPaymentTypes = 3;
-        $numDeliveryTypes = 3;
         $numProducts = 10;
         $numProductImages = 5;
 
@@ -59,21 +60,9 @@ class DatabaseSeeder extends Seeder
         // create all delivery types and save them in an array
         $deliveryTypes = (new DeliveryTypeSeeder())->run();
 
-        // create all products, images and attach random categories to each product
+        // create all products and attach random categories to each product
         for ($i = 0; $i < $numProducts; $i++) {
             $products[] = Product::factory()->create();
-
-            for ($j = 0; $j < $numProductImages; $j++) {
-                echo "Product ID: " . $products[$i]->id . "\n";
-                ProductImage::factory()->create([
-                    'product_id' => $products[$i]->id,
-                    'order' => $j, // order of the image in the product
-                ]);
-            }
-
-            // ProductImage::factory()->count($numProductImages)->create([
-            //     'product_id' => $products[$i]->id,
-            // ]);
 
             // attach random categories to each product
             $randomCategories = array_rand($categories, rand(1, $numCategories));
@@ -86,6 +75,9 @@ class DatabaseSeeder extends Seeder
                 $products[$i]->categories()->attach($categories[$category]);
             }
         }
+
+        // seed the product images
+        $this->seedProductImages($numProducts, $numProductImages, $products);
 
         // create all users and save them in an array
         for ($i = 0; $i < $numUsers; $i++) {
@@ -133,6 +125,43 @@ class DatabaseSeeder extends Seeder
                 'payment_type_id' => $paymentTypes[array_rand($paymentTypes)]->id,
                 'delivery_type_id' => $deliveryTypes[array_rand($deliveryTypes)]->id,
             ])->products()->attach($pivotData); // attach products to the order with quantities as pivot data
+        }
+    }
+
+    /**
+     * Seed the images for the products.
+     * 
+     * @return void
+     */
+    public function seedProductImages($numProducts, $numProductImages, array $products): void
+    {
+        // create a faker instance
+        $faker = Faker::create();
+
+        // create images for each product
+        for ($i = 0; $i < $numProducts; $i++) {
+            for ($j = 0; $j < $numProductImages; $j++) {
+                $product_id = $products[$i]->id;
+                echo "Product ID: " . $product_id . "\n";
+                // Define the path where the image will be stored
+                $path = public_path("/images/product-images/{$product_id}");
+
+                // Create the directory if it does not exist 
+                if (!file_exists($path)) {
+                    File::makeDirectory($path, 0777, true, true);
+                }
+
+                // Generate a fake image and store it in the new folder
+                $imagePath = $faker->image($path, 640, 480, null, false);
+
+                // Combine the path and the image name
+                $imagePath = "public/images/product-images/{$product_id}/{$imagePath}";
+                ProductImage::factory()->create([
+                    'product_id' => $product_id,
+                    'path' => $imagePath,
+                    'order' => $j,
+                ]);
+            }
         }
     }
 }

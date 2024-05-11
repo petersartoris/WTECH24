@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Support\Facades\File;
+use Faker\Factory as Faker;
+use Illuminate\Support\Str;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -11,7 +13,6 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\Order;
-use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -49,8 +50,10 @@ class DatabaseSeeder extends Seeder
 
         // create all categories and save them in an array
         for ($i = 0; $i < $numCategories; $i++) {
+            $name = 'Category ' . ($i + 1);
             $categories[] = Category::factory()->create([
-                'name' => 'Category ' . ($i + 1),
+                'name' => $name,
+                'slug' => Str::slug($name),
             ]);
         }
 

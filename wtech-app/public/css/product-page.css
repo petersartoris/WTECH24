@@ -49,6 +49,12 @@
     height: 4em;
 }
 
+.thumbnail {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}
+
 @media (max-width: 48em) {
     .variable-sizing {
         display: flex;

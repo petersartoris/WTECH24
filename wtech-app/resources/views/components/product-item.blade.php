@@ -3,7 +3,7 @@
         <!--IMAGE + TITLE-->
         <div class="col-lg-10 col-md-8 d-flex">
             <a href="{{ route('product-detail', ['product' => $product]) }}" class="product-link">
-                <img src="{{ asset($image) }}" alt="Product Image" class="img-fluid">
+                <img src="{{ asset($image) }}" alt="Product Image" class="img-fluid thumbnail">
             </a>
             <div class="container-fluid ms-3 m-2 product-info">
                 <a href="{{ route('product-detail', ['product' => $product]) }}" class="product-link">

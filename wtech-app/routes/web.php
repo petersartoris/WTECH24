@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController; // kontroler #kod1
+use Illuminate\Auth\Middleware\Authenticate;
+use Illuminate\Routing\RouteBinding;
 
 # HOME PAGE
 Route::get('/', function () {
@@ -10,13 +14,20 @@ Route::get('/', function () {
 })->name('/');
 
 # AUTHENTICATION
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+/*Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');*/
 
-Route::get('/register', function () {
+/*Route::get('/register', function () {
     return view('register');
-})->name('register');
+})->name('register');*/
+
+
+
+/*Route::post('/register', [RegisteredUserController::class, 'store'])
+->middleware('guest')
+->name('register');*/
+
 
 # PRODUCTS
 Route::get('/products/detail', function () {
@@ -61,5 +72,9 @@ Route::get('/error', function () {
 
 Route::get('/products/{category}', 'ProductController@show')->name('product-page'); //zobraz kategoriu #kod1
 Route::get('/product-detail/{product}', 'ProductController@show')->name('product-detail'); //zobraz detail produktu #kod1
+
+
+
+
 
 require __DIR__.'/auth.php';

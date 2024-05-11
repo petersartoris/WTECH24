@@ -198,14 +198,14 @@ body {
 
 
 
-/*TESTING*/
+/*SEARCHING*/
 #search-results {
     position: absolute;
-    background-color: white;
+    background-color: var(--box-color);
     width: 100%;
     max-height: 200px;
     overflow-y: auto;
-    border: 1px solid #ccc;
+    border: 1px solid var(--bg-color);
     z-index: 1;
     display: none;
 }
@@ -218,11 +218,12 @@ body {
 
 #search-results ul li {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid var(--border-color);
+    border-bottom: 1px solid ;
 }
 
 #search-results ul li:hover {
-    background-color: #eee;
+    background-color: black;
 }
 
 .input-group-wrapper {

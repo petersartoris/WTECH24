@@ -27,7 +27,6 @@ Route::get('/', function () {
 
 Route::get('/products/{categorySlug?}', [ProductController::class, 'index'])->name('products'); // display all products or products by category
 
-
 Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
 # SHOPPING CART

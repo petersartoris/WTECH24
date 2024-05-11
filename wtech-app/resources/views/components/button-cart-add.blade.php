@@ -1,0 +1,1 @@
+<button class="button-custom button-red fixed-size my-2">Add to cart</button>

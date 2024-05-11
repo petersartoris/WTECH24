@@ -22,7 +22,7 @@
                     <h2 class="m-2 d-md-none d-block white-text">{{ $name }}</h2>
                 </a>
                 <h2 class="m-2 white-text">{{ $price }} €</h2>
-                <button class="button-custom button-red fixed-size">Add to cart</button>
+                <x-button-cart-add></x-button-cart-add>
                 <div class="d-flex mb-3 mt-sm-2">
                     <span class="text-success">✓ Available</span>
                 </div>

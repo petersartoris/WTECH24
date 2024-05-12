@@ -56,6 +56,27 @@
     background-color: var(--white);
 }
 
+.dropdown-custom {
+    width: 12em;
+    height: 2em;
+    border-radius: 0.5em;
+    padding: 0.3em;
+    /* margin-right: 0.5em; */
+    margin-right: 0.5em;
+}
+
+.dropdown-label {
+    font-size: 1em;
+    margin-right: 0.625em;
+    color: var(--white);
+    /* margin-left: 0.5em; */
+}
+
+.sort-form {
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+}
 
 .form-check {
     color: white;

@@ -78,6 +78,11 @@
     margin-left: 1em;
 }
 
+.price-box {
+    width: 10em;
+
+}
+
 .form-check {
     color: white;
     padding-right: 2em;

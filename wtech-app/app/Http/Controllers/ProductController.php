@@ -30,6 +30,9 @@ class ProductController extends Controller
         // get the first category in the list of category slugs
         $category = Category::where('slug', $categorySlugs[0] ?? null)->first();
 
+        // get top-level categories if no category is selected
+        $topLevelCategories = $category ? collect() : Category::whereNull('parent_id')->get();
+
         // get products based on the selected category or all products if no category is selected
         $query = $category ? $category->products()->with(['categories', 'images']) : Product::query()->with(['categories', 'images']);
 
@@ -56,7 +59,7 @@ class ProductController extends Controller
             [
                 'products' => $products,
                 'current_category' => $category, // the current category that will be displayed to the left
-                'subcategories' => $category ? $category->children : collect() // Get the subcategories of the selected category
+                'subcategories' => $category ? $category->children : $topLevelCategories // Get the subcategories of the selected category
             ]
         );
     }

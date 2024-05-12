@@ -16,24 +16,34 @@
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
                         <p class="price-text">{{ $product->price }} €</p>
                     </div>
+
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
                         <div class="input-group">
-                            <!-- + -->
+                            <!-- PLUS -->
                             <span class="input-group-btn">
-                                <button type="button" class="quantity-right-plus btn btn-outline-light"
-                                    data-type="plus" data-field="">
-                                    +
-                                </button>
+                                <form action="{{ route('cart-update', $product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="quantity" value="{{ $quantity + 1 }}">
+                                    <button type="submit" class="quantity-right-plus btn btn-outline-light">
+                                        +
+                                    </button>
+                                </form>
                             </span>
-                            <!-- Quantity -->
-                            <input type="text" id="quantity" name="quantity"
-                                class="form-control input-number" value="{{ $quantity }}" min="1" max="100">
-                            <!-- - -->
+                            <!-- INPUT -->
+                            <form action="{{ route('cart-update', $product->id) }}" method="POST">
+                                @csrf
+                                <input type="text" id="quantity" name="quantity"
+                                    class="form-control input-number" value="{{ $quantity }}" min="1" max="100">
+                            </form>
+                            <!-- MINUS -->
                             <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus btn btn-outline-light"
-                                    data-type="minus" data-field="">
-                                    -
-                                </button>
+                                <form action="{{ route('cart-update', $product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="quantity" value="{{ max($quantity - 1, 1) }}">
+                                    <button type="submit" class="quantity-left-minus btn btn-outline-light">
+                                        -
+                                    </button>
+                                </form>
                             </span>
                         </div>
                     </div>
@@ -53,4 +63,3 @@
         </div>
     </div>
 </div>
-

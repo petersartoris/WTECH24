@@ -27,7 +27,11 @@
                 <x-cart-item :product="$product" :quantity="$quantity"></x-cart-item>
             @endforeach
         @else
-            <p>No products in the cart.</p>
+            <div class="container container-custom">
+                <div class="row">
+                    <p class="white-text">No products in the cart.</p>
+                </div>
+            </div>
         @endif
 
         <div class="container container-custom border-radius-custom mb-3 mt-2 border-custom">
@@ -44,9 +48,12 @@
                 </div>
 
                 <div class="col-sm-2 d-flex justify-content-center my-3">
-                    <button class="button-custom button-red">Continue</button>
+                    <a href="{{ route('cart-delivery') }}">
+                        <button class="button-custom button-red">Continue</button>
+                    </a>
                 </div>
             </div>
         </div>
-    </main>
+    </main>     
+    
 </x-layout>

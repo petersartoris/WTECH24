@@ -72,7 +72,7 @@
                     <div class="col-sm-2 d-flex justify-content-center my-3">
                         <form action="{{ route('cart-delivery-info') }}" method="POST" class="form-button-custom">
                             @csrf
-                            <input type="hidden" id="totalprice" name="totalprice">
+                            <input type="hidden" id="total" name="total">
                             <input type="hidden" id="deliverymethod" name="deliverymethod">
                             <input type="hidden" id="paymentmethod" name="paymentmethod">
                             <button type="submit" class="button-custom button-red">Continue</button>

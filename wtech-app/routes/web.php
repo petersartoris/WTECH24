@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 
 # HOME PAGE
 Route::get('/', function () {
@@ -36,6 +37,9 @@ Route::post('/cart/order-delivery-payment', [CartController::class, 'deliveryOpt
 
 Route::post('/cart/order-info', [CartController::class, 'finalOrder'])
     ->name('cart-delivery-info');
+
+Route::post('cart/order/create', [OrderController::class, 'create'])
+    ->name('order-create');
 
 # ADMIN
 Route::get('/admin', function () {

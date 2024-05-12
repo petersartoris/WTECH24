@@ -40,7 +40,7 @@ class CartController extends Controller
     // Here we are passing the total price, delivery method, and payment method to the view
     public function finalOrder(Request $request)
     {
-        $total = $request->input('totalprice');
+        $total = $request->input('total');
         $deliveryMethod = $request->input('deliverymethod');
         $paymentMethod = $request->input('paymentmethod');
 

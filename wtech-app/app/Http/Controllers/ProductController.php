@@ -43,10 +43,10 @@ class ProductController extends Controller
             case 'availability':
                 $query->orderByRaw("CASE WHEN availability = 'available' THEN 1 ELSE 2 END");
                 break;
-            case 'low-to-high':
+            case 'ascending':
                 $query->orderBy('price', 'asc');
                 break;
-            case 'high-to-low':
+            case 'descending':
                 $query->orderBy('price', 'desc');
                 // Add more cases as needed for other sort options
         }

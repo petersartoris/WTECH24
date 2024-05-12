@@ -39,16 +39,19 @@
                 <div class="col-sm-7"></div>
                 <div class="col-sm-3 d-flex justify-content-center align-items-center my-3">
                     <div class="flex-column">
-                        <h2 class="white-text">Total Price: {{ collect($cart)->map(function ($item) {
-                            $product = auth()->check() ? $item : \App\Models\Product::find($item->product_id);
-                            $quantity = auth()->check() ? $item->pivot->quantity : $item->quantity;
-                            return $product->price * $quantity;
-                        })->sum() }} €</h2>                        
+                        @php
+                            $total = collect($cart)->map(function ($item) {
+                                $product = auth()->check() ? $item : \App\Models\Product::find($item->product_id);
+                                $quantity = auth()->check() ? $item->pivot->quantity : $item->quantity;
+                                return $product->price * $quantity;
+                            })->sum();
+                        @endphp
+                        <h2 class="white-text">Total Price: {{ $total }} €</h2>                        
                     </div>                    
                 </div>
 
                 <div class="col-sm-2 d-flex justify-content-center my-3">
-                    <a href="{{ route('cart-delivery') }}">
+                    <a href="{{ route('cart-delivery', ['cart' => $cart, 'total' => $total]) }}">
                         <button class="button-custom button-red">Continue</button>
                     </a>
                 </div>

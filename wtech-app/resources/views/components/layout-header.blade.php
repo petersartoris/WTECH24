@@ -46,11 +46,11 @@
                     @endguest
                     @auth
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
-                            <li class="nav-item center-all">
+                            <li class="nav-item d-flex justify-content-center align-items-center">
                                 <i class="fas fa-user"></i>
                             </li>
 
-                            <li class="nav-item center-all">
+                            <li class="nav-item d-flex justify-content-center align-items-center">
                                 <label>{{ Auth::user()->username }}</label>
                             </li>
 

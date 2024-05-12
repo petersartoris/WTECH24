@@ -59,7 +59,10 @@
         </div>
 
         <div class="col-sm-2 my-md-0 my-2 py-md-0 py-2 d-flex justify-content-center">
-            <button type="button" class="remove-button" aria-label="Close">×</button>
+            <form action="{{ route('cart-remove', $product->id) }}" method="POST" class="remove-button">
+                @csrf
+                <button type="submit" class="remove-button" aria-label="Close">x</button>
+            </form>
         </div>
     </div>
 </div>

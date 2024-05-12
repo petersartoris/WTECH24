@@ -36,6 +36,12 @@ body {
     margin-block: auto;
 }
 
+.form-button-custom {
+    max-height: 3em;
+    height: 100%;
+    margin-block: auto;
+}
+
 .button-red {
     background-color: var(--top-attention);
     color: var(--light-white);
@@ -195,8 +201,6 @@ body {
         flex-direction: row;
     }
 }
-
-
 
 /*SEARCHING*/
 #search-results {

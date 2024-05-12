@@ -16,12 +16,6 @@ Route::get('/', function () {
 
 
 # PRODUCTS
-/*Route::get('/products/detail', function () {
-    return view('product-detail');
-})->name('product-detail');*/
-
-//Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
-//Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search'); // search for products
 // Route::get('/products/category/{categorySlug?}', [ProductController::class, 'index'])->name('products.category'); // display all products or products by category
@@ -29,13 +23,15 @@ Route::get('/products/search', [ProductController::class, 'search'])->name('prod
 Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
 # SHOPPING CART
-// tu pridat aj middlewares
 Route::get('/cart', function () {
     return view('shopping-cart');
 })->name('cart');
 
 Route::post('/cart/add/{product}', [ProductController::class, 'addToCart'])
     ->name('cart-add');
+
+Route::post('/cart/update/{product}', [ProductController::class, 'updateCart'])
+    ->name('cart-update');
 
 Route::get('/cart/delivery', function () {
     return view('shopping-cart-delivery-options');

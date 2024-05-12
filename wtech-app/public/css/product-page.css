@@ -40,6 +40,22 @@
     text-decoration: none;
 }
 
+.category-link {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--border-color);
+    margin-right: 0.5em;
+}
+
+.divider {
+    border-left: 1px solid var(--white);
+    /* Change color as needed */
+    height: 20px;
+    /* Change height as needed */
+    margin: 0 10px;
+    /* Add some margin to the left and right */
+}
+
 
 .form-check {
     color: white;

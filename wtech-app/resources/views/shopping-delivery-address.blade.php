@@ -4,6 +4,11 @@
     </x-slot>
 
     <main>
+
+        @php 
+            dd($paymentMethod, $deliveryMethod, $total);
+        @endphp
+
         <x-cart-links></x-cart-links>
 
         <section id="delivery-page">

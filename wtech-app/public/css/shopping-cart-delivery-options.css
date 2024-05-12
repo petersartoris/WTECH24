@@ -2,10 +2,6 @@
     width: 100% !important;
 }
 
-/* .row {
-    width:100%;
-} */
-
 .center-all {
     display: flex;
     justify-content: center;
@@ -20,4 +16,12 @@
     .justify-content-custom {
         justify-content: start !important;
     }
+}
+
+.selected {
+    outline: 0.25em solid red !important;
+}
+
+a.disabled {
+    pointer-events: none;
 }

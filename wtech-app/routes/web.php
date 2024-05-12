@@ -1,14 +1,9 @@
 <?php
-
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
-use Illuminate\Auth\Middleware\Authenticate;
-use Illuminate\Routing\RouteBinding;
-use Illuminate\Http\Request;
+use App\Http\Controllers\CartController;
 
 # HOME PAGE
 Route::get('/', function () {
@@ -24,32 +19,23 @@ Route::get('/products/search', [ProductController::class, 'search'])->name('prod
 Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
 # SHOPPING CART
-Route::get('/cart', function () {
-    return view('shopping-cart');
-})->name('cart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
-Route::post('/cart/add/{product}', [ProductController::class, 'addToCart'])
+
+Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])
     ->name('cart-add');
 
-Route::post('/cart/update/{product}', [ProductController::class, 'updateCart'])
+Route::post('/cart/update/{product}', [CartController::class, 'updateCart'])
     ->name('cart-update');
 
-Route::post('/cart/remove/{product}', [ProductController::class, 'removeFromCart'])
+Route::post('/cart/remove/{product}', [CartController::class, 'removeFromCart'])
     ->name('cart-remove');
 
-Route::get('/cart-delivery', function () {
-    // Retrieve cart and total from the session
-    $cart = session('cart');
-    $total = session('total');
+Route::post('/cart/order-delivery-payment', [CartController::class, 'deliveryOptions'])
+    ->name('cart-delivery');
 
-    // Pass the cart data and total price to the delivery options view
-    return view('shopping-cart-delivery-options', ['cart' => $cart, 'total' => $total]);
-})->name('cart-delivery');
-
-Route::get('/cart/delivery-info', function () {
-    return view('shopping-delivery-address');
-})->name('cart-delivery-info');
-
+Route::post('/cart/order-info', [CartController::class, 'finalOrder'])
+    ->name('cart-delivery-info');
 
 # ADMIN
 Route::get('/admin', function () {

@@ -8,7 +8,8 @@ let basePrice = parseFloat(totalPriceElement.textContent.replace('Total Price: '
 // Hidden input fields
 let deliveryMethodInput = document.getElementById('deliverymethod');
 let paymentMethodInput = document.getElementById('paymentmethod');
-let totalPriceInput = document.getElementById('totalprice');
+let totalPriceInput = document.getElementById('total');
+totalPriceInput.value = basePrice.toFixed(2);
 
 // Update total price
 function updateTotalPrice(deliveryPrice, paymentPrice) {

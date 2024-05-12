@@ -29,7 +29,7 @@ class CartController extends Controller
         $total = $request->input('total', 0);
         $deliveryMethod = $request->input('deliverymethod');
         $paymentMethod = $request->input('paymentmethod');
-
+        
         
         // Store the data in the session
         session(['total' => $total, 'deliverymethod' => $deliveryMethod, 'paymentmethod' => $paymentMethod]);
@@ -40,10 +40,10 @@ class CartController extends Controller
 
     public function finalOrder(Request $request)
     {
-        $total = $request->input('totalprice');
+        $total = $request->input('total');
         $deliveryMethod = $request->input('deliverymethod');
         $paymentMethod = $request->input('paymentmethod');
-
+        
         // Now you can use these values in your view
         return view('shopping-delivery-address', compact('total', 'deliveryMethod', 'paymentMethod'));
     }

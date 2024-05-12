@@ -10,19 +10,19 @@
             <div class="container container-custom">
                 <div class="row">
                     <div class="col-md-7 col-sm-12 mt-3">
-                        <h2 class="text-center border-custom" id="delivery-address">Enter delivery address</h2>
-                        <form>
+                        <h2 class="text-center border-custom" id="delivery-address">Enter order information</h2>
+                        <form method="POST" action="{{ route('order-create') }}">
+                            @csrf
                             <x-cart-form-group id="name" label="First name, Last name" type="text" autocomplete="name"></x-cart-form-group>
                             <x-cart-form-group id="address" label="Street address, Postal code" type="text" autocomplete="street-address"></x-cart-form-group>
                             <x-cart-form-group id="city" label="City, Country" type="text" autocomplete="address-level2"></x-cart-form-group>
                             <x-cart-form-group id="phone" label="Phone number" type="tel" autocomplete="tel"></x-cart-form-group>
-
+                        
+                            <div class="d-flex flex-column align-items-center">
+                                <h2 class="white-text mt-4">Total: {{ $total }} €</h2>
+                                <button type="submit" id="finish-order" class="button-custom button-red mt-2">Finish Order</button>
+                            </div>
                         </form>
-
-                        <div class="d-flex flex-column align-items-center">
-                            <h2 class="white-text mt-4">Total: {{ $total }} €</h2>
-                            <button id="finish-order" class="button-custom button-red mt-2">Finish Order</button>
-                        </div>
 
                     </div>
 

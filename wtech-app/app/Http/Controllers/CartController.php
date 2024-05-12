@@ -30,14 +30,14 @@ class CartController extends Controller
         $deliveryMethod = $request->input('deliverymethod');
         $paymentMethod = $request->input('paymentmethod');
 
-        
+
         // Store the data in the session
         session(['total' => $total, 'deliverymethod' => $deliveryMethod, 'paymentmethod' => $paymentMethod]);
 
         return view('shopping-cart-delivery-options', compact('cart', 'total'));
     }
 
-
+    // Here we are passing the total price, delivery method, and payment method to the view
     public function finalOrder(Request $request)
     {
         $total = $request->input('totalprice');
@@ -118,5 +118,4 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Product removed from cart successfully!');
     }
-
 }

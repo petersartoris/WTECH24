@@ -37,12 +37,24 @@ class Category extends Model
     }
 
     // validation rules for store and update methods
-    public static function rules($id = null)
+    public static function rules($context = 'create', $id = null)
     {
-        return [
+        $rules = [
             'parent_id' => 'nullable|exists:categories,id',
             'name' => 'required|string|max:255|unique:categories,name,' . $id . ',id,parent_id,' . request('parent_id'),
             'slug' => 'required|string|max:255|unique:categories,slug,' . $id . ',id,parent_id,' . request('parent_id'),
         ];
+
+        if ($context === 'array') {
+            $rules = [
+                '*' => 'exists:categories,slug',
+            ];
+        } elseif ($context === 'string') {
+            $rules = [
+                'exists:categories,slug',
+            ];
+        }
+
+        return $rules;
     }
 }

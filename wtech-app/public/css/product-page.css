@@ -29,9 +29,10 @@
     overflow-wrap: normal;
 }
 
-/* .button-cart:hover {
-    transform: scale(1.2);
-} */
+.border-radius-product-page {
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
 
 .product-link,
 .product-link:visited,

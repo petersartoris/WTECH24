@@ -36,17 +36,24 @@ Route::post('/cart/order-delivery-payment', [CartController::class, 'deliveryOpt
 Route::post('/cart/order-info', [CartController::class, 'finalOrder'])
     ->name('cart-delivery-info');
 
-Route::post('cart/order/create', [OrderController::class, 'create'])
+Route::post('cart/order-create', [OrderController::class, 'create'])
     ->name('order-create');
 
 # ADMIN
-Route::get('/admin', function () {
-    return view('admin.admin-page');
-})->middleware('admin')->name('admin'); //custom middleware
+Route::get('/admin', [ProductController::class, 'showProducts'])
+->middleware('admin')->name('admin'); //custom middleware
+
 
 Route::get('/admin/edit', function () {
     return view('admin.admin-page-edit');
 })->middleware('admin')->name('admin-edit'); //custom middleware
+
+Route::post('/admin-create', [ProductController::class, 'store'])->name('product.store');
+
+
+Route::delete('/admin-edit/{id}', [ProductController::class, 'destroy'])
+    ->name('product.destroy');
+
 
 
 # OTHER

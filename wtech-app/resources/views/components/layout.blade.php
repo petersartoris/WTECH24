@@ -26,8 +26,6 @@
     <link rel="mask-icon" href="{{ asset('images/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-
 </head>
 
 
@@ -42,29 +40,37 @@
     <!--FOOTER-->
     <x-layout-footer></x-layout-footer>
 
-    <script type="text/javascript" src="../libs/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-    function fetchResults() {
-        var query = $('#search').val();
-        if (query.length > 2) { // Only search if the query is at least 3 characters long
-            $.ajax({
-                url: '/search',
-                type: 'GET',
-                data: { 'query': query },
-                success: function(data) {
-                    $('#search-results').html(data);
-                    if (data) {
-                        $('#search-results').show(); // Show the search results
-                    } else {
-                        $('#search-results').hide(); // Hide the search results
+        function fetchResults() {
+            var query = $('#search').val();
+            if (query.length > 2) { // Only search if the query is at least 3 characters long
+                $.ajax({
+                    url: '/search',
+                    type: 'GET',
+                    data: {
+                        'query': query
+                    },
+                    success: function(data) {
+                        $('#search-results').html(data);
+                        if (data) {
+                            $('#search-results').show(); // Show the search results
+                        } else {
+                            $('#search-results').hide(); // Hide the search results
+                        }
                     }
-                }
-            });
-        } else {
-            $('#search-results').hide(); // Hide the search results
+                });
+            } else {
+                $('#search-results').hide(); // Hide the search results
+            }
         }
-    }
+    </script>
+
+    <!--Bootstrap-JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
 </body>

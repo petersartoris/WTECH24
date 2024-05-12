@@ -14,17 +14,18 @@
                             <div class="container container-custom border-custom border-radius-custom my-3">
                                 <h2 class="text-center m-2 white-text">Select delivery method</h2>
                             </div>
-                            <x-cart-method method="Method 1" price="1"></x-cart-method>
-                            <x-cart-method method="Method 2" price="1"></x-cart-method>
-                            <x-cart-method method="Method 3" price="1"></x-cart-method>
+                            <x-cart-method method="Delivery Box" price="2.00 €" class="delivery-button selected" num_price="2.00"></x-cart-method>
+                            <x-cart-method method="Our Stores" price="1.00 €" class="delivery-button" num_price="1.00"></x-cart-method>
+                            <x-cart-method method="Delivery to Address" price="3.50 €" class="delivery-button" num_price="3.50"></x-cart-method>
+
                         </div>
 
                         <div class="row mb-4">
                             <div class="container container-custom border-custom border-radius-custom my-3">
                                 <h2 class="text-center m-2 white-text">Choose payment method</h2>
                             </div>
-                            <x-cart-method method="Method 1" price="1"></x-cart-method>
-                            <x-cart-method method="Method 2" price="1"></x-cart-method>  
+                            <x-cart-method method="Payment Card" price="Free" class="payment-button selected" num_price="0.00"></x-cart-method>
+                            <x-cart-method method="Cash on Delivery" price="1.00 €" class="payment-button" num_price="1.00"></x-cart-method>
                         </div>
                     </div>
 
@@ -42,18 +43,23 @@
                     <div class="col-sm-7"></div>
                     <div class="col-sm-3 d-flex justify-content-center align-items-center my-3">
                         <div class="flex-column">
-                            <h2 class="white-text">Total Price: {{ $total }} €</h2>                        
-                        </div>                    
+                            <h2 class="white-text total-price">Total Price: {{ $total }} €</h2>                        
+                        </div>               
                     </div>
     
                     <div class="col-sm-2 d-flex justify-content-center my-3">
-                        <a href="{{ route('cart-delivery') }}">
-                            <button class="button-custom button-red">Continue</button>
-                        </a>
+                        <form action="{{ route('cart-delivery-info') }}" method="POST" class="form-button-custom">
+                            @csrf
+                            <input type="hidden" id="totalprice" name="totalprice">
+                            <input type="hidden" id="deliverymethod" name="deliverymethod">
+                            <input type="hidden" id="paymentmethod" name="paymentmethod">
+                            <button type="submit" class="button-custom button-red">Continue</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <script src="{{ asset('js/cart-methods.js') }}"></script>
 </x-layout>

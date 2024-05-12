@@ -51,9 +51,11 @@
                 </div>
 
                 <div class="col-sm-2 d-flex justify-content-center my-3">
-                    <a href="{{ route('cart-delivery', ['cart' => $cart, 'total' => $total]) }}">
-                        <button class="button-custom button-red">Continue</button>
-                    </a>
+                    <form action="{{ route('cart-delivery') }}" method="POST" class="form-button-custom">
+                        @csrf
+                        <input type="hidden" name="total" value="{{ $total }}">
+                        <button type="submit" class="button-custom button-red">Continue</button>
+                    </form>
                 </div>
             </div>
         </div>

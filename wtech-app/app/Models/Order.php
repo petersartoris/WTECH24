@@ -42,7 +42,7 @@ class Order extends Model
     public static function rules($id = null)
     {
         return [
-            'user_id' => 'required|exists:users,id',
+            'user_id' => 'nullable|exists:users,id',
             'delivery_type_id' => 'required|exists:delivery_types,id',
             'payment_type_id' => 'required|exists:payment_types,id',
             'status' => 'required|string|in:pending,processing,completed,cancelled',

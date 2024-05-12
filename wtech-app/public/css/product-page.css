@@ -80,7 +80,13 @@
 
 .price-box {
     width: 10em;
+}
 
+.price-display {
+    color: var(--white);
+    font-size: 1.2em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
 }
 
 .form-check {

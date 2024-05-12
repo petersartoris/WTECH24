@@ -81,6 +81,14 @@ class ProductController extends Controller
         return view('product-page', ['products' => $products]);
     }
 
+
+    public function showProducts()
+    {
+        $products = Product::all();
+
+        return view('admin.admin-page', ['products' => $products]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -92,10 +100,19 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductRequest $request)
+    public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->name = $request->input('product-name');
+        $product->description = $request->input('product-description');
+        $product->price = $request->input('product-price');
+        $product->quantity = $request->input('product-quantity');
+        $product->availability = $request->input('availability');
+        $product->save();
+
+        return redirect()->route('admin');
     }
+
 
     /**
      * Display the specified resource.
@@ -132,8 +149,15 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        // Delete the associated images
+        $product->images()->delete();
+
+        $product->delete();
+
+        return redirect()->route('admin');
     }
 }

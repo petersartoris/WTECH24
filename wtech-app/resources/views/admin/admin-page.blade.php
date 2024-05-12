@@ -4,8 +4,16 @@
     </x-slot>
 
     <main>
-        
-        <div class="container container-custom">
+        <div class="container container-custom">  
+            <div class="row">
+                
+                <button type="button" class="button-custom button-white">
+                    <a href="{{ route('admin-edit') }}" class="add-item-button">+ Add Item</a>
+                </button>
+                
+            </div>
+        </div>
+        <div class="container container-custom">  
             <div class="row">
                 <table>
                     <thead>
@@ -19,66 +27,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- this should be made into component ↓ --}}
-                        <tr>
-                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
-                                    alt="-"></td>
-                            <td>Product Name</td>
-                            <td>1000 €</td>
-                            <td>69</td>
-                            <td>
-                                <span class="text-success">✓ Available</span>
-                            </td>
-                            <td class="">
-                                <button class="button-edit button-white"><i class="fas fa-edit">Edit</i></button>
-                                <button class="button-edit button-red"><i class="fas fa-trash-alt">Remove</i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
-                                    alt="-"></td>
-                            <td>Product Name</td>
-                            <td>1000 €</td>
-                            <td>69</td>
-                            <td>
-                                <span class="text-success">✓ Available</span>
-                            </td>
-                            <td class="">
-                                <button class="button-edit button-white"><i class="fas fa-edit">Edit</i></button>
-                                <button class="button-edit button-red"><i class="fas fa-trash-alt">Remove</i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
-                                    alt="-"></td>
-                            <td>Product Name</td>
-                            <td>1000 €</td>
-                            <td>69</td>
-                            <td>
-                                <span class="text-success">✓ Available</span>
-                            </td>
-                            <td class="">
-                                <button class="button-edit button-white"><i class="fas fa-edit">Edit</i></button>
-                                <button class="button-edit button-red"><i class="fas fa-trash-alt">Remove</i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="{{ asset('images/main/product-desktop.jpg') }}" class="card-img"
-                                    alt="-"></td>
-                            <td>Product Name</td>
-                            <td>1000 €</td>
-                            <td>69</td>
-                            <td>
-                                <span class="text-success">✓ Available</span>
-                            </td>
-                            <td class="">
-                                <button class="button-edit button-white"><i class="fas fa-edit">Edit</i></button>
-                                <button class="button-edit button-red"><i class="fas fa-trash-alt">Remove</i></button>
-                            </td>
-                        </tr>
+                        @foreach ($products as $product)
+                            @php
+                                $image = $product->images->where('order', 0)->first();
+                            @endphp
+                            <x-product-row
+                                id="{{ $product->id }}" 
+                                image="{{ asset($image->path ?? 'images/main/250x250.png') }}"
+                                name="{{ $product->name }}"
+                                price="{{ $product->price }}"
+                                quantity="{{ $product->quantity }}"
+                                availability="{{ $product->availability }}"
+                            />
+                        @endforeach
                     </tbody>
                 </table>
-
             </div>
         </div>
     </main>

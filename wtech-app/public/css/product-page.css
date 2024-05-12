@@ -49,11 +49,11 @@
 
 .divider {
     border-left: 1px solid var(--white);
-    /* Change color as needed */
-    height: 20px;
-    /* Change height as needed */
+    height: 24px;
     margin: 0 10px;
     /* Add some margin to the left and right */
+    color: var(--white);
+    background-color: var(--white);
 }
 
 

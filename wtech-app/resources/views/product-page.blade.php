@@ -46,15 +46,23 @@
                     <div class="d-flex flex-grow-1 flex-wrap">
                         <!--check if the current_category is not null-->
                         @if ($current_category)
-                            <x-nav-item class="button-custom category-link"
-                                href="{{ route('products') }}">All</x-nav-item>
+                            @if ($current_category->parent)
+                                <x-nav-item class="button-custom category-link"
+                                    href="{{ route('products', ['categories[]' => $current_category->parent->slug]) }}"
+                                    :active="request()->is('products/' . $current_category->parent->slug)">
+                                    {{ $current_category->parent->name }}
+                                </x-nav-item>
+                            @else
+                                <x-nav-item class="button-custom category-link"
+                                    href="{{ route('products') }}">All</x-nav-item>
+                            @endif
                             <x-nav-item class="button-custom category-link"
                                 href="{{ route('products', ['categories[]' => $current_category->slug]) }}"
                                 :active="true">
                                 {{ $current_category->name }}
                             </x-nav-item>
-                            <<!-- add a devider-->
-                                <span class="devider"></span>
+                            <!-- add a divider-->
+                            <span class="divider"></span>
                         @endif
                         @foreach ($subcategories as $subcategory)
                             <x-nav-item class="button-custom category-link"

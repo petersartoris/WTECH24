@@ -51,6 +51,8 @@ class Order extends Model
             'country' => 'required|string|max:255',
             'zip_code' => 'required|string|max:255',
             'phone_number' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
         ];
     }
 }

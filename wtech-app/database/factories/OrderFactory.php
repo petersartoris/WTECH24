@@ -29,6 +29,8 @@ class OrderFactory extends Factory
             'country' => $this->faker->country,
             'zip_code' => $this->faker->postcode,
             'phone_number' => $this->faker->phoneNumber,
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
         ];
     }
 }

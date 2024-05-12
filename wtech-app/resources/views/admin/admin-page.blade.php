@@ -4,64 +4,7 @@
     </x-slot>
 
     <main>
-        <div class="container container-custom border-custom border-radius-custom center-all bg-box">
-            <div class="row">
-                <div class="col">
-                    <!-- Filtering options container -->
-                    <div class="filter-container d-flex py-2 align-items-center justify-content-between">
-                        <div class="d-flex flex-grow-1 flex-wrap">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter1">
-                                <label class="form-check-label" for="filter1">
-                                    Option 1
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter2">
-                                <label class="form-check-label" for="filter2">
-                                    Option 2
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter3">
-                                <label class="form-check-label" for="filter3">
-                                    Option 3
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter4">
-                                <label class="form-check-label" for="filter4">
-                                    Option 4
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter5">
-                                <label class="form-check-label" for="filter5">
-                                    Option 5
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter5">
-                                <label class="form-check-label" for="filter5">
-                                    Option 6
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter5">
-                                <label class="form-check-label" for="filter5">
-                                    Option 7
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <button class="button-custom button-white">Filter</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+        
         <div class="container container-custom">
             <div class="row">
                 <table>

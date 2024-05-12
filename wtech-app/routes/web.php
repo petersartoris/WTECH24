@@ -14,8 +14,6 @@ Route::get('/', function () {
 
 # PRODUCTS
 Route::get('/products', [ProductController::class, 'index'])->name('products');
-Route::get('/products/search', [ProductController::class, 'search'])->name('products.search'); // search for products
-// Route::get('/products/category/{categorySlug?}', [ProductController::class, 'index'])->name('products.category'); // display all products or products by category
 
 Route::get('/products/detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
@@ -44,11 +42,11 @@ Route::post('cart/order/create', [OrderController::class, 'create'])
 # ADMIN
 Route::get('/admin', function () {
     return view('admin.admin-page');
-})->name('admin');
+})->middleware('admin')->name('admin'); //custom middleware
 
 Route::get('/admin/edit', function () {
     return view('admin.admin-page-edit');
-})->name('admin-edit');
+})->middleware('admin')->name('admin-edit'); //custom middleware
 
 
 # OTHER

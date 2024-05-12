@@ -26,6 +26,7 @@ class PaymentTypeFactory extends Factory
 
         return [
             'name' => $paymentType->name,
+            'price' => $paymentType->price,
         ];
     }
 }

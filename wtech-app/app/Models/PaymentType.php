@@ -19,8 +19,9 @@ class PaymentType extends Model
     // validation rules for store and update methods
     public static function rules($id = null)
     {
-       return [
-        'name' => 'required|string|max:255|in:credit card,paypal,cash on delivery|unique:payment_types,name,' . $id . ',id',
-       ];
+        return [
+            'name' => 'required|string|max:255|in:credit card,paypal,cash on delivery|unique:payment_types,name,' . $id . ',id',
+            'price' => 'required|numeric|min:0.00'
+        ];
     }
 }

@@ -12,13 +12,13 @@
                 </div>
             </div>
             <div class="container container-custom">
-                <div class="row">
+                <div class="row"> <!-- use slugs for the category attribute -->
                     <x-product-category justify="justify-content-start" image="images/main/product-desktop.jpg"
                         category="category-1" name="Desktop PCs" />
-                    <x-product-category image="images/main/product-components.jpg" category="components"
+                    <x-product-category image="images/main/product-components.jpg" category="category-2"
                         name="Components" />
                     <x-product-category justify="justify-content-end" image="images/main/product-accessories.jpg"
-                        category="accessories" name="Accessories" />
+                        category="category-3" name="Accessories" />
                 </div>
             </div>
         </section>

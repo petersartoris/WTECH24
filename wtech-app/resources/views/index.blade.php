@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center flex-wrap responsive-drop">
                             @php
-                                $products = App\Models\Product::take(5)->get();
+                                $products = App\Models\Product::orderBy('created_at', 'desc')->take(5)->get();
                             @endphp
 
                             @foreach ($products as $product)

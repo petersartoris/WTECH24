@@ -46,12 +46,16 @@
                     @endguest
                     @auth
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-stretch flex-row-navbar">
-                            <li class="nav-item">
+                            <li class="nav-item center-all">
+                                <i class="fas fa-user"></i>
+                            </li>
+
+                            <li class="nav-item center-all">
                                 <label>{{ Auth::user()->username }}</label>
                             </li>
 
                             <li class="nav-item">
-                                <form method="POST" action="/logout">
+                                <form method="POST" action="/logout" class="form-button-custom">
                                     @csrf
                                     <button class="button-custom button-white">Log Out</button>
                                 </form>

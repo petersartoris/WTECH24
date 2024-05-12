@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\Models\Product;
 use App\Models\Category;
@@ -18,12 +19,17 @@ class ProductController extends Controller
     {
         $context = is_array($request->input('categories')) ? 'array' : 'string'; // Determine if the categories are passed as an array or a string
 
+        // validate the inputs from the request: price(ASC/DESC), name , availability, categories
         $request->validate([
-            'sort' => 'nullable|string|in:newest,availability,low-to-high,high-to-low',
+            'price' => 'nullable|in:ASC,DESC',
+            'name' => 'nullable|in:ASC,DESC',
+            'availability' => 'nullable|in:AVLF,NAVLF',
             'categories' => Category::rules($context),
         ]);
 
-        $sort = $request->input('sort');
+        $price = $request->input('price');
+        $name = $request->input('name');
+        $availability = $request->input('availability');
         $categorySlugs = is_array($request->input('categories')) ? $request->input('categories') : explode(',', $request->input('categories')); // convert the string of category slugs to an array
 
         // get the first category in the list of category slugs
@@ -35,23 +41,21 @@ class ProductController extends Controller
         // get products based on the selected category or all products if no category is selected
         $query = $category ? $category->products()->with(['categories', 'images']) : Product::query()->with(['categories', 'images']);
 
-        switch ($sort) {
-            case 'newest':
-                $query->orderBy('created_at', 'desc');
-                break;
-            case 'availability':
-                $query->orderByRaw("CASE WHEN availability = 'available' THEN 1 ELSE 2 END");
-                break;
-            case 'low-to-high':
-                $query->orderBy('price', 'asc');
-                break;
-            case 'high-to-low':
-                $query->orderBy('price', 'desc');
-                // Add more cases as needed for other sort options
+        // sort the products based on the selected options
+        if ($availability) {
+            $query->where('availability', $availability == 'AVLF' ? 'available' : 'unavailable');
+        }
+        if ($price) {
+            $query->orderBy('price', $price);
+        }
+        if ($name) {
+            $query->orderBy('name', $name);
         }
 
+
         // paginate the query results
-        $products = $query->paginate(5)->appends(['categories' => $categorySlugs]);
+        // $products = $query->paginate(5)->appends(['categories' => $categorySlugs]);
+        $products = $query->paginate(5)->appends($request->all());
 
         return view(
             'product-page',

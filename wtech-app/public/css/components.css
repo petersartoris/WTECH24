@@ -223,7 +223,7 @@ body {
 #search-results ul li {
     padding: 10px;
     border: 1px solid var(--border-color);
-    border-bottom: 1px solid ;
+    border-bottom: 1px solid;
 }
 
 #search-results ul li:hover {

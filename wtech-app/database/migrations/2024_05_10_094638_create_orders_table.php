@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete(); // User ID can be null for guest orders
             $table->foreignId('payment_type_id')->constrained()->cascadeOnDelete();
             $table->foreignId('delivery_type_id')->constrained()->cascadeOnDelete();
-
-            
             $table->string('status', 20)->default('pending'); // Status ('pending', 'processing', 'completed', 'cancelled)
-            
+
             $table->string('address'); // Address
             $table->string('city'); // City
             $table->string('country'); // Country

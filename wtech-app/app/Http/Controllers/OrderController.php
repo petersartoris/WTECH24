@@ -64,14 +64,22 @@ class OrderController extends Controller
         $order = new Order();
         $order->first_name = $firstName;
         $order->last_name = $lastName;
-        $order->phone = $validatedData['phone'];
+        $order->phone_number = $validatedData['phone'];
         $order->address = $address;
-        $order->postal_code = $postalCode;
+        $order->zip_code = $postalCode;
         $order->city = $city;
         $order->country = $country;
         $order->total_price = $validatedData['total'];
-        $order->delivery_type = $validatedData['deliveryMethod'];
-        $order->payment_type = $validatedData['paymentMethod'];
+
+        // Get the delivery method and payment method from the DB
+        $deliveryMethodName = $validatedData['deliveryMethod'];
+        $deliveryMethod = \App\Models\DeliveryType::where('name', $deliveryMethodName)->firstOrFail();
+        $order->delivery_type_id = $deliveryMethod->id;
+
+        $paymentMethodName = $validatedData['paymentMethod'];
+        $paymentMethod = \App\Models\PaymentType::where('name', $paymentMethodName)->firstOrFail();
+        $order->payment_type_id = $paymentMethod->id;
+
         $order->status = 'pending';
         $order->save();
 
@@ -80,26 +88,6 @@ class OrderController extends Controller
         foreach ($cart as $item) {
             $order->products()->attach($item->getProduct()->id, ['quantity' => $item->quantity]);
         }
-
-
-
-        // Split the city and country
-        list($city, $country) = explode(',', $validatedData['city']);
-        // Split the street address and postal code
-        list($street, $postalCode) = explode(',', $validatedData['address']);
-        // Split the first name and last name
-        list($firstName, $lastName) = explode(' ', $validatedData['name'], 2);
-
-        // Create a new order
-        $order = new Order($validatedData);
-
-        // Set the city, country, street, postal code, first namae, and last name
-        $order->city = trim($city);
-        $order->country = trim($country);
-        $order->street = trim($street);
-        $order->postal_code = trim($postalCode);
-        $order->first_name = trim($firstName);
-        $order->last_name = trim($lastName);
 
         // If the user is logged in, set the user_id
         if (Auth::check()) {
@@ -114,14 +102,23 @@ class OrderController extends Controller
 
         // Attach the products to the order
         foreach ($cart as $item) {
-            $order->products()->attach($item->getProduct()->id, ['quantity' => $item->quantity]);
+            // check if the order-product relation already exists
+            $existingProduct = $order->products()->where('product_id', $item->getProduct()->id)->first();
+            if ($existingProduct) {
+                // if it exists, update the quantity
+                $existingProduct->pivot->quantity += $item->quantity;
+                $existingProduct->pivot->save();
+            } else {
+                // if it doesn't exist, create a new relation
+                $order->products()->attach($item->getProduct()->id, ['quantity' => $item->quantity]);
+            }
         }
 
         // Clear the cart
         session(['cart' => []]);
 
         // Redirect to a success page
-        return redirect()->route('order.success');
+        return redirect()->route('order-success');
     }
 
 

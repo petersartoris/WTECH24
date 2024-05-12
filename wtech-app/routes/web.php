@@ -1,10 +1,12 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SuccessController;
 
 # HOME PAGE
 Route::get('/', function () {
@@ -39,9 +41,13 @@ Route::post('/cart/order-info', [CartController::class, 'finalOrder'])
 Route::post('cart/order-create', [OrderController::class, 'create'])
     ->name('order-create');
 
+Route::get('/order/success', [SuccessController::class, 'index'])
+    ->name('order-success');
+
+
 # ADMIN
 Route::get('/admin', [ProductController::class, 'showProducts'])
-->middleware('admin')->name('admin'); //custom middleware
+    ->middleware('admin')->name('admin'); //custom middleware
 
 
 Route::get('/admin/edit', function () {

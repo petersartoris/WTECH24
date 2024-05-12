@@ -4,11 +4,6 @@
     </x-slot>
 
     <main>
-
-        @php 
-            dd($paymentMethod, $deliveryMethod, $total);
-        @endphp
-
         <x-cart-links></x-cart-links>
 
         <section id="delivery-page">
@@ -25,7 +20,7 @@
                         </form>
 
                         <div class="d-flex flex-column align-items-center">
-                            <h2 class="white-text mt-4">Total: 4000 €</h2>
+                            <h2 class="white-text mt-4">Total: {{ $total }} €</h2>
                             <button id="finish-order" class="button-custom button-red mt-2">Finish Order</button>
                         </div>
 

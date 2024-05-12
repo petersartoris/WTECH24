@@ -6,13 +6,15 @@ let totalPriceElement = document.querySelector('.total-price');
 let basePrice = parseFloat(totalPriceElement.textContent.replace('Total Price: ', '').replace(' €', ''));
 
 // Hidden input fields
-let deliveryMethodInput = document.getElementById('deliveryMethod');
-let paymentMethodInput = document.getElementById('paymentMethod');
+let deliveryMethodInput = document.getElementById('deliverymethod');
+let paymentMethodInput = document.getElementById('paymentmethod');
+let totalPriceInput = document.getElementById('totalprice');
 
 // Update total price
 function updateTotalPrice(deliveryPrice, paymentPrice) {
     let newTotalPrice = basePrice + deliveryPrice + paymentPrice;
     totalPriceElement.textContent = 'Total Price: ' + newTotalPrice.toFixed(2) + ' €';
+    totalPriceInput.value = newTotalPrice.toFixed(2);
 }
 
 // Add click event listener to each delivery button

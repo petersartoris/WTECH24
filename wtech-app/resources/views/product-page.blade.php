@@ -29,6 +29,50 @@
             </div>
         </div>
 
+        <div class="container container-custom border-custom border-radius-custom bg-box">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-start align-items-center m-3">
+                        <span class="fw-bold white-text ">Filter by:</span>
+                        <!--filtering-->
+                        <form class="sort-form" method="get" action="{{ route('products') }}">
+                            <!-- Filter by Price Range -->
+                            <label for="min-price" class="dropdown-label">Min Price:</label>
+                            <input class="price-box" type="range" id="min-price" name="min_price"
+                                value="{{ request('min_price') }}">
+
+                            <label for="max-price" class="dropdown-label">Max Price:</label>
+                            <input class="price-box" type="range" id="max-price" name="max_price"
+                                value="{{ request('max_price') }}">
+
+                            {{-- <!-- Filter by Brand -->
+                                <label for="brand" class="dropdown-label">Brand:</label>
+                                <select class="dropdown-custom" id="brand" name="brand">
+                                    <option value="">Select...</option>
+                                    <!-- Assuming $brands is an array of all brands -->
+                                    @foreach ($brands as $brand)
+                                    <option value="{{ $brand }}" {{ request('brand') == $brand ? 'selected' : '' }}>
+                                        {{ $brand }}</option>
+                                        @endforeach
+                                    </select>
+                                    
+                                    <!-- Filter by Color -->
+                                    <label for="color" class="dropdown-label">Color:</label>
+                                    <select class="dropdown-custom" id="color" name="color">
+                                        <option value="">Select...</option>
+                                        <!-- Assuming $colors is an array of all colors -->
+                                        @foreach ($colors as $color)
+                                        <option value="{{ $color }}" {{ request('color') == $color ? 'selected' : '' }}>
+                                            {{ $color }}</option>
+                                            @endforeach
+                                        </select> --}}
+
+                            <button type="submit" class="button-custom">Filter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--Categories-->
         <div class="container container-custom border-custom border-radius-custom center-all bg-box">

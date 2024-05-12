@@ -9,35 +9,44 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-start align-items-center m-3">
-                        <span class="fw-bold white-text">Sort by:</span>
-                        <button class="button-custom button-box">Newest</button>
-                        <button class="button-custom button-box">Best-selling</button>
-                        <button class="button-custom button-box">Lowest Price</button>
-                        <button class="button-custom button-box">Highest Price</button>
+                        <span class="fw-bold white-text ml-3">Sort by:</span>
+
+                        <x-nav-item class="button-custom button-box" href="{{ route('products') }}"
+                            :active="request()->is('products')">Default</x-nav-item>
+
+                        <div class="sort-options">
+                            <span class="fw-bold white-text">Price:</span>
+                            <x-nav-item class="button-custom button-box"
+                                href="{{ route('products', ['sort' => 'ascending']) }}"
+                                :active="request()->is('products?sort=price')">ascending</x-nav-item>
+                            <x-nav-item class="button-custom button-box"
+                                href="{{ route('products', ['sort' => 'descending']) }}"
+                                :active="request()->is('products?sort=price')">descending</x-nav-item>
+                        </div>
+
+                        <div class="sort-options">
+                            <span class="fw-bold white-text">Alphabetically:</span>
+                            <x-nav-item class="button-custom button-box"
+                                href="{{ route('products', ['sort' => 'name']) }}" :active="request()->is('products?sort=name')">name</x-nav-item>
+                        </div>
+
+                        <div class="sort-options">
+                            <span class="fw-bold white-text">By code:</span>
+                            <x-nav-item class="button-custom button-box"
+                                href="{{ route('products', ['sort' => 'code']) }}" :active="request()->is('products?sort=code')">Code</x-nav-item>
+                        </div>
+
+                        <div class="sort-options">
+                            <span class="fw-bold white-text">Availability:</span>
+                            <x-nav-item class="button-custom button-box"
+                                href="{{ route('products', ['sort' => 'availability']) }}" :active="request()->is('products?sort=availability')">Available
+                                first</x-nav-item>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Categories-->
-        {{-- <div class="container container-custom border-custom border-radius-custom center-all bg-box">
-            <div class="row">
-                <div class="filter-container d-flex py-2 align-items-center justify-content-between">
-                    <div class="d-flex flex-grow-1 flex-wrap">
-                        <!--check if the current_category is not null-->
-                        @if ($current_category)
-                            <x-nav-item href="{{ route('products') }}" :active="request()->is('products')">All</x-nav-item>
-                            <!-- <x-product-page-category :category="$current_category" /> -->
-                        @endif
-                        @foreach ($subcategories as $subcategory)
-                            <!-- <x-product-page-category :category="$subcategory" /> -->
-                            <x-nav-item
-                                href="{{ route('products', ['categories[]' => $subcategory->slug]) }}">$subcategory->name</x-nav-item>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div> --}}
 
         <!--Categories-->
         <div class="container container-custom border-custom border-radius-custom center-all bg-box">
@@ -130,7 +139,8 @@
                         @for ($i = $start; $i <= $end; $i++)
                             @if ($i == $products->currentPage())
                                 <li class="page-item active "><span
-                                        class="page-link current border-radius-custom">{{ $i }}</span></li>
+                                        class="page-link current border-radius-custom">{{ $i }}</span>
+                                </li>
                             @else
                                 <li class="page-item"><a class="page-link"
                                         href="{{ $products->url($i) }}">{{ $i }}</a></li>

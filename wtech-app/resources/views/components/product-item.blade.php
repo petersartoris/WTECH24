@@ -1,4 +1,4 @@
-<div class="container container-custom border-custom border-radius-custom">
+<div class="container container-custom border-custom border-radius-product-page">
     <div class="row row-product content flex-column flex-sm-row">
         <!--IMAGE + TITLE-->
         <div class="col-lg-10 col-md-8 d-flex">
@@ -22,8 +22,9 @@
                     <h2 class="m-2 d-md-none d-block white-text">{{ $name }}</h2>
                 </a>
                 <h2 class="m-2 white-text">{{ $price }} €</h2>
-                <x-cart-add-button></x-cart-add-button>
 
+                <x-cart-add-button :product="$product"></x-cart-add-button>
+                
                 <div class="d-flex mb-3 mt-sm-2">
                     <span class="{{ $availability === 'available' ? 'text-success' : 'text-danger' }}">
                         {{ $availability === 'available' ? '✓ Available' : 'X Not Available' }}

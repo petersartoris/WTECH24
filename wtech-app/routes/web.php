@@ -34,9 +34,8 @@ Route::get('/cart', function () {
     return view('shopping-cart');
 })->name('cart');
 
-Route::post('/cart/add', [ProductController::class, 'addToCart'])
-->name('cart.add')
-->middleware('auth');
+Route::post('/cart/add/{product}', [ProductController::class, 'addToCart'])
+->name('cart-add');
 
 Route::get('/cart/delivery', function () {
     return view('shopping-cart-delivery-options');
@@ -49,11 +48,11 @@ Route::get('/cart/delivery-info', function () {
 
 # ADMIN
 Route::get('/admin', function () {
-    return view('admin-page');
+    return view('admin.admin-page');
 })->name('admin');
 
 Route::get('/admin/edit', function () {
-    return view('admin-page-edit');
+    return view('admin.admin-page-edit');
 })->name('admin-edit');
 
 

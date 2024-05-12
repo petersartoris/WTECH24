@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\CartItem;
 
 class ProductController extends Controller
 {
@@ -103,12 +104,32 @@ class ProductController extends Controller
         //
     }
 
-    public function addToCart(Request $request)
+    public function addToCart(Request $request, Product $product)
     {
-        // Add the product to the cart
-        // ...
+        // Get the quantity from the request, or default to 1 if no quantity is provided
+        $quantity = $request->input('quantity', 1);
 
-        // Redirect to the shopping cart
-        return redirect()->route('cart');
+        if ($request->user()) {
+            // If user is logged in, add to their cart in the database
+            $pivot = $request->user()->products()->where('product_id', $product->id)->first();
+            if ($pivot) {
+                $pivot->pivot->quantity += $quantity;
+                $pivot->pivot->save();
+            } else {
+                $request->user()->products()->attach($product->id, ['quantity' => $quantity]);
+            }
+        } else {
+            // If user is not logged in, add to their cart in the session
+            $cart = $request->session()->get('cart', []);
+            if (isset($cart[$product->id])) {
+                $cart[$product->id]->quantity += $quantity;
+            } else {
+                $cart[$product->id] = new CartItem($product->id, $quantity);
+            }
+            $request->session()->put('cart', $cart);
+        }
+
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
+
 }

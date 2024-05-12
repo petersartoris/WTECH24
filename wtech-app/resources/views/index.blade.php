@@ -36,11 +36,18 @@
                 <div class="container container-custom">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center flex-wrap responsive-drop">
-                            <x-product-box product="product1" image="250x250.png" />
-                            <x-product-box product="product2" image="250x250.png" />
-                            <x-product-box product="product3" image="250x250.png" />
-                            <x-product-box product="product4" image="250x250.png" />
-                            <x-product-box product="product5" image="250x250.png" />
+                            @php
+                                $products = App\Models\Product::take(5)->get();
+                            @endphp
+
+                            @foreach ($products as $product)
+                                @php
+                                    $image = $product->images->where('order', 0)->first();
+                                @endphp
+                                
+                                <x-product-box product="{{$product->id}}" image="{{ asset($image->path ?? 'images/main/250x250.png') }}" />
+                            
+                            @endforeach
                         </div>
                     </div>
                 </div>

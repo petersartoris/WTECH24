@@ -13,7 +13,8 @@
                 <div class="container-fluid search-container order-3 order-lg-2" id="navbarSearch">
                     <form action="/products/search" method="GET" class="input-group-wrapper">
                         <div class="input-group">
-                            <input id="search" name="query" class="form-control" type="search" placeholder="Search" aria-label="Search" onkeyup="fetchResults()">
+                            <input id="search" name="query" class="form-control" type="search"
+                                placeholder="Search" aria-label="Search" onkeyup="fetchResults()">
                             <button type="submit" class="btn btn-search">
                                 <img src="{{ asset('images/main/magnifying-glass.png') }}" alt="">
                             </button>
@@ -77,11 +78,11 @@
         <!--NAVBAR LOWER-->
         <nav class="navbar navbar-expand navbar-lower">
             <div class="navbar-nav">
-                <x-nav-item href="/" :active="request()->is('/')">Home</x-nav-item>
-                <x-nav-item href="/products" :active="request()->is('products')">Products</x-nav-item>
-                <x-nav-item href="/about#delivery" :active="request()->is('about')">Delivery</x-nav-item>
-                <x-nav-item href="/about#contact" :active="request()->is('about')">Contact</x-nav-item>
-                <x-nav-item href="/about#about" :active="request()->is('about')">About</x-nav-item>
+                <x-nav-item :href="route('/')" :active="request()->is('/')">Home</x-nav-item>
+                <x-nav-item :href="route('products')" :active="request()->is('products')">Products</x-nav-item>
+                <x-nav-item :href="route('about') . '#delivery'" :active="request()->is('about')">Delivery</x-nav-item>
+                <x-nav-item :href="route('about') . '#contact'" :active="request()->is('about')">Contact</x-nav-item>
+                <x-nav-item :href="route('about') . '#about'" :active="request()->is('about')">About</x-nav-item>
             </div>
         </nav>
     </div>

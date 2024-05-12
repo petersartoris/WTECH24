@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('payment_types', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique(); // Name in ('credit card', 'paypal', 'cash on delivery')
+            // price
+            $table->decimal('price', 8, 2)->default(0.00);
             $table->timestamps();
         });
     }

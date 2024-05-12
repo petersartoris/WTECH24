@@ -1,2 +1,3 @@
-@props(['active' => false])
-<a class="nav-item nav-link {{ $active ? 'nav-active' : '' }}" {{ $attributes }}>{{ $slot }}</a>
+@props(['active' => false, 'class' => ''])
+<a class="nav-item nav-link {{ $active ? 'nav-active' : '' }} {{ $class }}"
+    {{ $attributes }}>{{ $slot }}</a>

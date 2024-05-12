@@ -24,12 +24,16 @@ class ProductController extends Controller
             'name' => 'nullable|in:ASC,DESC',
             'availability' => 'nullable|in:AVLF,NAVLF',
             'categories' => Category::rules($context),
+            'min_price' => 'nullable|numeric',
+            'max_price' => 'nullable|numeric',
         ]);
 
         $price = $request->input('price');
         $name = $request->input('name');
         $availability = $request->input('availability');
         $categorySlugs = is_array($request->input('categories')) ? $request->input('categories') : explode(',', $request->input('categories')); // convert the string of category slugs to an array
+        $minPrice = $request->input('min_price');
+        $maxPrice = $request->input('max_price');
 
         // get the first category in the list of category slugs
         $category = Category::where('slug', $categorySlugs[0] ?? null)->first();
@@ -39,6 +43,14 @@ class ProductController extends Controller
 
         // get products based on the selected category or all products if no category is selected
         $query = $category ? $category->products()->with(['categories', 'images']) : Product::query()->with(['categories', 'images']);
+
+        // filter the products based on the filter price range
+        if ($minPrice) {
+            $query->where('price', '>=', $minPrice);
+        }
+        if ($maxPrice) {
+            $query->where('price', '<=', $maxPrice);
+        }
 
         // sort the products based on the selected options
         if ($availability) {

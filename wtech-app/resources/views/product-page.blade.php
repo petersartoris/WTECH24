@@ -40,17 +40,16 @@
                             style="display: flex; align-items: center;">
                             <!-- Filter by Price Range -->
                             <label for="min-price" class="dropdown-label">Min Price:</label>
-                            <input class="price-box" type="range" id="min-price" name="min_price"
-                                value="{{ request('min_price') }}"
+                            <input class="price-box" type="range" id="min-price" name="min_price" min="0"
+                                max="400" value="{{ request('min_price', '0') }}"
                                 oninput="document.getElementById('minPriceValue').innerText = this.value">
-                            <span id="minPriceValue" class="price-display">{{ request('min_price') }}</span>
+                            <span id="minPriceValue" class="price-display">{{ request('min_price', '0') }}</span>
 
                             <label for="max-price" class="dropdown-label">Max Price:</label>
-                            <input class="price-box" type="range" id="max-price" name="max_price"
-                                value="{{ request('max_price') }}"
+                            <input class="price-box" type="range" id="max-price" name="max_price" min="0"
+                                max="1000" value="{{ request('max_price', '0') }}"
                                 oninput="document.getElementById('maxPriceValue').innerText = this.value">
-                            <span id="maxPriceValue" class="price-display">{{ request('max_price') }}</span>
-
+                            <span id="maxPriceValue" class="price-display">{{ request('max_price', '0') }}</span>
 
                             <button type="submit" class="button-custom">Filter</button>
                         </form>

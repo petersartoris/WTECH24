@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('phone_number'); // Phone number
             $table->string('first_name'); // First name
             $table->string('last_name'); // Last name
+            $table->decimal('total_price', 8, 2); // Total price (8 digits, 2 decimal places
 
             $table->timestamps();
         });

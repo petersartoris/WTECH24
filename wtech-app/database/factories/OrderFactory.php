@@ -31,6 +31,7 @@ class OrderFactory extends Factory
             'phone_number' => $this->faker->phoneNumber,
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
+            'total_price' => $this->faker->randomFloat(2, 0, 500),
         ];
     }
 }

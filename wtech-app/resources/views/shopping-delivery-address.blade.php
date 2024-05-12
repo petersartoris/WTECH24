@@ -4,48 +4,19 @@
     </x-slot>
 
     <main>
-        <div class="container container-custom center-all mt-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <a href="/html/shopping-cart.html" class="btn btn-outline-secondary w-100 my-2">Shopping
-                            Cart</a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="/html/shopping-cart-delivery-options.html"
-                            class="btn btn-outline-secondary w-100 my-2">Shipping
-                            & Payment</a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="/html/shopping-delivery-address.html" class="btn btn-primary w-100 my-2">Delivery
-                            Information</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-cart-links></x-cart-links>
 
         <section id="delivery-page">
-            <div class="container">
+            <div class="container container-custom">
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 mt-3">
-                        <h1 class="text-center border-custom" id="delivery-address">Enter delivery address</h1>
+                    <div class="col-md-7 col-sm-12 mt-3">
+                        <h2 class="text-center border-custom" id="delivery-address">Enter delivery address</h2>
                         <form>
-                            <div class="form-group">
-                                <label for="name">First name, Last name</label>
-                                <input type="text" class="form-control" id="name" autocomplete="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Street address, Postal code</label>
-                                <input type="text" class="form-control" id="address" autocomplete="street-address">
-                            </div>
-                            <div class="form-group">
-                                <label for="city">City, Country</label>
-                                <input type="text" class="form-control" id="city" autocomplete="address-level2">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone number</label>
-                                <input type="tel" class="form-control" id="phone" autocomplete="tel">
-                            </div>
+                            <x-cart-form-group id="name" label="First name, Last name" type="text" autocomplete="name"></x-cart-form-group>
+                            <x-cart-form-group id="address" label="Street address, Postal code" type="text" autocomplete="street-address"></x-cart-form-group>
+                            <x-cart-form-group id="city" label="City, Country" type="text" autocomplete="address-level2"></x-cart-form-group>
+                            <x-cart-form-group id="phone" label="Phone number" type="tel" autocomplete="tel"></x-cart-form-group>
+
                         </form>
 
                         <div class="d-flex flex-column align-items-center">
@@ -55,16 +26,16 @@
 
                     </div>
 
-                    <div class="col-md-6 col-lg-4 mt-5 mt-md-3 align-content-center">
+                    <div class="col-md-5 col-sm-12 mt-5 mt-md-3 align-content-center">
                         <div class="picture-container">
-                            <img class="picture img-fluid mw-100" src="../images/delivery-address/delivery-page.jpeg"
+                            <img class="picture img-fluid mw-100" src="{{ asset('images/delivery-address/delivery-page.jpeg') }}"
                                 alt="picture of mascot in storage facility">
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
 
     </main>
-
 </x-layout>

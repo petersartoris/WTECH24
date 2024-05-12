@@ -183,4 +183,24 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'Product quantity updated successfully!');
     }
+
+    public function removeFromCart(Request $request, Product $product)
+    {
+        if ($request->user()) {
+            // If user is logged in, remove from their cart in the database
+            $pivot = $request->user()->products()->where('product_id', $product->id)->first();
+            if ($pivot) {
+                $pivot->pivot->delete();
+            }
+        } else {
+            // If user is not logged in, remove from their cart in the session
+            $cart = $request->session()->get('cart', []);
+            if (isset($cart[$product->id])) {
+                unset($cart[$product->id]);
+            }
+            $request->session()->put('cart', $cart);
+        }
+
+        return redirect()->back()->with('success', 'Product removed from cart successfully!');
+    }
 }

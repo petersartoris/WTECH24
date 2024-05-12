@@ -4,131 +4,86 @@
     </x-slot>
 
     <main>
-        <div class="container container-custom center-all mt-2">
-            <div class="container">
+        <x-cart-links></x-cart-links>
+
+        <section id="delivery-page">
+            <div class="container container-custom">
                 <div class="row">
-                    <div class="col-12 col-md-4">
-                        <a href="/html/shopping-cart.html" class="btn btn-outline-secondary w-100 my-2">Shopping
-                            Cart</a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="/html/shopping-cart-delivery-options.html" class="btn btn-primary w-100 my-2">Shipping
-                            & Payment</a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="/html/shopping-delivery-address.html"
-                            class="btn btn-outline-secondary w-100 my-2">Delivery Information</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <div class="col-md-7 col-sm-12 mt-3">
+                        <div class="row mb-4">
+                            <div class="container container-custom border-custom border-radius-custom my-3">
+                                <div class="row">
+                                    <div class="col">
+                                        <h2 class="text-center m-2 white-text">Select delivery method</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <x-cart-delivery-method method="Method 1" price="1"></x-cart-delivery-method>
+                            <x-cart-delivery-method method="Method 2" price="1"></x-cart-delivery-method>
+                            <x-cart-delivery-method method="Method 3" price="1"></x-cart-delivery-method>
+                        </div>
 
-        <div class="container container-custom border-custom border-radius-custom">
-            <div class="row">
-                <div class="col-12 col-md-8 center-all flex-column">
-                    <div class="row mb-4">
-                        <div class="container container-custom border-custom border-radius-custom my-3">
-                            <div class="row">
-                                <div class="col">
-                                    <h2 class="text-center m-2 white-text">Select delivery method</h2>
+                        <div class="row mb-4">
+                            <div class="container container-custom border-custom border-radius-custom my-3">
+                                <div class="row">
+                                    <div class="col">
+                                        <h2 class="text-center m-2 white-text">Choose payment method</h2>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="delivery-method">
-                            <div class="row py-3">
-                                <div class="col-9 d-flex justify-content-start">
-                                    <!-- Align the content to the right -->
-                                    <button class="button-custom button-white method-button">
-                                        <h4>Method 1</h4>
-                                    </button> <!-- Set button width to 80% -->
+                            <div class="delivery-method">
+                                <div class="row py-3">
+                                    <div class="col-9 d-flex justify-content-start">
+                                        <!-- Align the content to the right -->
+                                        <button class="button-custom button-white method-button">
+                                            <h4>Method 1</h4>
+                                        </button> <!-- Set button width to 80% -->
+                                    </div>
+                                    <div class="col-3">
+                                        <h4 class="m-2 px-4 white-text">1 €</h4>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <h4 class="m-2 px-4 white-text">1 €</h4>
+                                <div class="row py-3">
+                                    <div class="col-9 d-flex justify-content-start">
+                                        <!-- Align the content to the right -->
+                                        <button class="button-custom button-white method-button">
+                                            <h4>Method 2</h4>
+                                        </button> <!-- Set button width to 80% -->
+                                    </div>
+                                    <div class="col-3">
+                                        <h4 class="m-2 px-4 white-text">1 €</h4>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="delivery-method">
-                            <div class="row py-3">
-                                <div class="col-9 d-flex justify-content-start">
-                                    <!-- Align the content to the right -->
-                                    <button class="button-custom button-white method-button">
-                                        <h4>Method 2</h4>
-                                    </button> <!-- Set button width to 80% -->
-                                </div>
-                                <div class="col-3">
-                                    <h4 class="m-2 px-4 white-text">1 €</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="delivery-method">
-                            <div class="row py-3">
-                                <div class="col-9 d-flex justify-content-start">
-                                    <!-- Align the content to the right -->
-                                    <button class="button-custom button-white method-button">
-                                        <h4>Method 3</h4>
-                                    </button> <!-- Set button width to 80% -->
-                                </div>
-                                <div class="col-3">
-                                    <h4 class="m-2 px-4 white-text">1 €</h4>
-                                </div>
-                            </div>
+                            </div>    
                         </div>
                     </div>
-                    <div class="row mb-4">
-                        <div class="container container-custom border-custom border-radius-custom my-3">
-                            <div class="row">
-                                <div class="col">
-                                    <h2 class="text-center m-2 white-text">Choose payment method</h2>
-                                </div>
-                            </div>
+
+                    <div class="col-md-5 col-sm-12 mt-5 mt-md-3 align-content-center">
+                        <div class="picture-container">
+                            <img class="picture img-fluid mw-100" src="{{ asset('images/delivery-address/delivery-page.jpeg') }}"
+                                alt="picture of mascot in storage facility">
                         </div>
-                        <div class="delivery-method">
-                            <div class="row py-3">
-                                <div class="col-9 d-flex justify-content-start">
-                                    <!-- Align the content to the right -->
-                                    <button class="button-custom button-white method-button">
-                                        <h4>Method 1</h4>
-                                    </button> <!-- Set button width to 80% -->
-                                </div>
-                                <div class="col-3">
-                                    <h4 class="m-2 px-4 white-text">1 €</h4>
-                                </div>
-                            </div>
-                            <div class="row py-3">
-                                <div class="col-9 d-flex justify-content-start">
-                                    <!-- Align the content to the right -->
-                                    <button class="button-custom button-white method-button">
-                                        <h4>Method 2</h4>
-                                    </button> <!-- Set button width to 80% -->
-                                </div>
-                                <div class="col-3">
-                                    <h4 class="m-2 px-4 white-text">1 €</h4>
-                                </div>
-                            </div>
-                        </div>
+                    </div>   
+                </div>        
+            </div>
+
+            <div class="container container-custom border-radius-custom mb-3 mt-2 border-custom">
+                <div class="row">
+                    <div class="col-sm-7"></div>
+                    <div class="col-sm-3 d-flex justify-content-center align-items-center my-3">
+                        <div class="flex-column">
+                            <h2 class="white-text">Total Price: {{ $total }} €</h2>                        
+                        </div>                    
                     </div>
-                    <div class="row align-content-center">
-                        <div class="col-sm-4 d-flex justify-content-center align-items-center">
-                            <div class="flex-column">
-                                <h2 class="white-text">Total Price:</h2>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 d-flex justify-content-center my-3">
-                            <div class="d-flex align-items-center">
-                                <h2 class="white-text">1000€</h2>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 d-flex justify-content-center my-3">
+    
+                    <div class="col-sm-2 d-flex justify-content-center my-3">
+                        <a href="{{ route('cart-delivery') }}">
                             <button class="button-custom button-red">Continue</button>
-                        </div>
+                        </a>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-4 d-none d-md-block center-all border-left-custom">
-                    <!-- Placeholder for the second column -->
-                </div>
             </div>
-        </div>
+        </section>
     </main>
 
 </x-layout>

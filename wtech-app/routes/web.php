@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Routing\RouteBinding;
+use Illuminate\Http\Request;
 
 # HOME PAGE
 Route::get('/', function () {
@@ -33,8 +34,16 @@ Route::post('/cart/add/{product}', [ProductController::class, 'addToCart'])
 Route::post('/cart/update/{product}', [ProductController::class, 'updateCart'])
     ->name('cart-update');
 
-Route::get('/cart/delivery', function () {
-    return view('shopping-cart-delivery-options');
+Route::post('/cart/remove/{product}', [ProductController::class, 'removeFromCart'])
+    ->name('cart-remove');
+
+Route::get('/cart-delivery', function () {
+    // Retrieve cart and total from the session
+    $cart = session('cart');
+    $total = session('total');
+
+    // Pass the cart data and total price to the delivery options view
+    return view('shopping-cart-delivery-options', ['cart' => $cart, 'total' => $total]);
 })->name('cart-delivery');
 
 Route::get('/cart/delivery-info', function () {

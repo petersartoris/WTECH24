@@ -12,49 +12,19 @@
                     <div class="col-md-7 col-sm-12 mt-3">
                         <div class="row mb-4">
                             <div class="container container-custom border-custom border-radius-custom my-3">
-                                <div class="row">
-                                    <div class="col">
-                                        <h2 class="text-center m-2 white-text">Select delivery method</h2>
-                                    </div>
-                                </div>
+                                <h2 class="text-center m-2 white-text">Select delivery method</h2>
                             </div>
-                            <x-cart-delivery-method method="Method 1" price="1"></x-cart-delivery-method>
-                            <x-cart-delivery-method method="Method 2" price="1"></x-cart-delivery-method>
-                            <x-cart-delivery-method method="Method 3" price="1"></x-cart-delivery-method>
+                            <x-cart-method method="Method 1" price="1"></x-cart-method>
+                            <x-cart-method method="Method 2" price="1"></x-cart-method>
+                            <x-cart-method method="Method 3" price="1"></x-cart-method>
                         </div>
 
                         <div class="row mb-4">
                             <div class="container container-custom border-custom border-radius-custom my-3">
-                                <div class="row">
-                                    <div class="col">
-                                        <h2 class="text-center m-2 white-text">Choose payment method</h2>
-                                    </div>
-                                </div>
+                                <h2 class="text-center m-2 white-text">Choose payment method</h2>
                             </div>
-                            <div class="delivery-method">
-                                <div class="row py-3">
-                                    <div class="col-9 d-flex justify-content-start">
-                                        <!-- Align the content to the right -->
-                                        <button class="button-custom button-white method-button">
-                                            <h4>Method 1</h4>
-                                        </button> <!-- Set button width to 80% -->
-                                    </div>
-                                    <div class="col-3">
-                                        <h4 class="m-2 px-4 white-text">1 €</h4>
-                                    </div>
-                                </div>
-                                <div class="row py-3">
-                                    <div class="col-9 d-flex justify-content-start">
-                                        <!-- Align the content to the right -->
-                                        <button class="button-custom button-white method-button">
-                                            <h4>Method 2</h4>
-                                        </button> <!-- Set button width to 80% -->
-                                    </div>
-                                    <div class="col-3">
-                                        <h4 class="m-2 px-4 white-text">1 €</h4>
-                                    </div>
-                                </div>
-                            </div>    
+                            <x-cart-method method="Method 1" price="1"></x-cart-method>
+                            <x-cart-method method="Method 2" price="1"></x-cart-method>  
                         </div>
                     </div>
 
@@ -67,7 +37,7 @@
                 </div>        
             </div>
 
-            <div class="container container-custom border-radius-custom mb-3 mt-2 border-custom">
+            <div class="container container-custom border-radius-custom mb-5 mt-2 border-custom">
                 <div class="row">
                     <div class="col-sm-7"></div>
                     <div class="col-sm-3 d-flex justify-content-center align-items-center my-3">

@@ -13,32 +13,57 @@ use App\Models\CartItem;
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resources depending on attributes.
      */
-    public function index($categorySlug = null)
+    public function index(Request $request)
     {
-        $category = null;
+        $context = is_array($request->input('categories')) ? 'array' : 'string'; // Determine if the categories are passed as an array or a string
 
-        if ($categorySlug) {
-            $category = Category::where('slug', $categorySlug)->firstOrFail();
+        $request->validate([
+            'sort' => 'nullable|string|in:newest,availability,low-to-high,high-to-low',
+            'categories' => Category::rules($context),
+        ]);
 
-            $products = Product::whereHas('categories', function ($query) use ($category) {
-                $query->where('id', $category->id);
-            })->with(['images', 'categories'])->paginate(5); // this assumes that a product will belong to category and its subcategories
-        } else {
-            $products = Product::with(['images', 'categories'])->paginate(5);
+        $sort = $request->input('sort');
+        $categorySlugs = is_array($request->input('categories')) ? $request->input('categories') : explode(',', $request->input('categories')); // convert the string of category slugs to an array
+
+        // get the first category in the list of category slugs
+        $category = Category::where('slug', $categorySlugs[0] ?? null)->first();
+
+        // get products based on the selected category or all products if no category is selected
+        $query = $category ? $category->products()->with(['categories', 'images']) : Product::query()->with(['categories', 'images']);
+
+        switch ($sort) {
+            case 'newest':
+                $query->orderBy('created_at', 'desc');
+                break;
+            case 'availability':
+                $query->orderByRaw("CASE WHEN availability = 'available' THEN 1 ELSE 2 END");
+                break;
+            case 'low-to-high':
+                $query->orderBy('price', 'asc');
+                break;
+            case 'high-to-low':
+                $query->orderBy('price', 'desc');
+                // Add more cases as needed for other sort options
         }
+
+        // paginate the query results
+        $products = $query->paginate(5)->appends(['categories' => $categorySlugs]);
 
         return view(
             'product-page',
             [
                 'products' => $products,
-                'category' => $category,
-                'subcategories' => $category ? $category->children : collect()
+                'current_category' => $category, // the current category that will be displayed to the left
+                'subcategories' => $category ? $category->children : collect() // Get the subcategories of the selected category
             ]
         );
     }
 
+    /**
+     * Search for products.
+     */
     public function search(Request $request)
     {
         $query = $request->input('query');
@@ -48,6 +73,7 @@ class ProductController extends Controller
 
         return view('product-page', ['products' => $products]);
     }
+
     /**
      * Show the form for creating a new resource.
      */

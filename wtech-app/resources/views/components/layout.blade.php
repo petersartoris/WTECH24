@@ -35,7 +35,6 @@
 
     <!--SLOT FOR MAIN-->
     {{ $slot }}
-    @yield('content')
 
     <!--FOOTER-->
     <x-layout-footer></x-layout-footer>

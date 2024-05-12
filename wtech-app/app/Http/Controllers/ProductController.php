@@ -75,7 +75,7 @@ class ProductController extends Controller
         $query = $request->input('query');
         $products = Product::whereRaw('LOWER(name) LIKE ?', ["%{$query}%"])
             ->orWhereRaw('LOWER(description) LIKE ?', ["%{$query}%"])
-            ->paginate(5);
+            ->paginate(5)->appends(['query' => $query]);
 
         return view('product-page', ['products' => $products]);
     }

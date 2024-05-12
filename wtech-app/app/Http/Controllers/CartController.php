@@ -30,7 +30,6 @@ class CartController extends Controller
         $deliveryMethod = $request->input('deliverymethod');
         $paymentMethod = $request->input('paymentmethod');
 
-
         // Store the data in the session
         session(['total' => $total, 'deliverymethod' => $deliveryMethod, 'paymentmethod' => $paymentMethod]);
 

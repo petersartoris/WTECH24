@@ -36,8 +36,8 @@
                     <div class="d-flex justify-content-start align-items-center m-3">
                         <span class="fw-bold white-text ">Filter by:</span>
                         <!--filtering-->
-                        <form class="sort-form" method="get" action="{{ route('products') }}"
-                            style="display: flex; align-items: center;">
+                        <form class="sort-form d-flex align-items: center flex-wrap" method="get"
+                            action="{{ route('products') }}">
                             <!-- Filter by Price Range -->
                             <label for="min-price" class="dropdown-label">Min Price:</label>
                             <input class="price-box" type="range" id="min-price" name="min_price" min="0"
@@ -51,13 +51,20 @@
                                 oninput="document.getElementById('maxPriceValue').innerText = this.value">
                             <span id="maxPriceValue" class="price-display">{{ request('max_price', '0') }}</span>
 
+                            @if (isset($current_category))
+                                <input type="hidden" name="categories[]" value="{{ $current_category->slug }}">
+                            @endif
+
+                            <input type="hidden" name="price" value="{{ request('price') }}">
+                            <input type="hidden" name="name" value="{{ request('name') }}">
+                            <input type="hidden" name="availability" value="{{ request('availability') }}">
+
                             <button type="submit" class="button-custom">Filter</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
 
 
         <!--Categories-->

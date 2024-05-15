@@ -16,7 +16,7 @@
 
                     <!--MAIN PRODUCT IMAGE-->
                     <div class="d-flex justify-content-center align-content-center">
-                        <img src="{{ asset($mainImage->path) }}" class="img-fluid main" alt="{{ $product->name }}">
+                        <img src="{{ asset($mainImage->path ?? 'images/main/250x250.png') }}" class="img-fluid main" name="{{ $product->name }}">
                     </div>
 
                     <!--SMALL PRODUCT IMAGES-->

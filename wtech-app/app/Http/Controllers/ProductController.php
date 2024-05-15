@@ -115,6 +115,7 @@ class ProductController extends Controller
     {
         $product = new Product;
         $product->name = $request->input('product-name');
+        $product->code = substr(str_shuffle('0123456789'), 0, 3) . chr(rand(97, 122)) . substr(str_shuffle('0123456789'), 0, 3);
         $product->description = $request->input('product-description');
         $product->price = $request->input('product-price');
         $product->quantity = $request->input('product-quantity');

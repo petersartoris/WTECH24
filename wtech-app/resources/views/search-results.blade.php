@@ -8,7 +8,7 @@
             @endphp
             <li>
                 <a href="{{ route('product-detail', ['id' => $product->id]) }}" class="product-link-search">
-                    <img src="{{ asset($mainImage->path) }}" alt="{{ $product->name }}" class="product-image-search">
+                    <img src="{{ asset($mainImage->path ?? 'images/main/250x250.png' ) }}" alt="{{ $product->name }}" class="product-image-search">
                     {{ $product->name }}
                 </a>
             </li>
